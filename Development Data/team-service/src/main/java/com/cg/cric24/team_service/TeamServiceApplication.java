@@ -1,13 +1,13 @@
-package com.cg.Cric24.Player_Service;
+package com.cg.cric24.team_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Cric24Application {
+public class TeamServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Cric24Application.class, args);
+		SpringApplication.run(TeamServiceApplication.class, args);
 	}
 
 }
