@@ -29,7 +29,7 @@ public interface PlayerService {
 
 	Player getPlayerById(int id) throws PlayerNotfoundException;
 
-	Player getPlayer(String name) throws PlayerNotfoundException;
+	List<Player> getPlayer(String name) throws PlayerNotfoundException;
 
 	Player updatePlayer(Player player);
 
