@@ -1,15 +1,46 @@
 package com.cg.cric24.archives_service.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Columns;
+
+@Entity
+@Table(name = "score_card_master")
+@SequenceGenerator(name = "score_seq", sequenceName = "score_card_sequence", allocationSize = 1)
 public class ScoreCard {
 	
+	@Id
+	@GeneratedValue(generator = "score_seq")
+	@Column(name = "score_card_id")
 	private int scoreCardID;
+	
+	@Columns(columns = {
+			@Column(name = "team_one", nullable = false),
+			@Column(name = "team_two", nullable = false)
+	})
 	private Team[] participants;
+	
 	private int teamOneScore;
+	
 	private int teamOneWickets;
+	
 	private double teamOneOvers;
+	
 	private int teamTwoScore;
+	
 	private int teamTwoWickets;
+	
 	private double teamTwoOvers;
+	
+	@OneToOne
+	@JoinColumn(name = "player_id", referencedColumnName = "player_id")
 	private Player playerOfTheMatch;
 	
 	public int getScoreCardID() {
