@@ -8,39 +8,38 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.Cric24.Player_Service.entity.Player;
 import com.cg.Cric24.Player_Service.exception.PlayerNotfoundException;
-import com.cg.Cric24.Player_Service.repo.PlayerRepo;
 
 @Service
 @Transactional(rollbackFor = PlayerNotfoundException.class)
 public class PlayerServiceImpl implements PlayerService {
 
 	@Autowired
-	private PlayerRepo repo;
+	private com.cg.Cric24.Player_Service.repo.PlayerDao dao;
 
 	@Override
 	public Player addPlayer(Player player) {
-		return repo.save(player);
+		return dao.addPlayer(player);
 	}
 
 	@Override
 	public List<Player> getAllPlayers() {
-		return repo.findAll();
+		return dao.getAllPlayers();
 	}
 
 	@Override
 	public Player getPlayerById(int id) throws PlayerNotfoundException {
-		return repo.findById(id).get();
+		return dao.getPlayerById(id);
 	}
 
 	@Override
 	public Player updatePlayer(Player player) {
-		return repo.save(player);
+		return dao.updatePlayer(player);
 	}
 
 	@Override
 	public boolean deletePlayer(int id) throws PlayerNotfoundException {
 		try {
-			repo.deleteById(id);
+			dao.deletePlayer(id);
 			return true;
 		} catch (Exception e) {
 			throw new PlayerNotfoundException("No player found with current id: " + id);
@@ -49,7 +48,7 @@ public class PlayerServiceImpl implements PlayerService {
 
 	@Override
 	public List<Player> getPlayer(String name) throws PlayerNotfoundException {
-		return repo.getPlayer(name);
+		return dao.getPlayer(name);
 	}
 
 }

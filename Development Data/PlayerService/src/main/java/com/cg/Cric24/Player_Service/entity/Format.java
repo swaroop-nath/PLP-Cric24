@@ -1,12 +1,12 @@
 package com.cg.Cric24.Player_Service.entity;
 
-public enum RoleType {
-
-	WICKET_KEEPER("Wicketkeeper"), BATSMAN("Batsman"), BOWLER("Bowler");
-
+public enum Format {
+	
+	ODI("ODI"), TESTS("Tests"), T20("T20");
+	
 	private String typeValue;
-
-	private RoleType(String type) {
+	
+	private Format(String type) {
 		typeValue = type;
 	}
 	

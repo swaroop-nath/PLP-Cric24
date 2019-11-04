@@ -1,28 +1,43 @@
 package com.cg.Cric24.Player_Service.entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
+
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(name = "allPlayers", query = "SELECT p FROM Player p")
+@NamedQuery(name = "byName", query = "SELECT p FROM Player p WHERE p.name=:nam")
 @SequenceGenerator(name = "playseq", sequenceName = "play_seq", initialValue = 1001, allocationSize = 1)
 public class Player {
 
 	@Id
 	@GeneratedValue(generator = "playseq")
 	private int playerId;
+	
+	public int getPlayerId() {
+		return playerId;
+	}
+
+	public void setPlayerId(int playerId) {
+		this.playerId = playerId;
+	}
+
 	@Column(length = 20)
 	private String name;
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "player_team_master", joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
-	private Set<Team> teams;
+	private List<Team> teams = new ArrayList<Team>();
 
 	@Column(length = 5)
 	private int age;
 	@Column(length = 20)
 	private String nationality;
 	@Column(length = 5)
-	private float rating;
+	private double rating;
 	@Column(length = 7)
 	private double runs;
 	@Column(length = 5)
@@ -55,11 +70,11 @@ public class Player {
 		this.nationality = nationality;
 	}
 
-	public float getRating() {
+	public double getRating() {
 		return rating;
 	}
 
-	public void setRating(float rating) {
+	public void setRating(double rating) {
 		this.rating = rating;
 	}
 
@@ -86,4 +101,17 @@ public class Player {
 	public void setRoleType(RoleType roleType) {
 		this.roleType = roleType;
 	}
-}
+	
+	public void addToTeams(Team newTeam) {
+		this.teams.add(newTeam);
+	}
+
+	public List<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
+	}
+	
+} 
