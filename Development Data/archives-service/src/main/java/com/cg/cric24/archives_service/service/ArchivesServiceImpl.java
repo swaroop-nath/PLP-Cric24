@@ -2,6 +2,8 @@ package com.cg.cric24.archives_service.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.cg.cric24.archives_service.exception.NoMatchFoundException;
 import com.cg.cric24.archives_service.repository.ArchivesRepo;
 
 @Service
+@Transactional
 public class ArchivesServiceImpl implements ArchivesService {
 	
 	@Autowired private ArchivesRepo repo;

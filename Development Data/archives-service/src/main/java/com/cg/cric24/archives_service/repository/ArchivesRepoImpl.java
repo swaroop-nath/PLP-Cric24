@@ -5,11 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.cg.cric24.archives_service.entity.Match;
 import com.cg.cric24.archives_service.entity.Team;
 import com.cg.cric24.archives_service.exception.NoMatchFoundException;
 
+@Repository
 public class ArchivesRepoImpl implements ArchivesRepo {
 
 	@Autowired private EntityManager manager;
@@ -32,14 +34,13 @@ public class ArchivesRepoImpl implements ArchivesRepo {
 
 	@Override
 	public boolean updateMatchDetails(Match updatedMatch) {
-		
+//		manager.
 		return false;
 	}
 
 	@Override
 	public int save(Match newMatch) {
 		manager.merge(newMatch);
-		manager.persist(newMatch);
 		manager.flush();
 		return newMatch.getMatchID();
 	}
