@@ -4,12 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Columns;
 
 @Entity
 @Table(name = "score_card_master")
@@ -21,11 +17,11 @@ public class ScoreCard {
 	@Column(name = "score_card_id")
 	private int scoreCardID;
 	
-	@Columns(columns = {
-			@Column(name = "team_one", nullable = false),
-			@Column(name = "team_two", nullable = false)
-	})
-	private Team[] participants;
+	@Column(name = "team_one", nullable = false)
+	private Team teamOne;
+	
+	@Column(name = "team_two", nullable = false)
+	private Team teamTwo;
 	
 	private int teamOneScore;
 	
@@ -39,9 +35,9 @@ public class ScoreCard {
 	
 	private double teamTwoOvers;
 	
-	@OneToOne
-	@JoinColumn(name = "player_id", referencedColumnName = "player_id")
-	private Player playerOfTheMatch;
+//	@OneToOne
+//	@JoinColumn(name = "player_id", referencedColumnName = "player_id")
+//	private Player playerOfTheMatch;
 	
 	public int getScoreCardID() {
 		return scoreCardID;
@@ -50,13 +46,21 @@ public class ScoreCard {
 	public void setScoreCardID(int scoreCardID) {
 		this.scoreCardID = scoreCardID;
 	}
-	
-	public Team[] getParticipants() {
-		return participants;
+
+	public Team getTeamOne() {
+		return teamOne;
 	}
-	
-	public void setParticipants(Team[] participants) {
-		this.participants = participants;
+
+	public void setTeamOne(Team teamOne) {
+		this.teamOne = teamOne;
+	}
+
+	public Team getTeamTwo() {
+		return teamTwo;
+	}
+
+	public void setTeamTwo(Team teamTwo) {
+		this.teamTwo = teamTwo;
 	}
 	
 	public int getTeamOneScore() {
@@ -107,12 +111,12 @@ public class ScoreCard {
 		this.teamTwoOvers = teamTwoOvers;
 	}
 	
-	public Player getPlayerOfTheMatch() {
-		return playerOfTheMatch;
-	}
-	
-	public void setPlayerOfTheMatch(Player playerOfTheMatch) {
-		this.playerOfTheMatch = playerOfTheMatch;
-	}
+//	public Player getPlayerOfTheMatch() {
+//		return playerOfTheMatch;
+//	}
+//	
+//	public void setPlayerOfTheMatch(Player playerOfTheMatch) {
+//		this.playerOfTheMatch = playerOfTheMatch;
+//	}
 	
 }

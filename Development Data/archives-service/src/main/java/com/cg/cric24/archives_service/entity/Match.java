@@ -29,22 +29,27 @@ public class Match {
 	@Column(name = "match_id")
 	private int matchID;
 	
-	@Temporal(TemporalType.TIMESTAMP)
 	private LocalDateTime matchSchedule;
 	
 	@OneToOne
-	@JoinColumn(name = "stadium_id")
+	@JoinColumn(name = "stadium_id", nullable = false)
 	private Stadium matchVenue;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(name = "match_type", nullable = false)
 	private MatchType matchType;
 	
-	@Columns(columns = {
-			@Column(name = "team_one", nullable = false),
-			@Column(name = "team_two", nullable = false)
-	})
-	private Team[] participants;
+	@OneToOne
+	@JoinColumn(referencedColumnName = "team_id")
+	@Column(name = "team_one", nullable = false)
+	private Team teamOne;
+
+	@OneToOne
+	@JoinColumn(referencedColumnName = "team_id")
+	@Column(name = "team_two", nullable = false)
+	private Team teamTwo;
 	
+	@Column(name = "match_league", nullable = false)
 	private String matchLeague;
 	
 	/*
@@ -54,9 +59,11 @@ public class Match {
 	 */
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "score_card_id", referencedColumnName = "score_card_id")
+	@Column(name = "match_score_card", nullable = false)
 	private ScoreCard matchScoreCard;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(name = "match_status", nullable = false)
 	private MatchStatus matchStatus;
 	
 	public int getMatchID() {
@@ -90,15 +97,23 @@ public class Match {
 	public void setMatchType(MatchType matchType) {
 		this.matchType = matchType;
 	}
-	
-	public Team[] getParticipants() {
-		return participants;
+
+	public Team getTeamOne() {
+		return teamOne;
 	}
-	
-	public void setParticipants(Team[] participants) {
-		this.participants = participants;
+
+	public void setTeamOne(Team teamOne) {
+		this.teamOne = teamOne;
 	}
-	
+
+	public Team getTeamTwo() {
+		return teamTwo;
+	}
+
+	public void setTeamTwo(Team teamTwo) {
+		this.teamTwo = teamTwo;
+	}
+
 	public String getMatchLeague() {
 		return matchLeague;
 	}
