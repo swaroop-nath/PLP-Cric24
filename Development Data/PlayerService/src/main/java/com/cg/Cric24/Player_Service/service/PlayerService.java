@@ -14,12 +14,10 @@ public interface PlayerService {
 	String TEAM_RULE = "[A-Z][a-z]+( [A-Z][a-z]+)";
 	
 	String NATIONALITY_RULE = "[A-Z][a-z]+( [A-Z][a-z]+)";
+		
+	String WICKETS_RULE = "[0-9] {1,3}";
 	
-	String ROLE_RULE = "^[a-zA-Z]+(?:[\\s-][a-zA-Z]+)*$"; 
-	
-	String WICKETS_RULE = "[1-9][0-9] {2}";
-	
-	String RUNS_RULE = "[1-9][0-9] {4}";
+	String RUNS_RULE = "[0-9] {1,5}";
 	
 	String RATING_RULE = "[0-9]{1,2}.[0-9] {0,1}";
 
@@ -53,10 +51,6 @@ public interface PlayerService {
 	
 	default boolean validateRating(String rating) {
 		return rating.matches(RATING_RULE);
-	}
-	
-	default boolean validateRole(String role) {
-		return role.matches(ROLE_RULE);
 	}
 	
 	default boolean validateRuns(String runs) {

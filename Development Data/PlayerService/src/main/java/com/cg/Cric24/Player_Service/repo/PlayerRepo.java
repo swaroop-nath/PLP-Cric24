@@ -9,7 +9,7 @@ import com.cg.Cric24.Player_Service.entity.Player;
 
 public interface PlayerRepo extends JpaRepository<Player,Integer> {
 	
-	@Query("SELECT p FROM Player p WHERE p.name=:nam")
-	List<Player> getPlayer(String name);
+	@Query("FROM Player WHERE name=:nam")
+	List<Player> getPlayer(String nam);
 
 }

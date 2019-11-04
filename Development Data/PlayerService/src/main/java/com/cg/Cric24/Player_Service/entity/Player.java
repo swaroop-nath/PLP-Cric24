@@ -1,15 +1,10 @@
 package com.cg.Cric24.Player_Service.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
+import java.util.Set;
+import javax.persistence.*;
 
 @Entity
 @SequenceGenerator(name = "playseq", sequenceName = "play_seq", initialValue = 1001, allocationSize = 1)
-@NamedQuery(name = "byName", query = "SELECT p FROM Player p WHERE p.name=:nam")
 public class Player {
 
 	@Id
@@ -17,8 +12,11 @@ public class Player {
 	private int playerId;
 	@Column(length = 20)
 	private String name;
-	@Column(length = 20)
-	private String team;
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "player_team_master", joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
+	private Set<Team> teams;
+
 	@Column(length = 5)
 	private int age;
 	@Column(length = 20)
@@ -29,16 +27,9 @@ public class Player {
 	private double runs;
 	@Column(length = 5)
 	private int wickets;
-	@Column(length = 20)
-	private String role;
-
-	public int getPlayerId() {
-		return playerId;
-	}
-
-	public void setPlayerId(int playerId) {
-		this.playerId = playerId;
-	}
+	
+	@Enumerated(EnumType.STRING)
+	private RoleType roleType;
 
 	public String getName() {
 		return name;
@@ -46,14 +37,6 @@ public class Player {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getTeam() {
-		return team;
-	}
-
-	public void setTeam(String team) {
-		this.team = team;
 	}
 
 	public int getAge() {
@@ -96,12 +79,11 @@ public class Player {
 		this.wickets = wickets;
 	}
 
-	public String getRole() {
-		return role;
+	public RoleType getRoleType() {
+		return roleType;
 	}
-
-	public void setRole(String role) {
-		this.role = role;
+	
+	public void setRoleType(RoleType roleType) {
+		this.roleType = roleType;
 	}
-
 }
