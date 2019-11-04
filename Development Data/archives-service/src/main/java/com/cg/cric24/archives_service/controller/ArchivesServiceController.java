@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.cric24.archives_service.entity.Match;
+import com.cg.cric24.archives_service.entity.Team;
+import com.cg.cric24.archives_service.exception.NoMatchFoundException;
 import com.cg.cric24.archives_service.service.ArchivesService;
 
 @RestController
@@ -21,13 +23,13 @@ public class ArchivesServiceController {
 	@Autowired private ArchivesService service;
 	
 	@GetMapping(value = "/list-matches", produces = "application/json")
-	public List<Match> getListOfMatches() {
+	public List<Match> getListOfMatches() throws NoMatchFoundException {
 		return service.listAllMatches();
 	}
 	
-	@GetMapping(value = "/list-matches/{team_id}", produces = "application/json")
-	public List<Match> getListOfMatchesByTeam(@PathVariable int teamID) {
-		return service.getListOfMatchesByTeam(teamID);
+	@GetMapping(value = "/list-matches/by-team", produces = "application/json")
+	public List<Match> getListOfMatchesByTeam(@RequestBody Team team) throws NoMatchFoundException {
+		return service.getListOfMatchesByTeam(team);
 	}
 	
 	@PutMapping(value = "/update-match", consumes = "application/json")

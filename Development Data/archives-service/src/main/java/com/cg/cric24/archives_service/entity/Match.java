@@ -8,8 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -17,6 +20,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "match_master")
 @SequenceGenerator(name = "mat_seq", sequenceName = "matches_sequence", allocationSize = 1)
+@NamedQueries({
+	@NamedQuery(name = "all_matches", query = "from Match"),
+	@NamedQuery(name = "all_matches_for_team", query = "from Match where teamOne := team or teamTwo := team")
+})
 public class Match {
 
 	@Id

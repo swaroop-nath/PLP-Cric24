@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.cric24.archives_service.entity.Match;
+import com.cg.cric24.archives_service.entity.Team;
+import com.cg.cric24.archives_service.exception.NoMatchFoundException;
 import com.cg.cric24.archives_service.repository.ArchivesRepo;
 
 @Service
@@ -14,13 +16,13 @@ public class ArchivesServiceImpl implements ArchivesService {
 	@Autowired private ArchivesRepo repo;
 
 	@Override
-	public List<Match> listAllMatches() {
+	public List<Match> listAllMatches() throws NoMatchFoundException {
 		return repo.findAll();
 	}
 
 	@Override
-	public List<Match> getListOfMatchesByTeam(int teamID) {
-		return null;
+	public List<Match> getListOfMatchesByTeam(Team team) throws NoMatchFoundException {
+		return repo.getListOfMatchesByTeam(team);
 	}
 
 	@Override
@@ -30,7 +32,7 @@ public class ArchivesServiceImpl implements ArchivesService {
 
 	@Override
 	public int addMatchDetails(Match newMatch) {
-		return repo.save(newMatch).getMatchID();
+		return repo.save(newMatch);
 	}
 
 }
