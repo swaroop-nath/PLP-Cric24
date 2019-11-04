@@ -1,5 +1,8 @@
 package com.cg.cric24.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -36,9 +39,8 @@ public class User {
 	@Column(name = "user_type")
 	private String userType;
 	
-	@OneToMany
-	@JoinColumn(name = "blog_Id", referencedColumnName = "blog_Id")
-	private Blog blogId;
+	@OneToMany(mappedBy = "creator")
+	private List<Blog> blogs = new ArrayList<Blog>();
 	
 	@Column(name = "user_fav_food")
 	private String userFavFood;

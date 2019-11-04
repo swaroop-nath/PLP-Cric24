@@ -18,10 +18,7 @@ public class Blog {
 	
 	public Blog() {
 	}
-	
-	@ManyToOne
-	@JoinColumn(name = "creator_id", referencedColumnName = "user_Id")
-	private User creator;
+
 	
 	@Id
 	@Column(name="blog_Id")
@@ -37,6 +34,10 @@ public class Blog {
 	@Column(name = "blog_content")
 	private String blogContent;
 	
+	@ManyToOne
+	@JoinColumn(name = "creator_id", referencedColumnName = "user_Id")
+	private User creator;
+	
 	@Column(name="status")
 	private String status;
 
@@ -48,8 +49,8 @@ public class Blog {
 		this.status = status;
 	}
 
-	public Blog(int creatorId, String blogType, String blogHeading, String blogContent) {
-		this.blogId = creatorId;
+	public Blog(int blogId, String blogType, String blogHeading, String blogContent) {
+		this.blogId = blogId;
 		this.blogType = blogType;
 		this.blogHeading = blogHeading;
 		this.blogContent = blogContent;
