@@ -16,15 +16,15 @@ public class TeamDaoImpl implements TeamDao {
 	private EntityManager mgr;
 
 	@Override
-	public Team addTeam(Team teams) {
-		mgr.persist(teams);
-		return teams;
+	public Team addTeam(Team team) {
+		Team savedTeam = mgr.merge(team);
+		mgr.flush();
+		return savedTeam;
 	}
 
 	@Override
 	public List<Team> getAllTeams() {
-
-		return mgr.createNamedQuery("All Teams").getResultList();
+		return mgr.createNamedQuery("allteams").getResultList();
 	}
 
 	@Override

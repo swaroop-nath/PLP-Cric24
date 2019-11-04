@@ -8,7 +8,7 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@SequenceGenerator(name = "playseq", sequenceName = "play_seq", initialValue = 1001, allocationSize = 1)
+@SequenceGenerator(name = "playseq", sequenceName = "play_seq", initialValue = 1, allocationSize = 1)
 public class Player {
 
 	@Id
@@ -27,7 +27,9 @@ public class Player {
 	private String name;
 
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "player_team_master", joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
+	@JoinTable(name = "player_team_master", 
+	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), 
+	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
 	private List<Team> teams = new ArrayList<Team>();
 
 	@Column(length = 5)

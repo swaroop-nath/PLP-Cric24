@@ -1,12 +1,12 @@
 package com.cg.cric24.team_service.entity;
 
-public enum Format {
+public enum MatchFormat {
 
-	ODI("ODI"), TESTS("Tests"), T20("T20");
+	ODI("ODI"), TESTS("TESTS"), T20("T20");
 
 	private String typeValue;
 
-	private Format(String type) {
+	private MatchFormat(String type) {
 		typeValue = type;
 
 	}
