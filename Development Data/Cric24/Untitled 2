@@ -1,0 +1,17 @@
+database commands(my sql)
+create table user(user_Id varchar(20), user_Name varchar(20) not null, user_Phone varchar(10) not null, user_Email varchar(30) not null, user_Password varchar(20) not null, user_Type varchar(20) not null, user_fav_food varchar(20), user_fav_animal varchar(20), primary key (user_Id));
+insert into user values('arvish0609','Arvish Saluja','9877598822','arvishsaluja@gmail.com','arvish123','admin','noodles','dog');
+
+
+
+{
+"userId":"neha3108",
+"userName":"Neha Bhargava",
+"userPassword":"neha123",
+"userPhone":"9888999040",
+"userEmail":"neha@gmail.com",
+"userType":"blogger",
+"userFavFood":"maggi",
+"userFavAnimal":"cat"
+
+}
