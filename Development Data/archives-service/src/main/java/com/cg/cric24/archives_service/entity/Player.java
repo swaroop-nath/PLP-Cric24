@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.JoinColumn;
 
 @Entity
 @SequenceGenerator(name = "playseq", sequenceName = "play_seq", initialValue = 1001, allocationSize = 1)
@@ -19,12 +20,16 @@ public class Player {
 
 	@Id
 	@GeneratedValue(generator = "playseq")
+	@Column(name = "player_id")
 	private int playerId;
+	
 	@Column(length = 20)
 	private String name;
 
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "player_team_master", joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
+	@JoinTable(name = "player_team_master", 
+	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "player_id"), 
+	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "team_id"))
 	private Set<Team> teams;
 
 	@Column(length = 5)

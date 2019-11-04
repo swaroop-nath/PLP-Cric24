@@ -13,11 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import org.hibernate.annotations.Columns;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "match_master")
@@ -41,12 +36,10 @@ public class Match {
 	
 	@OneToOne
 	@JoinColumn(referencedColumnName = "team_id")
-	@Column(name = "team_one", nullable = false)
 	private Team teamOne;
 
 	@OneToOne
 	@JoinColumn(referencedColumnName = "team_id")
-	@Column(name = "team_two", nullable = false)
 	private Team teamTwo;
 	
 	@Column(name = "match_league", nullable = false)
@@ -59,7 +52,6 @@ public class Match {
 	 */
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "score_card_id", referencedColumnName = "score_card_id")
-	@Column(name = "match_score_card", nullable = false)
 	private ScoreCard matchScoreCard;
 	
 	@Enumerated(EnumType.STRING)

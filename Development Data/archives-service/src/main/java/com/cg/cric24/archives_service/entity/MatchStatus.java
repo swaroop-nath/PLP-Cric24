@@ -2,10 +2,10 @@ package com.cg.cric24.archives_service.entity;
 
 public enum MatchStatus {
 
-	Concluded ("Concluded"),
-	Forfeited ("Forfeited"),
-	Cancelled ("Cancelled"),
-	Scheduled ("Scheduled");
+	CONCLUDED ("Concluded"),
+	FORFEITED ("Forfeited"),
+	CANCELLED ("Cancelled"),
+	SCHEDULED ("Scheduled");
 	
 	private String statusValue;
 	

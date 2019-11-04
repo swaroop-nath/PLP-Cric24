@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,10 +19,12 @@ public class ScoreCard {
 	@Column(name = "score_card_id")
 	private int scoreCardID;
 	
-	@Column(name = "team_one", nullable = false)
+	@OneToOne
+	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamOne;
-	
-	@Column(name = "team_two", nullable = false)
+
+	@OneToOne
+	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamTwo;
 	
 	private int teamOneScore;
@@ -35,9 +39,9 @@ public class ScoreCard {
 	
 	private double teamTwoOvers;
 	
-//	@OneToOne
-//	@JoinColumn(name = "player_id", referencedColumnName = "player_id")
-//	private Player playerOfTheMatch;
+	@OneToOne
+	@JoinColumn(name = "player_id", referencedColumnName = "player_id")
+	private Player playerOfTheMatch;
 	
 	public int getScoreCardID() {
 		return scoreCardID;
@@ -111,12 +115,12 @@ public class ScoreCard {
 		this.teamTwoOvers = teamTwoOvers;
 	}
 	
-//	public Player getPlayerOfTheMatch() {
-//		return playerOfTheMatch;
-//	}
-//	
-//	public void setPlayerOfTheMatch(Player playerOfTheMatch) {
-//		this.playerOfTheMatch = playerOfTheMatch;
-//	}
+	public Player getPlayerOfTheMatch() {
+		return playerOfTheMatch;
+	}
+	
+	public void setPlayerOfTheMatch(Player playerOfTheMatch) {
+		this.playerOfTheMatch = playerOfTheMatch;
+	}
 	
 }

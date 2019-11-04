@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
@@ -16,6 +18,7 @@ public class Team {
 
 	@Id
 	@GeneratedValue(generator = "teamseq")
+	@Column(name = "team_id")
 	private int teamId;
 	
 	@Column(length = 20)
@@ -25,7 +28,7 @@ public class Team {
 	private int ranking;
 	
 	@ManyToMany(mappedBy = "teams")
-	private Set<Player> players = new HashSet()<Player>();
+	private Set<Player> players = new HashSet<Player>();
 	
 	@Column(length = 20)
 	private String format;
