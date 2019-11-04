@@ -17,5 +17,5 @@ public interface ArchivesRepo {
 	
 	boolean updateMatchDetails(Match updatedMatch);
 	
-	int save(Match newMatch);
+	Match save(Match newMatch);
 }

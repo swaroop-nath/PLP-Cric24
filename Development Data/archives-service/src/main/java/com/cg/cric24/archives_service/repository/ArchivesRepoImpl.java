@@ -26,7 +26,7 @@ public class ArchivesRepoImpl implements ArchivesRepo {
 
 	@Override
 	public List<Match> getListOfMatchesByTeam(Team team) throws NoMatchFoundException {
-		List<Match> fetchedMatches = manager.createNamedQuery("all_matches_for_team").getResultList();
+		List<Match> fetchedMatches = manager.createNamedQuery("all_matches_for_team").setParameter("team", team).getResultList();
 		if (fetchedMatches.size() == 0)
 			throw new NoMatchFoundException("No matches exist for the team: " + team.getTeamName());
 		return fetchedMatches;
@@ -34,15 +34,17 @@ public class ArchivesRepoImpl implements ArchivesRepo {
 
 	@Override
 	public boolean updateMatchDetails(Match updatedMatch) {
-//		manager.
-		return false;
+		manager.merge(updatedMatch);
+		manager.flush();
+		
+		return true;
 	}
 
 	@Override
-	public int save(Match newMatch) {
+	public Match save(Match newMatch) {
 		manager.merge(newMatch);
 		manager.flush();
-		return newMatch.getMatchID();
+		return newMatch;
 	}
 
 }

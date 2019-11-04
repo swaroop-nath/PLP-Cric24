@@ -37,8 +37,8 @@ public class ArchivesServiceController {
 		return service.updateMatchDetails(updatedMatch);
 	}
 	
-	@PostMapping(value = "/add-match", consumes = "application/json")
-	public int addMatchDetails(@RequestBody Match newMatch) {
+	@PostMapping(value = "/add-match", consumes = "application/json", produces = "application/json")
+	public Match addMatchDetails(@RequestBody Match newMatch) {
 		return service.addMatchDetails(newMatch);
 	}
 	

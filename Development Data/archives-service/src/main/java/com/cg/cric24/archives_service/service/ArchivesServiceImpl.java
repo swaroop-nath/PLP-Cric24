@@ -30,11 +30,11 @@ public class ArchivesServiceImpl implements ArchivesService {
 
 	@Override
 	public boolean updateMatchDetails(Match updatedMatch) {
-		return false;
+		return repo.updateMatchDetails(updatedMatch);
 	}
 
 	@Override
-	public int addMatchDetails(Match newMatch) {
+	public Match addMatchDetails(Match newMatch) {
 		return repo.save(newMatch);
 	}
 

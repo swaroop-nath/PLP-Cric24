@@ -14,5 +14,5 @@ public interface ArchivesService {
 	
 	boolean updateMatchDetails(Match updatedMatch);
 	
-	int addMatchDetails(Match newMatch);
+	Match addMatchDetails(Match newMatch);
 }

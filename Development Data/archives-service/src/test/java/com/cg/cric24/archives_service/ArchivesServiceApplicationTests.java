@@ -1,9 +1,11 @@
 package com.cg.cric24.archives_service;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Ignore;
@@ -22,6 +24,7 @@ import com.cg.cric24.archives_service.entity.RoleType;
 import com.cg.cric24.archives_service.entity.ScoreCard;
 import com.cg.cric24.archives_service.entity.Stadium;
 import com.cg.cric24.archives_service.entity.Team;
+import com.cg.cric24.archives_service.exception.NoMatchFoundException;
 import com.cg.cric24.archives_service.service.ArchivesService;
 
 @RunWith(SpringRunner.class)
@@ -41,8 +44,43 @@ public class ArchivesServiceApplicationTests {
 		assertNotNull(controller);
 	}
 	
+	@Ignore
+	@Test(expected = NoMatchFoundException.class)
+	public void testGetListOfMatchesByTeamWithException() throws NoMatchFoundException {
+		Team teamAustralia = new Team();
+		teamAustralia.setTeamId(3);
+		teamAustralia.setTeamName("Australia");
+		teamAustralia.setFormat("ODI");
+		teamAustralia.setLeagues("INTL");
+		teamAustralia.setPlayers(new HashSet<Player>());
+		teamAustralia.setRanking(3); 
+		List<Match> matchesByAus = service.getListOfMatchesByTeam(teamAustralia);
+	}
+	
 	@Test
-	public void testSaveMatch() {
+	public void testGetListOfMatchesByTeam() throws NoMatchFoundException {
+		Team teamIndia = new Team();
+		teamIndia.setTeamId(1);
+		teamIndia.setTeamName("India");
+		teamIndia.setFormat("ODI");
+		teamIndia.setLeagues("INTL");
+		teamIndia.setPlayers(new HashSet<Player>());
+		teamIndia.setRanking(3); 
+		List<Match> matchesByInd = service.getListOfMatchesByTeam(teamIndia);
+		
+		assertEquals(2, matchesByInd.size());
+	}
+	
+	@Ignore
+	@Test
+	public void testListAllMatches() throws NoMatchFoundException {
+		List<Match> fetchedMatches = service.listAllMatches();
+		assertEquals(2, fetchedMatches.size());
+	}
+	
+	@Ignore
+	@Test
+	public void testAddMatchDetails() {
 		Player viratKohli = new Player();
 		viratKohli.setPlayerId(1);
 		viratKohli.setName("Virat Kohli");
@@ -108,7 +146,20 @@ public class ArchivesServiceApplicationTests {
 		match.setTeamOne(teamIndia);
 		match.setTeamTwo(teamEngland);
 		
-		service.addMatchDetails(match);
+		Match savedMatch = service.addMatchDetails(match);
+		
+		assertEquals(2, savedMatch.getMatchID());
 	}
 
+	@Ignore
+	@Test
+	public void testUpdateMatchDetails() throws NoMatchFoundException {
+		List<Match> matches = service.listAllMatches();
+		Match matchOne = matches.get(0);
+		
+		matchOne.setMatchType(MatchType.TEST);
+		
+		service.updateMatchDetails(matchOne);
+	}
+	
 }
