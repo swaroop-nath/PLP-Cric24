@@ -12,17 +12,21 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@GenericGenerator(name="creator_id_seq",strategy = "increment")
+@GenericGenerator(name="blog_id_seq",strategy = "increment")
 @Table(name = "blogs")
 public class Blog {
 	
 	public Blog() {
 	}
 	
+	@ManyToOne
+	@JoinColumn(name = "creator_id", referencedColumnName = "user_Id")
+	private User creator;
+	
 	@Id
-	@Column(name="creator_Id")
-	@GeneratedValue(generator = "creator_id_seq",strategy = GenerationType.SEQUENCE)
-	private int creatorId;
+	@Column(name="blog_Id")
+	@GeneratedValue(generator = "blog_id_seq",strategy = GenerationType.SEQUENCE)
+	private int blogId;
 	
 	@Column(name = "blog_type")
 	private String blogType;
@@ -35,10 +39,6 @@ public class Blog {
 	
 	@Column(name="status")
 	private String status;
-	
-	@ManyToOne
-	@JoinColumn(name = "creator_id", referencedColumnName = "user_Id")
-	private User creator;
 
 	public String getStatus() {
 		return status;
@@ -49,18 +49,18 @@ public class Blog {
 	}
 
 	public Blog(int creatorId, String blogType, String blogHeading, String blogContent) {
-		this.creatorId = creatorId;
+		this.blogId = creatorId;
 		this.blogType = blogType;
 		this.blogHeading = blogHeading;
 		this.blogContent = blogContent;
 	}
 
-	public int getCreatorId() {
-		return creatorId;
+	public int getBlogId() {
+		return blogId;
 	}
 
-	public void setCreatorId(int creatorId) {
-		this.creatorId = creatorId;
+	public void setBlogId(int blogId) {
+		this.blogId = blogId;
 	}
 
 	public String getBlogType() {
@@ -77,6 +77,13 @@ public class Blog {
 
 	public void setBlogHeading(String blogHeading) {
 		this.blogHeading = blogHeading;
+	}
+
+	public Blog(String blogType, String blogHeading, String blogContent) {
+		super();
+		this.blogType = blogType;
+		this.blogHeading = blogHeading;
+		this.blogContent = blogContent;
 	}
 
 	public String getBlogContent() {

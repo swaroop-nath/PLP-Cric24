@@ -3,6 +3,9 @@ package com.cg.cric24.dto;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -13,6 +16,7 @@ public class User {
 	public User() {
 	}
 	
+
 	@Id
 	@Column(name = "user_Id")
 	private int userId;
@@ -31,6 +35,10 @@ public class User {
 	
 	@Column(name = "user_type")
 	private String userType;
+	
+	@OneToMany
+	@JoinColumn(name = "blog_Id", referencedColumnName = "blog_Id")
+	private Blog blogId;
 	
 	@Column(name = "user_fav_food")
 	private String userFavFood;
