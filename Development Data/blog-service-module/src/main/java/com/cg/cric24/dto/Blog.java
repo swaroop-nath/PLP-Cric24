@@ -34,9 +34,9 @@ public class Blog {
 	@Column(name = "blog_content")
 	private String blogContent;
 	
-	@ManyToOne
-	@JoinColumn(name = "creator_id", referencedColumnName = "user_Id")
-	private User creator;
+//	@ManyToOne
+//	@JoinColumn(name = "creator_id", referencedColumnName = "user_Id")
+//	private User creator;
 	
 	@Column(name="status")
 	private String status;

@@ -24,13 +24,13 @@ public class BlogServiceImpl implements BlogService{
 	
 
 	@Override
-	public int rejectBlog(int creatorId) {
-		return dao.rejectBlog(creatorId);
+	public int rejectBlog(int blogId) {
+		return dao.rejectBlog(blogId);
 	}
 
 	@Override
-	public int approveBlog(int creatorId) {
-		return dao.approveBlog(creatorId);  
+	public int approveBlog(int blogId) {
+		return dao.approveBlog(blogId);  
 	}
 
 

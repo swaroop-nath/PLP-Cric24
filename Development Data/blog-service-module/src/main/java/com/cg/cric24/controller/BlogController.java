@@ -31,14 +31,14 @@ public class BlogController {
 		return service.approvedBlogs();
 	}
 	
-	@PutMapping(value="/reject/{creatorId}",produces ="application/json", consumes = "application/json")
-	public int reject(@PathVariable int creatorId) {
-		return service.rejectBlog(creatorId);
+	@PutMapping(value="/reject/{blogId}",produces ="application/json", consumes = "application/json")
+	public int blogReject(@PathVariable int blogId) {
+		return service.rejectBlog(blogId);
 	}
 	
-	@PutMapping(value="/approve/{creatorId}",consumes = "application/json")
-	public int approve(@PathVariable int creatorId) {
-		return service.approveBlog(creatorId);
+	@PutMapping(value="/approve/{blogId}",consumes = "application/json")
+	public int blogApprove(@PathVariable int blogId) {
+		return service.approveBlog(blogId);
 	}
 	
 }

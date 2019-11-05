@@ -1,6 +1,7 @@
 package com.cg.cric24.dto;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -39,8 +40,8 @@ public class User {
 	@Column(name = "user_type")
 	private String userType;
 	
-	@OneToMany(mappedBy = "creator")
-	private List<Blog> blogs = new ArrayList<Blog>();
+//	@OneToMany(mappedBy = "creator")
+//	private List<Blog> blogs = new ArrayList<Blog>();
 	
 	@Column(name = "user_fav_food")
 	private String userFavFood;

@@ -15,12 +15,12 @@ import com.cg.cric24.dto.Blog;
 public interface BlogDao extends JpaRepository<Blog, Integer>{
 	
 	@Modifying
-	@Query("UPDATE Blog b SET b.status = 'Rejected' WHERE b.blogId=:crtrId")
-	public int rejectBlog(int crtrId);
+	@Query("UPDATE Blog b SET b.status = 'Rejected' WHERE b.blogId=:blgId")
+	public int rejectBlog(int blgId);
 	
 	@Modifying
-	@Query("UPDATE Blog b SET b.status = 'Approved' WHERE b.blogId=:crtrId")
-	public int approveBlog(int crtrId);
+	@Query("UPDATE Blog b SET b.status = 'Approved' WHERE b.blogId=:blgId")
+	public int approveBlog(int blgId);
 
 	@Query("SELECT b FROM Blog b where b.status='Approved'")
 	public List<Blog> approvedBlogs();
