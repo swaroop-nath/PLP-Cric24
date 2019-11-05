@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.cg.cric24.stadium_service.entity.StadiumBean;
+import com.cg.cric24.stadium_service.entity.Stadium;
+import com.cg.cric24.stadium_service.exception.NoRegisteredStadiumException;
 import com.cg.cric24.stadium_service.exception.StadiumNotFoundException;
 import com.cg.cric24.stadium_service.service.IStadiumService;
 
@@ -28,28 +29,33 @@ public class StadiumController {
 	IStadiumService service;
 	
 	@PostMapping(value = "/add",produces = "application/json",consumes = "application/json")
-	public StadiumBean addStadium(@RequestBody StadiumBean stadium) {
+	public Stadium addStadium(@RequestBody Stadium stadium) {
 		return service.addStadium(stadium);
 	}
 	
 	
 	@GetMapping(value = "/id/{stadiumId}",produces = "application/json")
-	public StadiumBean fetchById(@PathVariable int stadiumId) throws StadiumNotFoundException {
+	public Stadium fetchById(@PathVariable int stadiumId) throws StadiumNotFoundException {
 		return service.fetchById(stadiumId);
 	}
 	
 	@GetMapping(value = "/name/{stadiumName}",produces = "application/json")
-	public List<StadiumBean> fetchByName(@PathVariable String stadiumName) throws StadiumNotFoundException {
+	public List<Stadium> fetchByName(@PathVariable String stadiumName) throws StadiumNotFoundException {
 		return service.fetchByName(stadiumName);
 	}
 	
+	@GetMapping(value = "/country/{country}",produces = "application/json")
+	public List<Stadium> fetchByCountry(@PathVariable String country) throws NoRegisteredStadiumException {
+		return service.fetchByCountry(country);
+	}
+	
 	@GetMapping(value = "/all",produces = "application/json")
-	public List<StadiumBean> fetchAll() throws StadiumNotFoundException {
+	public List<Stadium> fetchAll() throws StadiumNotFoundException {
 		return service.fetchAll();
 	}
 	
 	@PutMapping(value = "/update",consumes = "application/json",produces = "application/json")
-	public StadiumBean updateStadium(@RequestBody StadiumBean stadium) {
+	public Stadium updateStadium(@RequestBody Stadium stadium) {
 		return service.updateStadium(stadium);
 	}
 

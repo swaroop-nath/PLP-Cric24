@@ -11,12 +11,17 @@
     
     
     
-        <tr><td>Enter Location:  </td>
-          <td><input type="text" [(ngModel)]=stadium.location name="loc" class="form-control" #loc=ngModel placeholder="Enter Location">
-            <span *ngIf="loc.touched && loc.invalid && (loc.errors.required || loc.errors.pattern)" class="alert-warning">
+      <tr><td>Enter Location:  </td>
+         <td><input type="text" [(ngModel)]=stadium.location name="loc" class="form-control" #loc=ngModel placeholder="Enter Location">
+         <span *ngIf="loc.touched && loc.invalid && (loc.errors.required || loc.errors.pattern)" class="alert-warning">
+           Invalid location or location cannot be empty!
+        </span></td> </tr>
+        
+        <tr><td>Enter Country:  </td>
+          <td><input type="text" [(ngModel)]=stadium.country name="con" class="form-control" #con=ngModel placeholder="Enter Country">
+            <span *ngIf="con.touched && con.invalid && (con.errors.required || con.errors.pattern)" class="alert-warning">
               Invalid location or location cannot be empty!
             </span></td> </tr>
-  
   
     
       <tr><td>Enter Capacity: </td>

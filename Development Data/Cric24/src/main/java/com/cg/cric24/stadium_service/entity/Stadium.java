@@ -14,7 +14,8 @@ import javax.persistence.Table;
 @Table(name = "stadium")
 @NamedQuery(name = "findAll",query = "SELECT stadium FROM StadiumBean stadium")
 @NamedQuery(name = "byName" ,query = "SELECT stadium FROM StadiumBean stadium WHERE stadium.stadiumName=:name")
-public class StadiumBean {
+@NamedQuery(name = "byCountry" ,query = "SELECT stadium FROM StadiumBean stadium WHERE stadium.country=:country")
+public class Stadium {
 
 	@Id
 	@GeneratedValue(generator = "stadiumseq")
@@ -23,9 +24,17 @@ public class StadiumBean {
 	private String stadiumName;
 	@Column(name = "location", length = 50)
 	private String location;
+	@Column(name = "country")
+	private String country;
 	@Column(name = "capacity")
 	private int capacity;
 	
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
 	public int getStadiumId() {
 		return stadiumId;
 	}

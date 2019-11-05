@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.cg.cric24.stadium_service.exception.NoRegisteredStadiumException;
 import com.cg.cric24.stadium_service.exception.StadiumNotFoundException;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -20,6 +21,13 @@ public class RestExceptionHandler {
 	@ExceptionHandler(StadiumNotFoundException.class)
 	@ResponseBody
 	public ResponseEntity<Object> handleInvalidStadium(StadiumNotFoundException stadium){
+		System.out.println("Exception: "+stadium.getMessage());
+		return new ResponseEntity<>(stadium.getMessage(), HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(NoRegisteredStadiumException.class)
+	@ResponseBody
+	public ResponseEntity<Object> handleUnenteredStadium(NoRegisteredStadiumException stadium){
 		System.out.println("Exception: "+stadium.getMessage());
 		return new ResponseEntity<>(stadium.getMessage(), HttpStatus.NOT_FOUND);
 	}

@@ -2,7 +2,8 @@ package com.cg.cric24.stadium_service.service;
 
 import java.util.List;
 
-import com.cg.cric24.stadium_service.entity.StadiumBean;
+import com.cg.cric24.stadium_service.entity.Stadium;
+import com.cg.cric24.stadium_service.exception.NoRegisteredStadiumException;
 import com.cg.cric24.stadium_service.exception.StadiumNotFoundException;
 
 import oracle.net.aso.b;
@@ -13,15 +14,17 @@ public interface IStadiumService {
 	
 	String Capacity_Rule = "[0-9]{3,}";
 	
-	StadiumBean addStadium (StadiumBean stadium);
+	Stadium addStadium (Stadium stadium);
 	
-	StadiumBean fetchById(int stadiumId) throws StadiumNotFoundException;
+	Stadium fetchById(int stadiumId) throws StadiumNotFoundException;
 	
-	List<StadiumBean> fetchByName(String stadiumName) throws StadiumNotFoundException;
+	List<Stadium> fetchByName(String stadiumName) throws StadiumNotFoundException;
 	
-	List<StadiumBean> fetchAll() throws StadiumNotFoundException;
+	List<Stadium> fetchByCountry(String country)throws NoRegisteredStadiumException;
 	
-	StadiumBean updateStadium(StadiumBean stadium);
+	List<Stadium> fetchAll() throws StadiumNotFoundException;
+	
+	Stadium updateStadium(Stadium stadium);
 	
 	Boolean deleteStadium(int stadiumId) throws StadiumNotFoundException;
 	

@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.cric24.stadium_service.dao.IStadiumDao;
-import com.cg.cric24.stadium_service.entity.StadiumBean;
+import com.cg.cric24.stadium_service.entity.Stadium;
+import com.cg.cric24.stadium_service.exception.NoRegisteredStadiumException;
 import com.cg.cric24.stadium_service.exception.StadiumNotFoundException;
 
 @Service
@@ -18,27 +19,33 @@ public class StadiumServiceImpl implements IStadiumService {
 	private IStadiumDao dao;
 
 	@Override
-	public StadiumBean addStadium(StadiumBean stadium) {
+	public Stadium addStadium(Stadium stadium) {
 		return dao.create(stadium);
 	}
 
 	@Override
-	public StadiumBean fetchById(int stadiumId) throws StadiumNotFoundException {
+	public Stadium fetchById(int stadiumId) throws StadiumNotFoundException {
 		return dao.retrieveById(stadiumId);
 	}
 
 	@Override
-	public List<StadiumBean> fetchByName(String stadiumName) throws StadiumNotFoundException {
+	public List<Stadium> fetchByName(String stadiumName) throws StadiumNotFoundException {
 		return dao.retrieveByName(stadiumName);
 	}
 
+
 	@Override
-	public List<StadiumBean> fetchAll() throws StadiumNotFoundException {
+	public List<Stadium> fetchByCountry(String country) throws NoRegisteredStadiumException {
+		return dao.retrieveByCountry(country);
+	}
+	
+	@Override
+	public List<Stadium> fetchAll() throws StadiumNotFoundException {
 		return dao.retrieveAll();
 	}
 
 	@Override
-	public StadiumBean updateStadium(StadiumBean stadium) {
+	public Stadium updateStadium(Stadium stadium) {
 		return dao.update(stadium);
 	}
 
@@ -46,6 +53,6 @@ public class StadiumServiceImpl implements IStadiumService {
 	public Boolean deleteStadium(int stadiumId) throws StadiumNotFoundException {
 		return dao.delete(stadiumId);
 	}
-	
+
 }
 

@@ -2,20 +2,23 @@ package com.cg.cric24.stadium_service.dao;
 
 import java.util.List;
 
-import com.cg.cric24.stadium_service.entity.StadiumBean;
+import com.cg.cric24.stadium_service.entity.Stadium;
+import com.cg.cric24.stadium_service.exception.NoRegisteredStadiumException;
 import com.cg.cric24.stadium_service.exception.StadiumNotFoundException;
 
 public interface IStadiumDao {
 
-	StadiumBean create (StadiumBean stadium);
+	Stadium create (Stadium stadium);
 	
-	StadiumBean retrieveById(int stadiumId) throws StadiumNotFoundException;
+	Stadium retrieveById(int stadiumId) throws StadiumNotFoundException;
 	
-	List<StadiumBean> retrieveByName(String stadiumName) throws StadiumNotFoundException;
+	List<Stadium> retrieveByName(String stadiumName) throws StadiumNotFoundException;
 	
-	List<StadiumBean> retrieveAll() throws StadiumNotFoundException;
+	List<Stadium> retrieveAll() throws StadiumNotFoundException;
 	
-	StadiumBean update(StadiumBean stadium);
+	List<Stadium> retrieveByCountry(String country)throws NoRegisteredStadiumException;
+	
+	Stadium update(Stadium stadium);
 	
 	Boolean delete(int id) throws StadiumNotFoundException;
 }
