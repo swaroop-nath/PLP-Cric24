@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cg</groupId>
-	<artifactId>blog-service-module</artifactId>
+	<artifactId>blog-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blog-service-module</name>
+	<name>blog-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

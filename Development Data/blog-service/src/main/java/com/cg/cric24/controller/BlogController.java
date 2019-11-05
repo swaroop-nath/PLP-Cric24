@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.cric24.dto.Blog;
+import com.cg.cric24.exception.BlogNotFoundException;
 import com.cg.cric24.service.BlogService;
 
 @RestController
@@ -21,24 +22,28 @@ public class BlogController {
 	@Autowired
 	private BlogService service;
 	
-	@PostMapping(value = "/add",consumes = "application/json",produces = "application/json")
+	@PostMapping(value = "/add",produces = "application/json",consumes = "application/json")
 	public Blog addNewBlog(@RequestBody Blog blog) {
-		return service.addBlog(blog);
+		return service.addBLog(blog);
 	}
 	
 	@GetMapping(produces = "application/json")
 	public List<Blog> findallBlogs(){
-		return service.approvedBlogs();
+		return service.listOfBlogs();
 	}
 	
-	@PutMapping(value="/reject/{blogId}",produces ="application/json", consumes = "application/json")
-	public int blogReject(@PathVariable int blogId) {
-		return service.rejectBlog(blogId);
-	}
-	
-	@PutMapping(value="/approve/{blogId}",consumes = "application/json")
-	public int blogApprove(@PathVariable int blogId) {
+	@PutMapping(value = "/approve/{blogId}",produces = "application/json",consumes = "application/json")
+	public int approveBlog(@PathVariable int blogId ) {
 		return service.approveBlog(blogId);
 	}
 	
+	@PutMapping(value = "/reject/{blogId}",produces = "application/json",consumes = "application/json")
+	public int rejectBlog(@PathVariable int blogId ) {
+		return service.rejectBlog(blogId);
+	}
+
+	@GetMapping(value="/search/{blogType}",produces = "application/json")
+	public List<Blog> searchByCategory(@PathVariable String blogType) throws BlogNotFoundException{
+		return service.searchByCategory(blogType);
+	}
 }
