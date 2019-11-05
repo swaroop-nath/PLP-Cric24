@@ -18,8 +18,9 @@ public class PlayerDaoImpl implements PlayerDao {
 
 	@Override
 	public Player addPlayer(Player player) {
-		entitymanager.persist(player);
-		return player;
+		Player savedPlayer = entitymanager.merge(player);
+		entitymanager.flush();
+		return savedPlayer;
 	}
 
 	@Override
@@ -48,6 +49,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	@Override
 	public Player updatePlayer(Player player) {
 		entitymanager.merge(player);
+		entitymanager.flush();
 		return player;
 	}
 

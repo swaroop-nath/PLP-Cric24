@@ -20,12 +20,13 @@ public class Team {
 	private int ranking;
 	@Column(length = 20)
 	private String leagues;
-	@ManyToMany(mappedBy = "teams")
-	@JoinTable(name = "player_team_master", joinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"), inverseJoinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"))
+	
+	@ManyToMany(mappedBy = "teams", cascade = CascadeType.ALL)
+	
 	private List<Player> players = new ArrayList<Player>();
 
 	@Enumerated(EnumType.STRING)
-	private Format format;
+	private MatchFormat format;
 
 	public int getTeamId() {
 		return teamId;
@@ -59,11 +60,11 @@ public class Team {
 		this.players = players;
 	}
 
-	public Format getFormat() {
+	public MatchFormat getFormat() {
 		return format;
 	}
 
-	public void setFormat(Format format) {
+	public void setFormat(MatchFormat format) {
 		this.format = format;
 	}
 
