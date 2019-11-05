@@ -3,7 +3,6 @@ package com.cg.Cric24.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,16 +17,12 @@ import com.cg.Cric24.entity.User;
 import com.cg.Cric24.exception.UserNotFoundException;
 import com.cg.Cric24.service.LoginService;
 
-
 @RestController
 @RequestMapping("/login")
 public class LoginController {
 
 	@Autowired
 	LoginService service;
-
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
 
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
@@ -43,33 +38,31 @@ public class LoginController {
 	@PutMapping("/forgetPassword")
 	public String forgetPassword(@RequestParam String password, @RequestParam String userId,
 			@RequestParam String favFood, @RequestParam String favAnimal) throws UserNotFoundException {
-		User user = service.getUserById(userId);
-		if (user.getUserFavFood().equals(favFood) || user.getUserFavAnimal().equals(favAnimal)) {
-			service.changePassword(password, userId);
+		if (service.changePassword(password, userId, favFood, favAnimal) == 1)
 			return "Password updated";
-		}
-		return "incorrect answer";
+		else
+			return "Security Questions answered wrong";
 
 	}
-	
+
 	@GetMapping("/bloggers")
 	public List<User> getAllBloggers() throws UserNotFoundException {
-		List<User> users = service.getAllBloggers("blogger");
+		List<User> users = service.getAllBloggers();
 		return users;
 	}
-	
+
 	@GetMapping("/enter")
-	public String loginCredentials(@RequestParam String userId, @RequestParam String userPassword) throws UserNotFoundException {
-		User user = service.getUserById(userId);
-		if (passwordEncoder.matches(userPassword, user.getUserPassword()))
+	public String loginCredentials(@RequestParam String userId, @RequestParam String userPassword)
+			throws UserNotFoundException {
+		if (service.confirmPassword(userId, userPassword))
 			return "Login successfull";
-		return "invalid login credentials";
+		return "kidnly enter the right password";
 	}
 
 	@GetMapping("/updatePassword")
-	public String updatePassword(@RequestParam String userId,
-			@RequestParam String oldPassword, @RequestParam String newPassword) throws UserNotFoundException {
-		if(service.updatePassword(userId, oldPassword, newPassword))
+	public String updatePassword(@RequestParam String userId, @RequestParam String oldPassword,
+			@RequestParam String newPassword) throws UserNotFoundException {
+		if (service.updatePassword(userId, oldPassword, newPassword))
 			return "Password updated successfully";
 		else
 			return "wrong password";
@@ -79,8 +72,5 @@ public class LoginController {
 	public User getBlogger(@PathVariable String userName) throws UserNotFoundException {
 		return service.getByUserName(userName);
 	}
-	
-
-	
 
 }

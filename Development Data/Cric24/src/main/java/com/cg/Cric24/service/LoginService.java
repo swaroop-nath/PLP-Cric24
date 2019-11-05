@@ -51,9 +51,7 @@ public interface LoginService {
 		return userPassword.matches(USER_PASSWORD_VALIDATOR);
 	}
 
-	static boolean confirmPassword(String userPassword, String confirmPassword) {
-		return userPassword.matches(confirmPassword);
-	}
+	boolean confirmPassword(String userId, String userPassword) throws UserNotFoundException;
 
 	User signUp(User user);
 	
@@ -61,9 +59,9 @@ public interface LoginService {
 	
 	boolean deleteUserByUserId(String userId) throws UserNotFoundException;
 	
-	List<User> getAllBloggers(String userType) throws UserNotFoundException;
+	List<User> getAllBloggers() throws UserNotFoundException;
 	
-	int changePassword(String password, String userId) throws UserNotFoundException;
+	int changePassword(String password, String userId, String favFood, String favAnimal) throws UserNotFoundException;
 	
 	String encryptPassword(String userId, String userPassword) throws UserNotFoundException;
 	
