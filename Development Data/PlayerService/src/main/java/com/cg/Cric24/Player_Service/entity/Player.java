@@ -20,7 +20,7 @@ public class Player {
 	@Column(length = 20)
 	private String name;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "player_team_master", 
 	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), 
 	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))

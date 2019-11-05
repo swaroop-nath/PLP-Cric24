@@ -21,7 +21,7 @@ public class Team {
 	@Column(length = 20)
 	private String leagues;
 	
-	@ManyToMany(mappedBy = "teams", cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy = "teams", cascade = CascadeType.ALL, fetch =FetchType.EAGER)
 	
 	private List<Player> players = new ArrayList<Player>();
 
@@ -52,9 +52,9 @@ public class Team {
 		this.ranking = ranking;
 	}
 
-	public List<Player> getPlayers() {
-		return players;
-	}
+//	public List<Player> getPlayers() {
+//		return players;
+//	}
 
 	public void setPlayers(List<Player> players) {
 		this.players = players;

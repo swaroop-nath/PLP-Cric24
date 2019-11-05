@@ -60,6 +60,7 @@ public class PlayerDaoImpl implements PlayerDao {
 			throw new PlayerNotfoundException("Player not founbd found with id: " + id);
 		}
 		entitymanager.remove(p);
+		System.out.println("Deleted");
 		return true;
 	}
 

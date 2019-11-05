@@ -3,6 +3,7 @@ package com.cg.Cric24.Player_Service.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,12 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.Cric24.Player_Service.entity.Player;
 import com.cg.Cric24.Player_Service.exception.PlayerNotfoundException;
 import com.cg.Cric24.Player_Service.service.PlayerService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/player")
 public class PlayerController {
@@ -28,17 +31,17 @@ public class PlayerController {
 		return service.addPlayer(player);
 	}
 
-	@GetMapping(value = "/all", produces = "application/json", consumes = "application/json")
+	@GetMapping(value = "/all", produces = "application/json")
 	public List<Player> fetchAll() {
 		return service.getAllPlayers();
 	}
 
-	@GetMapping(value = "/name/{name}", produces = "application/json", consumes = "application/json")
+	@GetMapping(value = "/name/{name}", produces = "application/json")
 	public List<Player> fetchByName(@PathVariable String name) throws PlayerNotfoundException {
 		return service.getPlayer(name);
 	}
 
-	@GetMapping(value = "/id/{id}", produces = "application/json", consumes = "application/json")
+	@GetMapping(value = "/id/{id}", produces = "application/json")
 	public Player fetchById(@PathVariable int id) throws PlayerNotfoundException {
 		return service.getPlayerById(id);
 	}
@@ -50,6 +53,7 @@ public class PlayerController {
 	
 	@DeleteMapping(value = "/delete/{id}")
 	public Boolean deleteProduct(@PathVariable int id) throws PlayerNotfoundException {
+		System.out.println("Delete called");
 		return service.deletePlayer(id);
 	}
 

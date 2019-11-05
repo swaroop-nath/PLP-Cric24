@@ -38,12 +38,7 @@ public class PlayerServiceImpl implements PlayerService {
 
 	@Override
 	public boolean deletePlayer(int id) throws PlayerNotfoundException {
-		try {
-			dao.deletePlayer(id);
-			return true;
-		} catch (Exception e) {
-			throw new PlayerNotfoundException("No player found with current id: " + id);
-		}
+		return dao.deletePlayer(id);
 	}
 
 	@Override
