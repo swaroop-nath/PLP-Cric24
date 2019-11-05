@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListByIdComponent } from './list-by-id.component';
+import { SearchByIDComponent } from './search-by-id.component';
 
-describe('ListByIdComponent', () => {
-  let component: ListByIdComponent;
-  let fixture: ComponentFixture<ListByIdComponent>;
+describe('SearchByIDComponent', () => {
+  let component: SearchByIDComponent;
+  let fixture: ComponentFixture<SearchByIDComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListByIdComponent ]
+      declarations: [ SearchByIDComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListByIdComponent);
+    fixture = TestBed.createComponent(SearchByIDComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

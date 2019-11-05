@@ -12,9 +12,9 @@ import javax.persistence.Table;
 @Entity
 @SequenceGenerator(name = "stadiumseq" , sequenceName = "seq_stadium", allocationSize = 1)
 @Table(name = "stadium")
-@NamedQuery(name = "findAll",query = "SELECT stadium FROM StadiumBean stadium")
-@NamedQuery(name = "byName" ,query = "SELECT stadium FROM StadiumBean stadium WHERE stadium.stadiumName=:name")
-@NamedQuery(name = "byCountry" ,query = "SELECT stadium FROM StadiumBean stadium WHERE stadium.country=:country")
+@NamedQuery(name = "findAll",query = "SELECT stadium FROM Stadium stadium")
+@NamedQuery(name = "byName" ,query = "SELECT stadium FROM Stadium stadium WHERE stadium.stadiumName=:name")
+@NamedQuery(name = "byCountry" ,query = "SELECT stadium FROM Stadium stadium WHERE stadium.country=:country")
 public class Stadium {
 
 	@Id

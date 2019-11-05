@@ -7,13 +7,13 @@
     <th>Capacity</th>
     </tr>
 
-     <tr *ngFor="let std of stadiums; let i=id">
+     <tr *ngFor="let std of stadiums">
       <td>{{std.stadiumId}}</td>
       <td>{{std.stadiumName}}</td>
       <td>{{std.location}}</td>
       <td>{{std.country}}</td>
       <td>{{std.capacity}}</td>
 
-      <td> <button class="btn btn-warning" (click)="delete(i)">Delete</button></td> 
+      <td> <button class="btn btn-warning" (click)="delete(std)">Delete</button></td> 
     </tr>
 </table>

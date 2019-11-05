@@ -1,0 +1,31 @@
+<form (ngSubmit) = "findStadiumById()">
+  <div class="form-group">
+    <label>Enter the Stadium ID</label><br>
+    <input type="number" [(ngModel)]=id name="id"><br><br>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Search Stadium with ID</button>
+  </div>
+
+</form>
+
+<div [hidden]="!submitted">
+  <table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Country</th>
+        <th>Capacity</th>
+    </tr>
+
+    <tr>
+        <td>{{stadium.stadiumId}}</td>
+        <td>{{stadium.stadiumName}}</td>
+        <td>{{stadium.location}}</td>
+        <td>{{stadium.country}}</td>
+        <td>{{stadium.capacity}}</td>
+        </tr>
+  </table>
+</div>

@@ -20,11 +20,15 @@ export class StadiumdetailsService {
     return this.http.get<StadiumModel[]>("http://localhost:8890/stadium/all");
   }
 
-  listStadiumByID():Observable<StadiumModel>{
-    return this.http.get<StadiumModel>("http://localhost:8890/stadium/id/");
+  listByCountry(country:string):Observable<StadiumModel[]>{
+    return this.http.get<StadiumModel[]>("http://localhost:8890/stadium/country/" + country);
+  }
+
+  findStadiumById(id:number):Observable<StadiumModel>{
+    return this.http.get<StadiumModel>("http://localhost:8890/stadium/id/" + id);
   }
 
   deleteStadium(id:number):Observable<boolean>{
-    return this.http.delete<boolean>("http://localhost:8890/stadium/delete");
+    return this.http.delete<boolean>("http://localhost:8890/stadium/delete/" + id);
   }
 }

@@ -36,6 +36,7 @@ public class StadiumController {
 	
 	@GetMapping(value = "/id/{stadiumId}",produces = "application/json")
 	public Stadium fetchById(@PathVariable int stadiumId) throws StadiumNotFoundException {
+		System.out.println("id");
 		return service.fetchById(stadiumId);
 	}
 	
