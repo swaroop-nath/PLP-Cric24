@@ -39,7 +39,7 @@ public class Match {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "match_type", nullable = false)
-	private MatchType matchType;
+	private MatchFormat matchFormat;
 	
 	@OneToOne
 	@JoinColumn(referencedColumnName = "team_id")
@@ -65,6 +65,10 @@ public class Match {
 	@Column(name = "match_status", nullable = false)
 	private MatchStatus matchStatus;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "winning_team", referencedColumnName = "team_id")
+	private Team winningTeam;
+	
 	public int getMatchID() {
 		return matchID;
 	}
@@ -89,12 +93,12 @@ public class Match {
 		this.matchVenue = matchVenue;
 	}
 	
-	public MatchType getMatchType() {
-		return matchType;
+	public MatchFormat getMatchFormat() {
+		return matchFormat;
 	}
 	
-	public void setMatchType(MatchType matchType) {
-		this.matchType = matchType;
+	public void setMatchFormat(MatchFormat matchFormat) {
+		this.matchFormat = matchFormat;
 	}
 
 	public Team getTeamOne() {
@@ -135,6 +139,14 @@ public class Match {
 	
 	public void setMatchStatus(MatchStatus matchStatus) {
 		this.matchStatus = matchStatus;
+	}
+
+	public Team getWinningTeam() {
+		return winningTeam;
+	}
+
+	public void setWinningTeam(Team winningTeam) {
+		this.winningTeam = winningTeam;
 	}
 	
 }

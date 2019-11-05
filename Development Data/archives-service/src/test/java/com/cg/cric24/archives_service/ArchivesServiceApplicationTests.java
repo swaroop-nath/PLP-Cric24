@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.cg.cric24.archives_service.controller.ArchivesServiceController;
 import com.cg.cric24.archives_service.entity.Match;
 import com.cg.cric24.archives_service.entity.MatchStatus;
-import com.cg.cric24.archives_service.entity.MatchType;
+import com.cg.cric24.archives_service.entity.MatchFormat;
 import com.cg.cric24.archives_service.entity.Player;
 import com.cg.cric24.archives_service.entity.RoleType;
 import com.cg.cric24.archives_service.entity.ScoreCard;
@@ -141,7 +141,7 @@ public class ArchivesServiceApplicationTests {
 		match.setMatchSchedule(LocalDateTime.now());
 		match.setMatchScoreCard(score);
 		match.setMatchStatus(MatchStatus.CONCLUDED);
-		match.setMatchType(MatchType.ODI);
+		match.setMatchFormat(MatchFormat.ODI);
 		match.setMatchVenue(wankhede);
 		match.setTeamOne(teamIndia);
 		match.setTeamTwo(teamEngland);
@@ -157,7 +157,7 @@ public class ArchivesServiceApplicationTests {
 		List<Match> matches = service.listAllMatches();
 		Match matchOne = matches.get(0);
 		
-		matchOne.setMatchType(MatchType.TEST);
+		matchOne.setMatchFormat(MatchFormat.TEST);
 		
 		service.updateMatchDetails(matchOne);
 	}
