@@ -7,20 +7,19 @@ import com.cg.cric24.schedules_service.entity.Match;
 import com.cg.cric24.schedules_service.entity.MatchStatus;
 import com.cg.cric24.schedules_service.entity.Stadium;
 import com.cg.cric24.schedules_service.entity.Team;
-import com.cg.cric24.schedules_service.exception.MatchCouldNotBeAddedException;
+import com.cg.cric24.schedules_service.exception.ScheduleServicingException;
 
 public interface SchedulesRepository {
 	
-	List<Team> getAllTeams(LocalDateTime date);
 	
-	Stadium getAllStadiums(LocalDateTime date);
+	List<Match> getByDate(LocalDateTime date) throws ScheduleServicingException;
 	
-	Match saveMatch(Match newMatch);
+	Match saveMatch(Match newMatch) throws ScheduleServicingException;
 	
-	Match updateMatchDetails(Match newMatch) throws MatchCouldNotBeAddedException;
+	Match updateMatchDetails(Match newMatch) throws ScheduleServicingException;
 	
-	List<Match> listAllScheduledMatches();
+	List<Match> listAllScheduledMatches() throws ScheduleServicingException;
 	
-	boolean updateStatusOfMatch(int id, MatchStatus status);
+	boolean updateStatusOfMatch(int id, MatchStatus matchStatus) throws ScheduleServicingException;
 
 }

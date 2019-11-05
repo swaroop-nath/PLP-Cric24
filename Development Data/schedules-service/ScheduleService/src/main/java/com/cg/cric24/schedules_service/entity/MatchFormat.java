@@ -1,14 +1,14 @@
-package com.cg.cric24.schedules_service.entity;
+ package com.cg.cric24.schedules_service.entity;
 
-public enum MatchType {
+public enum MatchFormat {
 
-	T20 ("T-20"),
+	T20 ("T20"),
 	ODI ("ODI"),
 	TEST ("TEST");
 	
 	private String typeValue;
 	
-	private MatchType(String type) {
+	private MatchFormat(String type) {
 		typeValue = type;
 	}
 	

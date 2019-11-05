@@ -2,10 +2,10 @@ package com.cg.cric24.schedules_service.entity;
 
 public enum MatchStatus {
 
-	CONCLUDED ("Concluded"),
-	FORFEITED ("Forfeited"),
-	CANCELLED ("Cancelled"),
-	SCHEDULED ("Scheduled");
+	CONCLUDED ("CONCLUDED"),
+	FORFEITED ("FORFEITED"),
+	CANCELLED ("CANCELLED"),
+	SCHEDULED ("SCHEDULED");
 	
 	private String statusValue;
 	

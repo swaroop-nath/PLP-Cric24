@@ -3,8 +3,11 @@ package com.cg.cric24.schedules_service.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -27,11 +30,11 @@ public class Team {
 	@Column(length = 20)
 	private int ranking;
 	
-	@ManyToMany(mappedBy = "teams")
+	@ManyToMany(mappedBy = "teams", cascade = CascadeType.MERGE)
 	private Set<Player> players = new HashSet<Player>();
 	
-	@Column(length = 20)
-	private String format;
+	@Enumerated(EnumType.STRING)
+	private MatchFormat format;
 	
 	@Column(length = 20)
 	private String leagues;
@@ -68,11 +71,11 @@ public class Team {
 		this.players = players;
 	}
 
-	public String getFormat() {
+	public MatchFormat getFormat() {
 		return format;
 	}
 
-	public void setFormat(String format) {
+	public void setFormat(MatchFormat format) {
 		this.format = format;
 	}
 

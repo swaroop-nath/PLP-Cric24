@@ -15,7 +15,7 @@ import javax.persistence.JoinColumn;
 
 @Entity
 @SequenceGenerator(name = "playseq", sequenceName = "play_seq", initialValue = 1001, allocationSize = 1)
-public class Player {
+public class Player { 
 
 	@Id
 	@GeneratedValue(generator = "playseq")
@@ -25,7 +25,7 @@ public class Player {
 	@Column(length = 20)
 	private String name;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.MERGE)
 	@JoinTable(name = "player_team_master", 
 	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "player_id"), 
 	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "team_id"))
@@ -50,7 +50,7 @@ public class Player {
 	}
 
 	public void setPlayerId(int playerId) {
-		this.playerId = playerId;
+		this.playerId = playerId; 
 	}
 
 	public Set<Team> getTeams() {

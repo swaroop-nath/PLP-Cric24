@@ -1,5 +1,6 @@
 package com.cg.cric24.schedules_service.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,40 +9,39 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.cric24.schedules_service.entity.Match;
 import com.cg.cric24.schedules_service.entity.MatchStatus;
+import com.cg.cric24.schedules_service.exception.ScheduleServicingException;
 import com.cg.cric24.schedules_service.repository.SchedulesRepo;
+import com.cg.cric24.schedules_service.repository.SchedulesRepository;
 @Service
-@Transactional
+@Transactional(rollbackFor = ScheduleServicingException.class)
 public class ScheduleServiceImpl implements SchedulesService {
 	
 	@Autowired
-	private SchedulesRepo repo;
+	private SchedulesRepository repo;
 
 	@Override
-	public Match addMAtch(Match newMatch) {
-		return repo.save(newMatch);
+	public Match addMAtch(Match newMatch) throws ScheduleServicingException {
+		return repo.saveMatch(newMatch);
 	}
 
 	@Override
-	public Match updateMatch(Match newMatch) {
-		return repo.save(newMatch);
+	public Match updateMatch(Match newMatch) throws ScheduleServicingException {
+		return repo.updateMatchDetails(newMatch);
 	}
 
 	@Override
-	public List<Match> listAllMatches() {
-		return repo.findAll();
+	public List<Match> listAllMatches() throws ScheduleServicingException {
+		return repo.listAllScheduledMatches();
 	}
 
 	@Override
-	public boolean updateStatus(int id, MatchStatus status) {
-		Match matchById =  repo.findById(id).get();
-		if(matchById== null) {
-			return false;
-		}
-		else
-			matchById.setMatchStatus(status);
-			repo.save(matchById);
-			return true;
-		
+	public boolean updateStatus(int id, MatchStatus status) throws ScheduleServicingException {
+		return repo.updateStatusOfMatch(id, status);		
+	}
+
+	@Override
+	public List<Match> getMatchesByDate(LocalDateTime date) throws ScheduleServicingException {
+		return repo.getByDate(date);
 	}
 
 }

@@ -11,12 +11,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "match_master")
+@NamedQuery(name = "allMatches", query = "SELECT m FROM Match m ")
 @SequenceGenerator(name = "mat_seq", sequenceName = "matches_sequence", allocationSize = 1)
 public class Match {
 
@@ -27,19 +29,19 @@ public class Match {
 	
 	private LocalDateTime matchSchedule;
 	
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "stadium_id", nullable = false)
 	private Stadium matchVenue;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "match_type", nullable = false)
-	private MatchType matchType;
+	private MatchFormat matchFormat;
 	
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamOne;
 
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamTwo;
 	
@@ -59,6 +61,26 @@ public class Match {
 	@Column(name = "match_status", nullable = false)
 	private MatchStatus matchStatus;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "winning_team", referencedColumnName = "team_id")
+	private Team winningTeam;
+	
+	public MatchFormat getMatchFormat() {
+		return matchFormat;
+	}
+
+	public void setMatchFormat(MatchFormat matchFormat) {
+		this.matchFormat = matchFormat;
+	}
+
+	public Team getWinningTeam() {
+		return winningTeam;
+	}
+
+	public void setWinningTeam(Team winningTeam) {
+		this.winningTeam = winningTeam;
+	}
+
 	public int getMatchID() {
 		return matchID;
 	}
@@ -83,14 +105,6 @@ public class Match {
 		this.matchVenue = matchVenue;
 	}
 	
-	public MatchType getMatchType() {
-		return matchType;
-	}
-	
-	public void setMatchType(MatchType matchType) {
-		this.matchType = matchType;
-	}
-
 	public Team getTeamOne() {
 		return teamOne;
 	}
