@@ -15,46 +15,43 @@ public class Stadium {
 
 	@Id
 	@GeneratedValue(generator = "stadiumseq")
-	@Column(name = "stadium_id", nullable = false)
 	private int stadiumId;
-	
-	@Column(length = 30, name = "stadium_name", nullable = false)
+	@Column(length = 30, name = "stadium_name", nullable=false)
 	private String stadiumName;
-	
-	@Column(name = "location", length = 50, nullable = false)
+	@Column(name = "location", length = 50)
 	private String location;
-	
-	@Column(name = "capacity", nullable = false)
+	@Column(name = "country")
+	private String country;
+	@Column(name = "capacity")
 	private int capacity;
 	
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
 	public int getStadiumId() {
 		return stadiumId;
 	}
-	
 	public void setStadiumId(int stadiumId) {
 		this.stadiumId = stadiumId;
 	}
-	
 	public String getStadiumName() {
 		return stadiumName;
 	}
-	
 	public void setStadiumName(String stadiumName) {
 		this.stadiumName = stadiumName;
 	}
-	
 	public String getLocation() {
 		return location;
 	}
-	
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	
 	public int getCapacity() {
 		return capacity;
 	}
-	
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}

@@ -1,5 +1,7 @@
 package com.cg.cric24.archives_service.entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -21,7 +23,6 @@ public class Player {
 
 	@Id
 	@GeneratedValue(generator = "playseq")
-	@Column(name = "player_id")
 	private int playerId;
 	
 	@Column(length = 20)
@@ -29,16 +30,17 @@ public class Player {
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "player_team_master", 
-	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "player_id"), 
-	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "team_id"))
-	private Set<Team> teams;
+	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), 
+	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
+	
+	private List<Team> teams = new ArrayList<Team>();
 
 	@Column(length = 5)
 	private int age;
 	@Column(length = 20)
 	private String nationality;
 	@Column(length = 5)
-	private float rating;
+	private double rating;
 	@Column(length = 7)
 	private double runs;
 	@Column(length = 5)
@@ -46,21 +48,13 @@ public class Player {
 	
 	@Enumerated(EnumType.STRING)
 	private RoleType roleType;
-
+	
 	public int getPlayerId() {
 		return playerId;
 	}
 
 	public void setPlayerId(int playerId) {
 		this.playerId = playerId;
-	}
-
-	public Set<Team> getTeams() {
-		return teams;
-	}
-
-	public void setTeams(Set<Team> teams) {
-		this.teams = teams;
 	}
 
 	public String getName() {
@@ -87,11 +81,11 @@ public class Player {
 		this.nationality = nationality;
 	}
 
-	public float getRating() {
+	public double getRating() {
 		return rating;
 	}
 
-	public void setRating(float rating) {
+	public void setRating(double rating) {
 		this.rating = rating;
 	}
 
@@ -117,5 +111,17 @@ public class Player {
 	
 	public void setRoleType(RoleType roleType) {
 		this.roleType = roleType;
+	}
+	
+	public void addToTeams(Team newTeam) {
+		this.teams.add(newTeam);
+	}
+
+	public List<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
 	}
 }

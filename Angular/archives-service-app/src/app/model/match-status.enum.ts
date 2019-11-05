@@ -1,0 +1,6 @@
+export class MatchStatus {
+    CONCLUDED = "CONCLUDED",
+	FORFEITED = "FORFEITED",
+	CANCELLED = "CANCELLED",
+	SCHEDULED = "SCHEDULED";
+}

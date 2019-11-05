@@ -1,10 +1,15 @@
 package com.cg.cric24.archives_service.entity;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,23 +24,22 @@ public class Team {
 
 	@Id
 	@GeneratedValue(generator = "teamseq")
-	@Column(name = "team_id")
 	private int teamId;
-	
+
 	@Column(length = 20)
 	private String teamName;
-	
+
 	@Column(length = 20)
 	private int ranking;
-	
-	@ManyToMany(mappedBy = "teams")
-	private Set<Player> players = new HashSet<Player>();
-	
-	@Column(length = 20)
-	private String format;
-	
 	@Column(length = 20)
 	private String leagues;
+	
+	@ManyToMany(mappedBy = "teams", cascade = CascadeType.ALL)
+	
+	private List<Player> players = new ArrayList<Player>();
+
+	@Enumerated(EnumType.STRING)
+	private MatchFormat format;
 
 	public int getTeamId() {
 		return teamId;
@@ -61,19 +65,19 @@ public class Team {
 		this.ranking = ranking;
 	}
 
-	public Set<Player> getPlayers() {
+	public List<Player> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(Set<Player> players) {
+	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
 
-	public String getFormat() {
+	public MatchFormat getFormat() {
 		return format;
 	}
 
-	public void setFormat(String format) {
+	public void setFormat(MatchFormat format) {
 		this.format = format;
 	}
 

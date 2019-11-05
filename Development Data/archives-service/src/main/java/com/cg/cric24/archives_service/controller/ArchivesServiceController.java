@@ -27,7 +27,7 @@ public class ArchivesServiceController {
 		return service.listAllMatches();
 	}
 	
-	@GetMapping(value = "/list-matches/by-team", produces = "application/json")
+	@PostMapping(value = "/list-matches/by-team", produces = "application/json")
 	public List<Match> getListOfMatchesByTeam(@RequestBody Team team) throws NoMatchFoundException {
 		return service.getListOfMatchesByTeam(team);
 	}
