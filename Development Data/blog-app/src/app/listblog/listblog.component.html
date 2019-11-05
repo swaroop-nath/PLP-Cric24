@@ -1,0 +1,25 @@
+<form (ngSubmit)="listBlog()">
+  <div class="form group">
+      <label>Enter the player id</label><br>
+      <input type="number" [(ngModel)]=id name="id"><br><br> 
+    </div>
+  <div class="form group">
+    <button type="submit" class="btn btn-success">Search player</button>
+  </div>
+</form>
+
+<div [hidden]="!submitted">
+<table class="table table-bordered">
+  <tr>
+    <th>Player Name</th>
+    <th>Player team</th>
+    <th>player rating</th>
+  </tr>
+  <tr>
+    <td>{{player.name}}</td>
+    <td>{{player.team}}</td>
+    <td>{{player.rating}}</td>
+  </tr>
+</table>
+</div>
+

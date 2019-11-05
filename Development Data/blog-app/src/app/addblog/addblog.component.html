@@ -1,0 +1,18 @@
+<form (ngSubmit)="addBlog()">
+  <div class="form-group">
+    <label>Blog Type</label><br>
+    <input type="text" [(ngModel)]=blog.blogType name="type"><br>
+  </div>
+  <div class="form-group">
+    <label>Enter Blog Heading</label><br>
+    <input type="text" [(ngModel)]=blog.blogHeading name="heading"><br>
+  </div>
+  <div class="form group">
+    <label>Write Blog Content</label><br>
+    <input type="text" [(ngModel)]=blog.blogContent name="content">
+  </div>
+  <div class="form group">
+    <br><br>
+    <button class="btn btn-success" type="submit">Add Blog</button>
+  </div>
+</form>
