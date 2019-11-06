@@ -15,6 +15,7 @@ public class Player {
 
 	@Id
 	@GeneratedValue(generator = "playseq")
+	@Column(name = "player_id")
 	private int playerId;
 	
 	@Column(length = 20)
@@ -22,8 +23,8 @@ public class Player {
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "player_team_master", 
-	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), 
-	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
+	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "player_id"), 
+	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "team_id"))
 	
 	private List<Team> teams = new ArrayList<Team>();
 

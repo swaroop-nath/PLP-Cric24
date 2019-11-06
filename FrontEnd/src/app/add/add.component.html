@@ -1,0 +1,60 @@
+<form (ngSubmit)="addPlayer()" #addForm="ngForm">
+  <table class="table table-hover"> 
+      <thead><tr><th colspan="2">Add Player Details</th></tr></thead>
+
+      <tr><td width="15%"><label for="playName">Name</label></td>
+        <td><input name="playerName" [(ngModel)]=player.name #name=ngModel required pattern="[A-Za-z ]{5,}" placeholder="Enter Name">
+         <span *ngIf="name.touched && name.invalid && 
+         (name.errors.required || name.errors.pattern)" class="alert-warning">
+          Invalid name!
+        </span>
+    </td></tr>
+
+    <tr><td><label for="age">Age</label><br>
+      <td><select  [(ngModel)]="player.age" name="age" #age=ngModel required>
+        <option *ngFor="let a of ages" [value]="a">{{a}}</option>
+      </select>
+    </td></tr>
+
+    <tr><td><label for="roleType">Player Role</label><br>
+      <td><select  [(ngModel)]="player.roleType" name="roleType" #age=ngModel required>
+        <option *ngFor="let r of roleTypes" [value]="r">{{r}}</option>
+      </select>
+    </td></tr>
+
+    <tr><td width="15%"><label for="playNationality">Nationality</label></td>
+      <td><input name="playerNationality" [(ngModel)]=player.nationality #nationality=ngModel required pattern="[A-Za-z ]{5,}" placeholder="Enter Nationality">
+       <span *ngIf="nationality.touched && nationality.invalid && 
+       (nationality.errors.required || nationality.errors.pattern)" class="alert-warning">
+        Invalid nationality!
+      </span>
+  </td></tr>
+
+  <tr><td><label for="rating">Player Rating</label></td>
+    <td><input name="rating" [(ngModel)]="player.rating" #rating=ngModel required pattern="[1-9][0-9]{1,2}" placeholder="Enter Player Rating">
+    <span *ngIf="rating.touched && rating.invalid && 
+    (rating.errors.required || rating.errors.pattern)" class="alert-warning">
+      Invalid rating!
+    </span>
+  </td></tr>
+
+  <tr><td><label for="runs">Runs Scored</label></td>
+    <td><input name="runs" [(ngModel)]="player.runs" #runs=ngModel required pattern="[1-9][0-9]{1,4}" placeholder="Enter Runs Scored">
+    <span *ngIf="runs.touched && runs.invalid && 
+    (runs.errors.required || runs.errors.pattern)" class="alert-warning">
+      Invalid runs!
+    </span>
+  </td></tr>
+
+  <tr><td><label for="wickets">Wickets Taken</label></td>
+    <td><input name="wickets" [(ngModel)]="player.wickets" #wickets=ngModel required pattern="[1-9][0-9]{1,2}" placeholder="Enter Wickets Taken">
+    <span *ngIf="wickets.touched && wickets.invalid && 
+    (wickets.errors.required || wickets.errors.pattern)" class="alert-warning">
+      Invalid wickets!
+    </span>
+  </td></tr>
+
+  <tr><th colspan="2"><button type="submit" [disabled]="!addForm.valid" class="btn btn-success">Save Player</button>
+  </th></tr>
+</table>
+</form>

@@ -2,6 +2,8 @@ package com.cg.Cric24.Player_Service.entity;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public class Team {
 
 	@Id
 	@GeneratedValue(generator = "teamseq")
+	@Column(name = "team_id")
 	private int teamId;
 
 	@Column(length = 20)
@@ -20,9 +23,9 @@ public class Team {
 	private int ranking;
 	@Column(length = 20)
 	private String leagues;
-	
-	@ManyToMany(mappedBy = "teams", cascade = CascadeType.ALL, fetch =FetchType.EAGER)
-	
+
+	@ManyToMany(mappedBy = "teams", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnore
 	private List<Player> players = new ArrayList<Player>();
 
 	@Enumerated(EnumType.STRING)
@@ -75,6 +78,5 @@ public class Team {
 	public void setLeagues(String leagues) {
 		this.leagues = leagues;
 	}
-
 
 }

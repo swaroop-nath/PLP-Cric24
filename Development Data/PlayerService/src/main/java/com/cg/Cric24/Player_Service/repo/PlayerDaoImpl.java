@@ -57,7 +57,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	public boolean deletePlayer(int id) throws PlayerNotfoundException {
 		Player p = entitymanager.find(Player.class, id);
 		if (p == null) {
-			throw new PlayerNotfoundException("Player not founbd found with id: " + id);
+			throw new PlayerNotfoundException("Player not found found with id: " + id);
 		}
 		entitymanager.remove(p);
 		System.out.println("Deleted");
