@@ -104,68 +104,6 @@ public class Cric24ApplicationTests {
 		service.updatePlayer(viratKohli);
 	}
 	
-	
-	@Test
-	public void testValidateCorrectPlayerName() {
-		assertTrue(service.validatePlayerName("Virat Kohli"));
-	}
-	
-	@Test
-	public void testValidateIncorrectPlayerName() {
-		assertFalse(service.validatePlayerName("virat kohli"));
-	}
-	
-	@Test
-	public void testValidateCorrectAge() {
-		assertTrue(service.validateAge("30"));
-	}
-	
-	@Test
-	public void testValidateIncorrectAge() {
-		assertFalse(service.validateAge("300"));
-	}
-	
-	@Test
-	public void testValidateCorrectNationality() {
-		assertTrue(service.validateNationality("Indian"));
-	}
-	
-	@Test
-	public void testValidateIncorrectNationality() {
-		assertFalse(service.validateNationality("indian"));
-	}
-	
-	@Test
-	public void testValidateCorrectWickets() {
-		assertTrue(service.validateWickets("5"));
-	}
-	
-	@Test
-	public void testValidateIncorrectWickets() {
-		assertFalse(service.validateWickets("fdf"));
-	}
-	
-	@Test
-	public void testValidateCorrectRuns() {
-		assertTrue(service.validateRuns("11520"));
-	}
-	
-	@Test
-	public void testValidateIncorrectRuns() {
-		assertFalse(service.validateRuns("rgvsf"));
-	}
-	
-	@Test
-	public void testRatingCorrectRule() {
-		assertTrue(service.validateRating("9.5"));
-		}
-	
-	@Test
-	public void testRatingIncorrectRule() {
-		assertFalse(service.validateRating("19.5"));
-		}
-	
-	
-	
+		
 
 }
