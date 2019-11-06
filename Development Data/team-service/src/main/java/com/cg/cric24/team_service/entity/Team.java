@@ -13,6 +13,7 @@ public class Team {
 
 	@Id
 	@GeneratedValue(generator = "teamseq")
+	@Column(name = "team_id")
 	private int teamId;
 
 	@Column(length = 20)
@@ -21,7 +22,7 @@ public class Team {
 	@Column(length = 20)
 	private int ranking;
 
-	@ManyToMany(mappedBy = "teams", cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy = "teams", cascade = CascadeType.ALL,fetch= FetchType.EAGER)
 	private List<Player> players = new ArrayList<Player>();
 
 	@Enumerated(EnumType.STRING)

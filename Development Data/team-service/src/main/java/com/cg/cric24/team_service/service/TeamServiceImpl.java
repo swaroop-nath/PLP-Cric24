@@ -44,14 +44,10 @@ public class TeamServiceImpl implements TeamService {
 
 	@Override
 	public boolean deleteTeam(int teamId) throws TeamNotFoundException {
-		try {
-			dao.deleteTeam(teamId);
-			return true;
-		} catch (Exception e) {
-			throw new TeamNotFoundException("No player found with current id: " + teamId);
+		return dao.deleteTeam(teamId);
 		}
 	}
 
-}
+
 
 

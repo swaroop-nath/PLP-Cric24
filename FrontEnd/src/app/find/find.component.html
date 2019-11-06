@@ -1,0 +1,62 @@
+<form (ngSubmit)="findTeamByName()">
+    <div class="form group">
+      <label>Enter Team Name</label><br>
+      <input type="text" [(ngModel)]=teamName name="teamName"><br><br> 
+    </div>
+    <div class="form group">
+      <button type="submit" class="btn btn-success">Search Team</button>
+    </div>
+  </form>
+  
+  <div [hidden]="!submitted">
+  <table class="table table-bordered">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Ranking</th>
+      <th>Format</th>
+      <th>League</th>
+    </tr>
+    <tr
+      *ngFor = "let team of teams">
+      <td>{{team.teamId}}</td>
+      <td>{{team.teamName}}</td>
+      <td>{{team.ranking}}</td>
+      <td>{{team.format}}</td>
+      <td>{{team.leagues}}</td>
+    </tr>
+  </table>
+  </div>
+
+  <form (ngSubmit)="findTeamById()">
+      <div class="form group">
+        <label>Enter Team Id</label><br>
+        <input type="number" [(ngModel)]=teamId name="teamId"><br><br> 
+      </div>
+      <div class="form group">
+        <button type="submit" class="btn btn-success">Search Team</button>
+      </div>
+    </form>
+    
+    <div [hidden]="!submitted">
+    <table class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Ranking</th>
+        <th>Format</th>
+        <th>League</th>
+      </tr>
+      <tr>
+        <td>{{t.teamId}}</td>
+        <td>{{t.teamName}}</td>
+        <td>{{t.ranking}}</td>
+        <td>{{t.format}}</td>
+        <td>{{t.leagues}}</td>
+      </tr>
+    </table>
+    </div>
+    
+  
+  
+  

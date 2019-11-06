@@ -1,0 +1,16 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Cric24 </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['add']">Add Team</a></li>
+      <li><a [routerLink]="['find']">Search Team</a></li>
+      <li><a [routerLink]="['list']">Display Team</a></li>
+      <li><a [routerLink]="['update']">Update Team</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

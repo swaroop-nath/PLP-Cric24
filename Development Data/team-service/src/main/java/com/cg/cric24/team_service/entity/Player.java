@@ -7,12 +7,15 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @SequenceGenerator(name = "playseq", sequenceName = "play_seq", initialValue = 1, allocationSize = 1)
 public class Player {
 
 	@Id
 	@GeneratedValue(generator = "playseq")
+	@Column(name = "player_id")
 	private int playerId;
 
 	public int getPlayerId() {
@@ -26,10 +29,11 @@ public class Player {
 	@Column(length = 20)
 	private String name;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@JsonIgnore
+	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinTable(name = "player_team_master", 
-	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), 
-	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
+	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "player_id"), 
+	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "team_id"))
 	private List<Team> teams = new ArrayList<Team>();
 
 	@Column(length = 5)
