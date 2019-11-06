@@ -24,8 +24,16 @@ export class StadiumdetailsService {
     return this.http.get<StadiumModel[]>("http://localhost:8890/stadium/country/" + country);
   }
 
+  listByName(name:string):Observable<StadiumModel[]>{
+    return this.http.get<StadiumModel[]>("http://localhost:8890/stadium/name/" + name);
+  }
+
   findStadiumById(id:number):Observable<StadiumModel>{
     return this.http.get<StadiumModel>("http://localhost:8890/stadium/id/" + id);
+  }
+
+  updateStadium(stad : StadiumModel){
+    return this.http.put<StadiumModel>("http://localhost:8890/stadium/update", stad);
   }
 
   deleteStadium(id:number):Observable<boolean>{

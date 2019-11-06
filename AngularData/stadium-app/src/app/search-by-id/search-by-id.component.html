@@ -10,7 +10,7 @@
 
 </form>
 
-<div [hidden]="!submitted">
+<div [hidden]="!exists">
   <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -18,6 +18,7 @@
         <th>Location</th>
         <th>Country</th>
         <th>Capacity</th>
+        <th>View</th>
     </tr>
 
     <tr>
@@ -26,6 +27,9 @@
         <td>{{stadium.location}}</td>
         <td>{{stadium.country}}</td>
         <td>{{stadium.capacity}}</td>
+        <td><img [src]="stadium.stadiumImage" width="200" height="150"></td>
+
+        <td><button class="btn btn-warning" (click)="delete()">Delete</button></td>
         </tr>
   </table>
 </div>

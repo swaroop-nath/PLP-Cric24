@@ -9,8 +9,6 @@
         Invalid name or name cannot be empty!
       </span></td> </tr>
     
-    
-    
       <tr><td>Enter Location:  </td>
          <td><input type="text" [(ngModel)]=stadium.location name="loc" class="form-control" #loc=ngModel placeholder="Enter Location">
          <span *ngIf="loc.touched && loc.invalid && (loc.errors.required || loc.errors.pattern)" class="alert-warning">
@@ -30,6 +28,11 @@
           Invalid capacity or capacity cannot be empty!
         </span></td></tr>
     
+        <tr><td>Enter Stadium Image Path:  </td>
+          <td><input type="text" [(ngModel)]=stadium.stadiumImage name="img" class="form-control" #img=ngModel placeholder="Enter Image">
+          <span *ngIf="img.touched && img.invalid && (img.errors.required || img.errors.pattern)" class="alert-warning">
+            Image cannot be empty!
+         </span></td> </tr>
     
       <tr>
         <td colspan="2" align="center">

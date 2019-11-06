@@ -28,6 +28,16 @@ public class Stadium {
 	private String country;
 	@Column(name = "capacity")
 	private int capacity;
+	@Column(name = "view")
+	private String stadiumImage;
+	
+	
+	public String getStadiumImage() {
+		return stadiumImage;
+	}
+	public void setStadiumImage(String stadiumImage) {
+		this.stadiumImage = stadiumImage;
+	}
 	
 	public String getCountry() {
 		return country;

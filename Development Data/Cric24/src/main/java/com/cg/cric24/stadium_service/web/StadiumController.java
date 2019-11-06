@@ -36,7 +36,6 @@ public class StadiumController {
 	
 	@GetMapping(value = "/id/{stadiumId}",produces = "application/json")
 	public Stadium fetchById(@PathVariable int stadiumId) throws StadiumNotFoundException {
-		System.out.println("id");
 		return service.fetchById(stadiumId);
 	}
 	
@@ -62,6 +61,7 @@ public class StadiumController {
 
 	@DeleteMapping(value = "/delete/{stadiumId}")
 	public Boolean deleteStadium(@PathVariable int stadiumId) throws StadiumNotFoundException {
+		System.out.println("Delete req" + stadiumId);
 		return service.deleteStadium(stadiumId);
 	}
 }

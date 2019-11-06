@@ -18,13 +18,4 @@ export class ListComponent implements OnInit {
     this.service.listStadium().subscribe(data => this.stadiums=data);
   }
 
-   delete(stadium:StadiumModel){
-    var ans = confirm("Are you sure you want to delete ?");
-    if(ans){
-      console.log(stadium.stadiumId)
-      this.service.deleteStadium(stadium.stadiumId).subscribe(data => this.stadiums=this.stadiums.filter(z => z !==stadium));
-    }
-   
-  }
-
 }

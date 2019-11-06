@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StadiumModel } from '../model/stadium';
 import { StadiumdetailsService } from '../services/stadiumdetails.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-list-by-country',
@@ -10,18 +9,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListByCountryComponent implements OnInit {
 
-  stadiums: StadiumModel;
-  stadium: StadiumModel[];
+  stadiums: StadiumModel[];
+  stadium:StadiumModel;
   country: string;
+  submitted:boolean=false;
   
-  constructor(private service: StadiumdetailsService, public http: HttpClient) {
-    this.stadiums= new StadiumModel();
+  constructor(private service: StadiumdetailsService) {
    }
 
   ngOnInit() {
+    this.stadium=new StadiumModel();
   }
 
-  listByCountry(country:string){
-    return this.http.get<StadiumModel>("http://localhost:8890/stadium/country/" +this.country).subscribe(data => this.stadiums=data);
-  }
+  byCountry(){
+    this.service.listByCountry(this.country).subscribe(data => {
+      this.stadiums = data;
+      this.submitted=true;
+    });
+}
 }

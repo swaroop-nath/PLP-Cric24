@@ -47,6 +47,7 @@ public class StadiumServiceImplTest {
 		oneStadium.setStadiumName("Feroz Shah Kotla");
 		oneStadium.setLocation("Raj Ghat, New Delhi");
 		oneStadium.setCapacity(41820);
+		oneStadium.setStadiumImage("https://s.ndtvimg.com//images/entities/300/feroz-shah-kotla-delhi_636889815309845065.jpg");
 		
 		List<Stadium> std = new ArrayList<Stadium>();
 		std.add(oneStadium);

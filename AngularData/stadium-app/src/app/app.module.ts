@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListByCountryComponent } from './list-by-country/list-by-country.component';
 import { ListByNameComponent } from './list-by-name/list-by-name.component';
 import { SearchByIDComponent } from './search-by-id/search-by-id.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SearchByIDComponent } from './search-by-id/search-by-id.component';
     ListComponent,
     ListByCountryComponent,
     ListByNameComponent,
-    SearchByIDComponent
+    SearchByIDComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule, FormsModule, NaviRoutingModule, HttpClientModule

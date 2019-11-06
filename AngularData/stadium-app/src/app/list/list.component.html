@@ -5,6 +5,7 @@
     <th>Location</th>
     <th>Country</th>
     <th>Capacity</th>
+    <th>View</th>
     </tr>
 
      <tr *ngFor="let std of stadiums">
@@ -13,7 +14,6 @@
       <td>{{std.location}}</td>
       <td>{{std.country}}</td>
       <td>{{std.capacity}}</td>
-
-      <td> <button class="btn btn-warning" (click)="delete(std)">Delete</button></td> 
+      <td><img [src]="std.stadiumImage" alt="image" width="200" height="150"></td>
     </tr>
 </table>

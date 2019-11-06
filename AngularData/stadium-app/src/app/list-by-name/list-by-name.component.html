@@ -1,3 +1,33 @@
-<p>
-  list-by-name works!
-</p>
+<form (ngSubmit) = "byName()">
+    <div class="form-group">
+      <label>Enter Stadium Name</label><br>
+      <input type="text" [(ngModel)]=name name="name"><br><br>
+    </div>
+  
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">Fetch all Stadiums </button>
+    </div>
+  
+  </form>
+  
+  <div [hidden]="!submitted">
+    <table class="table table-bordered">
+      <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Country</th>
+          <th>Capacity</th>
+          <th>View</th>
+      </tr>
+  
+      <tr *ngFor="let std of stadiums">
+          <td>{{std.stadiumId}}</td>
+          <td>{{std.stadiumName}}</td>
+          <td>{{std.location}}</td>
+          <td>{{std.country}}</td>
+          <td>{{std.capacity}}</td> 
+          <td><img [src]="std.stadiumImage" alt="image" width="200" height="150"></td>
+          </tr>
+    </table>
+  </div>
