@@ -1,0 +1,27 @@
+<table class="table table-bordered">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Nationality</th>
+          <th>Rating</th>
+          <th>Role</th>
+          <th>Runs</th>
+          <th>Wickets</th>
+          <th>Action</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let pla of players;let i = index">
+          <td>{{pla.playerId}}</td>
+          <td>{{pla.name}}</td>
+          <td>{{pla.age}}</td>
+          <td>{{pla.nationality}}</td>
+          <td>{{pla.rating}}</td>
+          <td>{{pla.roleType}}</td>
+          <td>{{pla.runs}}</td>
+          <td>{{pla.wickets}}</td>
+          <td><button class="btn btn-primary" (click)="update(i)">Update</button></td>
+          <td><button class="btn btn-warning" (click)="delete(i)">Delete</button></td>
+        </tr>
+      </table>
+      

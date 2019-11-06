@@ -18,6 +18,10 @@ import { StadiumsRetrieveAllComponent } from './stadiums-module/stadiums-retriev
 import { StadiumsRetrieveFieldComponent } from './stadiums-module/stadiums-retrieve-field/stadiums-retrieve-field.component';
 import { StadiumsUpdateComponent } from './stadiums-module/stadiums-update/stadiums-update.component';
 import { FormsModule } from '@angular/forms';
+import { PlayersCreateComponent } from './players-module/players-create/players-create.component';
+import { PlayersRetrieveAllComponent } from './players-module/players-retrieve-all/players-retrieve-all.component';
+import { PlayersRetrieveFieldComponent } from './players-module/players-retrieve-field/players-retrieve-field.component';
+import { PlayersUpdateComponent } from './players-module/players-update/players-update.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { FormsModule } from '@angular/forms';
     StadiumsCreateComponent,
     StadiumsRetrieveAllComponent,
     StadiumsRetrieveFieldComponent,
-    StadiumsUpdateComponent
+    StadiumsUpdateComponent,
+    PlayersCreateComponent,
+    PlayersRetrieveAllComponent,
+    PlayersRetrieveFieldComponent,
+    PlayersUpdateComponent
   ],
   imports: [
     BrowserModule,

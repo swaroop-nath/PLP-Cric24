@@ -46,6 +46,6 @@ export class StadiumsService {
   }
 
   deleteStadium(id:number):Observable<boolean>{
-    return this.cricService.deleteEntityForEntity<boolean, void>(this.BASE_URL + this.DELETE_EXT + id, null);
+    return this.cricService.deleteEntityForEntity<boolean>(this.BASE_URL + this.DELETE_EXT + id);
   }
 }
