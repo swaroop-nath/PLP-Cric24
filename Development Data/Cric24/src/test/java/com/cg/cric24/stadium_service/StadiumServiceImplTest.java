@@ -34,6 +34,11 @@ public class StadiumServiceImplTest {
 	@Autowired
 	private IStadiumService service;
 	
+	/* 
+	 * Test case to test if all dependency injection succeeds,
+	 * and the application loads successfully.
+	 */
+	
 	@Ignore
 	@Test
 	public void contextLoads() {
