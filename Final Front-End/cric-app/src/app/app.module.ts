@@ -22,6 +22,10 @@ import { PlayersCreateComponent } from './players-module/players-create/players-
 import { PlayersRetrieveAllComponent } from './players-module/players-retrieve-all/players-retrieve-all.component';
 import { PlayersRetrieveFieldComponent } from './players-module/players-retrieve-field/players-retrieve-field.component';
 import { PlayersUpdateComponent } from './players-module/players-update/players-update.component';
+import { TeamsCreateComponent } from './teams-module/teams-create/teams-create.component';
+import { TeamsRetrieveAllComponent } from './teams-module/teams-retrieve-all/teams-retrieve-all.component';
+import { TeamsRetrieveFieldComponent } from './teams-module/teams-retrieve-field/teams-retrieve-field.component';
+import { TeamsUpdateComponent } from './teams-module/teams-update/teams-update.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { PlayersUpdateComponent } from './players-module/players-update/players-
     PlayersCreateComponent,
     PlayersRetrieveAllComponent,
     PlayersRetrieveFieldComponent,
-    PlayersUpdateComponent
+    PlayersUpdateComponent,
+    TeamsCreateComponent,
+    TeamsRetrieveAllComponent,
+    TeamsRetrieveFieldComponent,
+    TeamsUpdateComponent
   ],
   imports: [
     BrowserModule,

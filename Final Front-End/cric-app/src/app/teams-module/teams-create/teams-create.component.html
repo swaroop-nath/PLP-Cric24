@@ -1,0 +1,63 @@
+<form (ngSubmit)="addTeam()" #addForm="ngForm">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th colspan="2">Add Team Details</th>
+            </tr>
+          </thead>
+      
+          <tr>
+            <td width="15%"><label for="teamName">Name</label></td>
+            <td><input name="teamName" [(ngModel)]=team.teamName #teamName=ngModel required pattern="[A-Za-z ]{3,}"
+                placeholder="Enter Team Name">
+              <span *ngIf="teamName.touched && teamName.invalid && 
+               (teamName.errors.required || teamName.errors.pattern)" class="alert-warning">
+                Invalid Team name!
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="ranking">Ranking</label></td>
+            <td><input name="ranking" [(ngModel)]=team.ranking #ranking=ngModel required pattern="[0-9]{1,2}"
+                placeholder="Enter Team Ranking">
+              <span *ngIf="ranking.touched && ranking.invalid && 
+          (ranking.errors.required || ranking.errors.pattern)" class="alert-warning">
+                Invalid ranking!
+              </span>
+            </td>
+          </tr>
+      
+          <tr>
+            <td><label for="format">Match Format</label></td>
+            <td><select name="format" [(ngModel)]=team.format #format=ngModel required>
+                <option *ngFor= "let format of matchFormats" [value]="format">{{format}}</option>
+              </select>
+            </td>
+          </tr>
+      
+          <tr>
+              <td><label for="players">Players in Team</label><br>
+              <td>
+                <li *ngFor = "let player of playerSelection">
+                  <input type="checkbox" [(ngModel)] = "player.isChecked" name = "player.player.name"> {{player.player.name}}
+                </li>
+              </td>
+            </tr>
+
+          <tr>
+            <td width="15%"><label for="leagues">League</label></td>
+            <td><input name="leagues" [(ngModel)]=team.leagues #leagues=ngModel required pattern="[A-Za-z ]{3,}"
+                placeholder="Enter League Name">
+              <span *ngIf="leagues.touched && leagues.invalid && 
+           (leagues.errors.required || leagues.errors.pattern)" class="alert-warning">
+                Invalid League Name!
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2"><button type="submit" [disabled]="!addForm.valid" class="btn btn-success">Save Player</button>
+            </th>
+          </tr>
+        </table>
+        
+      </form>

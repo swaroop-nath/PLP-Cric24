@@ -8,12 +8,14 @@ import { StadiumsUpdateComponent } from '../stadiums-module/stadiums-update/stad
 import { PlayersCreateComponent } from '../players-module/players-create/players-create.component';
 import { PlayersRetrieveAllComponent } from '../players-module/players-retrieve-all/players-retrieve-all.component';
 import { PlayersUpdateComponent } from '../players-module/players-update/players-update.component';
+import { PlayersRetrieveFieldComponent } from '../players-module/players-retrieve-field/players-retrieve-field.component';
+import { TeamsCreateComponent } from '../teams-module/teams-create/teams-create.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: PlayersRetrieveAllComponent,
+    component: TeamsCreateComponent,
   },
   {
     path: 'players-update',

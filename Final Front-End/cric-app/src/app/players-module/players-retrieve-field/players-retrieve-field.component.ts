@@ -9,7 +9,6 @@ import { PlayersService } from '../players-service/players-service.service';
 })
 export class PlayersRetrieveFieldComponent implements OnInit {
   players:Player[];
-  play:Player;
   pname:string;
   id:number;
   submitted:boolean=false;
@@ -18,18 +17,20 @@ export class PlayersRetrieveFieldComponent implements OnInit {
 
   ngOnInit() {
     this.players=[];
-    this.play=new Player();
   }
 
   findPlayerById(){
-    this.service.findPlayerById(this.id).subscribe(data => {
-      this.play = data;
-      this.submitted=true});
+    this.service.findPlayerById(this.id).subscribe(fetchedPlayer => {
+      this.players = [];
+      this.players.push(fetchedPlayer);
+      this.submitted=true;
+    });
   }
 
   findPlayerByName(){
-    this.service.findPlayerByName(this.pname).subscribe(p => {
-      this.players=p;
+    this.service.findPlayerByName(this.pname).subscribe(fetchedPlayers => {
+      this.players = [];
+      this.players = fetchedPlayers;
       this.submitted=true;
     });
     
