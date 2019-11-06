@@ -28,7 +28,7 @@ export class TeamService {
   }
 
   deleteTeam(id: number) {
-    return this.http.delete<Team>("http://localhost:8888/team/delete/" + id).subscribe();
+    return this.http.delete<boolean>("http://localhost:8888/team/delete/" + id).subscribe();
   }
 
 }

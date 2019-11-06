@@ -41,9 +41,9 @@ public class Player {
 	@Column(length = 20)
 	private String nationality;
 	@Column(length = 5)
-	private float rating;
+	private int rating;
 	@Column(length = 7)
-	private double runs;
+	private int  runs;
 	@Column(length = 5)
 	private int wickets;
 
@@ -74,19 +74,19 @@ public class Player {
 		this.nationality = nationality;
 	}
 
-	public float getRating() {
+	public int getRating() {
 		return rating;
 	}
 
-	public void setRating(float rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
-	public double getRuns() {
+	public int getRuns() {
 		return runs;
 	}
 
-	public void setRuns(double runs) {
+	public void setRuns(int runs) {
 		this.runs = runs;
 	}
 
