@@ -20,5 +20,7 @@ export class AddblogComponent implements OnInit {
   }
   addBlog(){
   this.service.addBlog(this.blog).subscribe(p => this.blog =p);
+  this.blog = new Blog();
+  this.route.navigate(['list']);
 }
 }

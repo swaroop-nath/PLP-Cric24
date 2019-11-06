@@ -10,13 +10,30 @@ import { Blog } from '../model/blog';
 })
 export class ListblogComponent implements OnInit {
   blogs:Blog[];
+  blg:Blog;
 
-  constructor(private service:BlogService, private route:Router) { }
+  constructor(private service:BlogService, private route:Router) { 
+    this.blg=new Blog();
+  }
 
   ngOnInit() {
-  }
-
-  listBlog(){
     this.service.listBlog().subscribe(p => this.blogs=p);
   }
+  approveBlogs(blog: Blog){
+    // console.log(blogId)
+    let blogId = blog.blogId;
+    this.service.approveBlogs(blogId).subscribe(val => {
+      blog.status = 'Approved';
+    });
+  }
+  rejectBlogs(blog:Blog){
+
+    let blogId = blog.blogId;
+    this.service.rejectBlogs(blogId).subscribe(val => {
+      blog.status = 'Rejected';
+    });
+  }
+
+  
+
 }

@@ -1,3 +1,28 @@
-<p>
-  searchblog works!
-</p>
+<form (ngSubmit)="searchByCategory()">
+  <div class="form group">
+      <label>Enter blog category</label><br>
+      <input type="text" [(ngModel)]=blogType name="type"><br><br> 
+    </div>
+  <div class="form group">
+    <button type="submit" class="btn btn-success">Display Blogs</button><br><hr>
+  </div>
+</form>
+
+<div [hidden]="!submitted">
+<table class="table table-bordered">
+  <tr>
+    <th>Blog ID</th>
+    <th>Type</th>
+    <th>Heading</th>
+    <th>Content</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let blg of blog">
+    <td>{{blg.blogId}}</td>
+    <td>{{blg.blogType}}</td>
+    <td>{{blg.blogHeading}}</td>
+    <td>{{blg.blogContent}}</td>
+    <td>{{blg.status}}</td>
+  </tr>
+</table>
+</div>
