@@ -13,6 +13,11 @@ import { ArchivesCreateComponent } from './archives-module/archives-create/archi
 import { ArchivesRetrieveComponent } from './archives-module/archives-retrieve/archives-retrieve.component';
 import { ArchivesUpdateComponent } from './archives-module/archives-update/archives-update.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StadiumsCreateComponent } from './stadiums-module/stadiums-create/stadiums-create.component';
+import { StadiumsRetrieveAllComponent } from './stadiums-module/stadiums-retrieve-all/stadiums-retrieve-all.component';
+import { StadiumsRetrieveFieldComponent } from './stadiums-module/stadiums-retrieve-field/stadiums-retrieve-field.component';
+import { StadiumsUpdateComponent } from './stadiums-module/stadiums-update/stadiums-update.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +31,17 @@ import { HttpClientModule } from '@angular/common/http';
     AuthModuleComponent,
     ArchivesCreateComponent,
     ArchivesRetrieveComponent,
-    ArchivesUpdateComponent
+    ArchivesUpdateComponent,
+    StadiumsCreateComponent,
+    StadiumsRetrieveAllComponent,
+    StadiumsRetrieveFieldComponent,
+    StadiumsUpdateComponent
   ],
   imports: [
     BrowserModule,
     CricketRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

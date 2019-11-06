@@ -24,6 +24,7 @@ public class Team {
 
 	@Id
 	@GeneratedValue(generator = "teamseq")
+	@Column(name = "team_id")
 	private int teamId;
 
 	@Column(length = 20)

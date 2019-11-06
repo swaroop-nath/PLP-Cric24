@@ -33,7 +33,7 @@ public class Match {
 	
 	private LocalDateTime matchSchedule;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "stadium_id", nullable = false)
 	private Stadium matchVenue;
 	
@@ -41,11 +41,11 @@ public class Match {
 	@Column(name = "match_type", nullable = false)
 	private MatchFormat matchFormat;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamOne;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamTwo;
 	

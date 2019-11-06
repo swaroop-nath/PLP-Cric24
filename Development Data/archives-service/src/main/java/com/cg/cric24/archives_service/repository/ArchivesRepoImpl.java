@@ -42,9 +42,9 @@ public class ArchivesRepoImpl implements ArchivesRepo {
 
 	@Override
 	public Match save(Match newMatch) {
-		manager.merge(newMatch);
+		Match savedMatch = manager.merge(newMatch);
 		manager.flush();
-		return newMatch;
+		return savedMatch;
 	}
 
 }

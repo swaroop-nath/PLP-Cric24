@@ -15,6 +15,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.JoinColumn;
 
 @Entity
@@ -23,15 +26,17 @@ public class Player {
 
 	@Id
 	@GeneratedValue(generator = "playseq")
+	@Column(name = "player_id")
 	private int playerId;
 	
 	@Column(length = 20)
 	private String name;
 
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "player_team_master", 
-	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "playerId"), 
-	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "teamId"))
+	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "player_id"), 
+	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "team_id"))
 	
 	private List<Team> teams = new ArrayList<Team>();
 

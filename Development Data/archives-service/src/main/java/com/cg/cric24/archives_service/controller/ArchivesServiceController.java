@@ -3,6 +3,7 @@ package com.cg.cric24.archives_service.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import com.cg.cric24.archives_service.entity.Team;
 import com.cg.cric24.archives_service.exception.NoMatchFoundException;
 import com.cg.cric24.archives_service.service.ArchivesService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/archives-api")
 public class ArchivesServiceController {

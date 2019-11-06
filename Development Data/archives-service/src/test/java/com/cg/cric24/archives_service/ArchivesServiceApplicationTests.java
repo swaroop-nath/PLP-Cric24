@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -50,21 +51,22 @@ public class ArchivesServiceApplicationTests {
 		Team teamAustralia = new Team();
 		teamAustralia.setTeamId(3);
 		teamAustralia.setTeamName("Australia");
-		teamAustralia.setFormat("ODI");
+		teamAustralia.setFormat(MatchFormat.ODI);
 		teamAustralia.setLeagues("INTL");
-		teamAustralia.setPlayers(new HashSet<Player>());
+		teamAustralia.setPlayers(new ArrayList<Player>());
 		teamAustralia.setRanking(3); 
 		List<Match> matchesByAus = service.getListOfMatchesByTeam(teamAustralia);
 	}
 	
+	@Ignore
 	@Test
 	public void testGetListOfMatchesByTeam() throws NoMatchFoundException {
 		Team teamIndia = new Team();
 		teamIndia.setTeamId(1);
 		teamIndia.setTeamName("India");
-		teamIndia.setFormat("ODI");
+		teamIndia.setFormat(MatchFormat.ODI);
 		teamIndia.setLeagues("INTL");
-		teamIndia.setPlayers(new HashSet<Player>());
+		teamIndia.setPlayers(new ArrayList<Player>());
 		teamIndia.setRanking(3); 
 		List<Match> matchesByInd = service.getListOfMatchesByTeam(teamIndia);
 		
@@ -78,7 +80,7 @@ public class ArchivesServiceApplicationTests {
 		assertEquals(2, fetchedMatches.size());
 	}
 	
-	@Ignore
+//	@Ignore
 	@Test
 	public void testAddMatchDetails() {
 		Player viratKohli = new Player();
@@ -93,16 +95,16 @@ public class ArchivesServiceApplicationTests {
 		Team teamIndia = new Team();
 		teamIndia.setTeamId(1);
 		teamIndia.setTeamName("India");
-		teamIndia.setFormat("ODI");
+		teamIndia.setFormat(MatchFormat.ODI);
 		teamIndia.setLeagues("INTL");
 		
-		Set<Player> players = new HashSet<Player>();
+		List<Player> players = new ArrayList<Player>();
 		players.add(viratKohli);
 		
 		teamIndia.setPlayers(players);
 		teamIndia.setRanking(1);
 		
-		Set<Team> teams = new HashSet<Team>();
+		List<Team> teams = new ArrayList<Team>();
 		teams.add(teamIndia);
 		viratKohli.setTeams(teams);
 		viratKohli.setWickets(0);
@@ -110,10 +112,10 @@ public class ArchivesServiceApplicationTests {
 		Team teamEngland = new Team();
 		teamEngland.setTeamId(2);
 		teamEngland.setTeamName("England");
-		teamEngland.setFormat("ODI");
+		teamEngland.setFormat(MatchFormat.ODI);
 		teamEngland.setLeagues("INTL");
 		
-		Set<Player> players2 = new HashSet<Player>();
+		List<Player> players2 = new ArrayList<Player>();
 		
 		teamEngland.setPlayers(players2);
 		teamEngland.setRanking(2);
@@ -127,12 +129,12 @@ public class ArchivesServiceApplicationTests {
 		ScoreCard score = new ScoreCard();
 		
 		score.setTeamOne(teamIndia);
-		score.setTeamOneOvers(50);
-		score.setTeamOneScore(321);
-		score.setTeamOneWickets(7);
+		score.setTeamOneOvers(42);
+		score.setTeamOneScore(201);
+		score.setTeamOneWickets(10);
 		score.setTeamTwo(teamEngland);
-		score.setTeamTwoOvers(48.3);
-		score.setTeamTwoScore(281);
+		score.setTeamTwoOvers(45.3);
+		score.setTeamTwoScore(237);
 		score.setTeamTwoWickets(10);
 		
 		Match match = new Match();
@@ -145,6 +147,8 @@ public class ArchivesServiceApplicationTests {
 		match.setMatchVenue(wankhede);
 		match.setTeamOne(teamIndia);
 		match.setTeamTwo(teamEngland);
+		
+		match.setWinningTeam(teamEngland);
 		
 		Match savedMatch = service.addMatchDetails(match);
 		

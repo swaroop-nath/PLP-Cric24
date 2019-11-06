@@ -42,7 +42,7 @@ export class ArchivesService {
   }
 
   public updateMatchDetails(match: Match): Observable<boolean> {
-    return this,this.cricService.updateEntityForEntity<boolean, Match>(this.BASE_URL + this.UPDATE_EXT, match);
+    return this.cricService.updateEntityForEntity<boolean, Match>(this.BASE_URL + this.UPDATE_EXT, match);
   }
 
   public fetchAllTeams(): Observable<Team[]> {
@@ -50,6 +50,6 @@ export class ArchivesService {
   }
 
   public fetchAllStadiums(): Observable<Stadium[]> {
-    return this.stadiumsService.fetchAllStadiums();
+    return this.stadiumsService.listStadium();
   }
 }

@@ -1,0 +1,46 @@
+<div class="container">
+
+    <form (ngSubmit)="addStadium()" #addForm="ngForm" >
+        <table class="table table-hover">
+  
+        <tr><td>Enter Stadium Name: </td>
+        <td><input type="text" [(ngModel)]=stadium.stadiumName name="stdname" class="form-control" #stdname=ngModel placeholder="Enter Name">
+        <span *ngIf="stdname.touched && stdname.invalid && (stdname.errors.required || stdname.errors.pattern)" class="alert-warning">
+          Invalid name or name cannot be empty!
+        </span></td> </tr>
+      
+        <tr><td>Enter Location:  </td>
+           <td><input type="text" [(ngModel)]=stadium.location name="loc" class="form-control" #loc=ngModel placeholder="Enter Location">
+           <span *ngIf="loc.touched && loc.invalid && (loc.errors.required || loc.errors.pattern)" class="alert-warning">
+             Invalid location or location cannot be empty!
+          </span></td> </tr>
+          
+          <tr><td>Enter Country:  </td>
+            <td><input type="text" [(ngModel)]=stadium.country name="con" class="form-control" #con=ngModel placeholder="Enter Country">
+              <span *ngIf="con.touched && con.invalid && (con.errors.required || con.errors.pattern)" class="alert-warning">
+                Invalid location or location cannot be empty!
+              </span></td> </tr>
+    
+      
+        <tr><td>Enter Capacity: </td>
+          <td><input type="number" [(ngModel)]=stadium.capacity name="cap" #cap=ngModel placeholder="Enter Capacity" class="form-control" required pattern="[0-9]{3,}">
+        <span *ngIf="cap.touched && cap.invalid && (cap.errors.required || cap.errors.pattern)" class="alert-warning">
+            Invalid capacity or capacity cannot be empty!
+          </span></td></tr>
+      
+          <tr><td>Enter Stadium Image Path:  </td>
+            <td><input type="text" [(ngModel)]=stadium.stadiumImage name="img" class="form-control" #img=ngModel placeholder="Enter Image">
+            <span *ngIf="img.touched && img.invalid && (img.errors.required || img.errors.pattern)" class="alert-warning">
+              Image cannot be empty!
+           </span></td> </tr>
+      
+        <tr>
+          <td colspan="2" align="center">
+              <button class="btn btn-success" type="submit" [disabled]="!addForm.valid">Add Stadium</button>
+          </td>
+        </tr>
+      
+    </table>
+    </form>
+    </div>
+    

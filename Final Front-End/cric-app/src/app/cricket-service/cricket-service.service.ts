@@ -17,11 +17,19 @@ export class CricketService {
     return this.client.post<U>(fetchUrl, dependentEntity);
   }
 
+  fetchEntityForCondition<U>(fetchUrl: string): Observable<U> {
+    return this.client.get<U>(fetchUrl);
+  }
+
   persistEntityForEntity<U, V>(persistUrl: string, entity: V): Observable<U> {
     return this.client.post<U>(persistUrl, entity);
   }
 
   updateEntityForEntity<U, V>(updateUrl: string, entity: V): Observable<U> {
     return this.client.put<U>(updateUrl, entity);
+  }
+
+  deleteEntityForEntity<U, V>(deleteUrl: string, entity: V): Observable<U> {
+    return this.client.delete<U>(deleteUrl, entity);
   }
 }
