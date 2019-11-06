@@ -20,6 +20,7 @@ export class TeamsCreateComponent implements OnInit {
   constructor(private service: TeamsService, private route:Router) {
     this.team =new Team();
     this.playerSelection = [];
+    this.team.players = [];
    }
 
   ngOnInit() {
@@ -31,10 +32,15 @@ export class TeamsCreateComponent implements OnInit {
     });
   }
   addTeam(){
-    this.service.saveTeam(this.team).subscribe(p => this.team = p);
-    console.log(this.team);
-    this.team = new Team();
-    // this.route.navigate(['list']);
-    
+    this.playerSelection.forEach(player => {
+      if (player.isChecked) {
+        this.team.players.push(player.player)
+      }
+    });
+    this.service.saveTeam(this.team).subscribe(savedTeam => {
+      this.team = new Team();
+      this.team.players = [];
+      // this.route.navigate(['list']);
+    });
   }
 }

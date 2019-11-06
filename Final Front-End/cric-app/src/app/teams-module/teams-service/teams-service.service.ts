@@ -18,6 +18,8 @@ export class TeamsService {
   private UPDATE_EXT = '/update';
   private DELETE_EXT = '/delete/';
 
+  transitTeam: Team;
+
   constructor(private cricService: CricketService) { }
 
   public fetchAllTeams(): Observable<Team[]> {
@@ -33,7 +35,7 @@ export class TeamsService {
   }
 
   findTeamByName(name: string): Observable<Team[]> {
-    return this.cricService.fetchEntityForCondition<Team[]>(this.BASE_URL = this.FETCH_BY_NAME_EXT + name);
+    return this.cricService.fetchEntityForCondition<Team[]>(this.BASE_URL + this.FETCH_BY_NAME_EXT + name);
   }
 
   updateTeam(t1: Team): Observable<Team> {
@@ -45,7 +47,7 @@ export class TeamsService {
   }
 
   fetchAllPlayers(): Observable<Player[]> {
-    return this.cricService.fetchAll<Player>('http://localhost:8889/player/all')
+    return this.cricService.fetchAll<Player>('http://localhost:8889/player/all') // To avoid circular dependency
   }
 
 }

@@ -1,1 +1,18 @@
-<p>teams-retrieve-all works!</p>
+<table class="table table-bordered">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Rankings</th>
+      <th>Format</th>
+      <th>Leagues</th>
+    </tr>
+    <tr *ngFor="let tl of teams;let i = index">
+      <td>{{tl.teamId}}</td>
+      <td>{{tl.teamName}}</td>
+      <td>{{tl.ranking}}</td>
+      <td>{{tl.format}}</td>
+      <td>{{tl.leagues}}</td>
+      <td><button class="btn btn-warning" (click)="delete(i)">Delete</button></td>
+    </tr>
+  </table>
+  

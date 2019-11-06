@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatchFormat } from 'src/app/model/match-format.enum';
+import { TeamsService } from '../teams-service/teams-service.service';
+import { Team } from 'src/app/model/team.model';
+import { Router } from '@angular/router';
+import { PlayerSelection } from 'src/app/model/player-selection.util';
 
 @Component({
   selector: 'app-teams-update',
@@ -7,9 +12,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamsUpdateComponent implements OnInit {
 
-  constructor() { }
+  team:Team;
+  submitted:boolean=false;
+  ranking:number;
+  matchFormats:string[]= [];
+  playerSelection: PlayerSelection[];
 
-  ngOnInit() {
+  constructor(private service:TeamsService, private route:Router) { 
+    this.playerSelection = [];
   }
 
+  ngOnInit() {
+    this.matchFormats[0]= MatchFormat.ODI;
+    this.matchFormats[1]= MatchFormat.T20;
+    this.matchFormats[2]= MatchFormat.TEST;
+    this.team = this.service.transitTeam;
+    // console.log(this.team.players)
+    this.service.fetchAllPlayers().subscribe(fetchedPlayers => {
+      fetchedPlayers.forEach(player => {
+        let flag = false;
+        this.team.players.forEach(existentPlayer => {
+          if (player.playerId === existentPlayer.playerId) {
+            this.playerSelection.push(new PlayerSelection(player, true))
+            flag = true;
+          }
+        });
+        if (!flag)
+          this.playerSelection.push(new PlayerSelection(player))
+      });
+      console.log(this.playerSelection)
+    })
+  }
+
+  update(){
+    this.service.updateTeam(this.team).subscribe(data => {
+      this.team=data;
+      this.submitted=true;
+    });
+    this.team=new Team();
+    }
+  
 }

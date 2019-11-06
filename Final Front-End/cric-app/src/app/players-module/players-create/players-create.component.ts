@@ -21,6 +21,7 @@ export class PlayersCreateComponent implements OnInit {
   constructor(private service: PlayersService,private route: Router) {
     this.player = new Player();
     this.teamSelection = [];
+    this.player.teams = [];
    }
 
   ngOnInit() {
@@ -34,7 +35,6 @@ export class PlayersCreateComponent implements OnInit {
 
     this.service.fetchAllTeams().subscribe(teams => {
       teams.forEach(team => this.teamSelection.push(new TeamSelection(team)));
-      console.log(teams);
     });
   }
 
@@ -43,8 +43,10 @@ export class PlayersCreateComponent implements OnInit {
       if (team.isChecked)
         this.player.teams.push(team.team)
     });
+    console.log(this.player)
     this.service.savePlayer(this.player).subscribe(savedPlayer => {
-      this.player = savedPlayer;
+      this.player = new Player();
+      this.player.teams = [];
       // this.route.navigate(['list']);
     });
   }
