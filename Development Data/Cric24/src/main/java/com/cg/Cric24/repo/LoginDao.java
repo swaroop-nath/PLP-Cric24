@@ -1,4 +1,4 @@
-package com.cg.Cric24.dao;
+package com.cg.Cric24.repo;
 
 import java.util.List;
 

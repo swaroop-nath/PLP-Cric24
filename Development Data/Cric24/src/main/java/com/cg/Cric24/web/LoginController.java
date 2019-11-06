@@ -3,6 +3,7 @@ package com.cg.Cric24.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.cg.Cric24.entity.User;
 import com.cg.Cric24.exception.UserNotFoundException;
 import com.cg.Cric24.service.LoginService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/login")
 public class LoginController {
@@ -35,13 +37,13 @@ public class LoginController {
 		return "User deleted with Id:" + userId;
 	}
 
-	@PutMapping("/forgetPassword")
-	public String forgetPassword(@RequestParam String password, @RequestParam String userId,
-			@RequestParam String favFood, @RequestParam String favAnimal) throws UserNotFoundException {
+	@PutMapping("/forgetPassword/{password}/{userId}/{favFood}/{favAnimal}")
+	public boolean forgetPassword(@PathVariable String password, @PathVariable String userId,
+			@PathVariable String favFood, @PathVariable String favAnimal) throws UserNotFoundException {
 		if (service.changePassword(password, userId, favFood, favAnimal) == 1)
-			return "Password updated";
+			return true;
 		else
-			return "Security Questions answered wrong";
+			return false;
 
 	}
 
@@ -51,21 +53,24 @@ public class LoginController {
 		return users;
 	}
 
-	@GetMapping("/enter")
-	public String loginCredentials(@RequestParam String userId, @RequestParam String userPassword)
+	@GetMapping(value = "/enter/{userId}/{userPassword}", produces = "application/json")
+	public String loginCredentials(@PathVariable String userId, @PathVariable String userPassword)
 			throws UserNotFoundException {
-		if (service.confirmPassword(userId, userPassword))
-			return "Login successfull";
-		return "kidnly enter the right password";
+		if (service.confirmPassword(userId, userPassword)) {
+			String s = service.getUserById(userId).getUserType();
+			return s ;
+		}
+		else
+			return null;
 	}
 
-	@GetMapping("/updatePassword")
-	public String updatePassword(@RequestParam String userId, @RequestParam String oldPassword,
-			@RequestParam String newPassword) throws UserNotFoundException {
+	@GetMapping("/updatePassword/{userId}/{oldPassword}/{newPassword}")
+	public boolean updatePassword(@PathVariable String userId, @PathVariable String oldPassword,
+			@PathVariable String newPassword) throws UserNotFoundException {
 		if (service.updatePassword(userId, oldPassword, newPassword))
-			return "Password updated successfully";
+			return true;
 		else
-			return "wrong password";
+			return false;
 	}
 
 	@GetMapping("/getBlogger/{userName}")

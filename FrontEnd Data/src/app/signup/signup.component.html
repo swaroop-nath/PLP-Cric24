@@ -1,0 +1,63 @@
+<div class="container">
+
+  <form (ngSubmit)="signup()" #addForm="ngForm">
+  
+      <table class="table table-striped">
+          <tr><th colspan="2">Register</th></tr>
+  
+          <tr><td width="30%">User id: </td>
+              <td><input type="text" name="userId" [(ngModel)]=user.userId #id=ngModel required pattern="[A-Za-z0-9]+" placeholder="Please Enter your user Id">
+               <span *ngIf="id.touched && id.invalid && (id.errors.required || id.errors.pattern)" class="alert alert-warning">
+                Invalid User Id or User Id cannot be empty!
+              </span>
+          </td></tr>
+  
+          <tr><td width="30%">Name: </td>
+              <td><input type="text" name="userName" [(ngModel)]=user.userName #name=ngModel required pattern="[A-Z][A-Za-z ]+" placeholder="Please Enter your Name">
+               <span *ngIf="name.touched && name.invalid && (name.errors.required || name.errors.pattern)" class="alert alert-warning">
+                Invalid name or name cannot be empty!
+              </span>
+          </td></tr>
+  
+          <tr><td width="30%">User password: </td>
+              <td><input type="password" name="userPassword" [(ngModel)]=user.userPassword #password=ngModel required   placeholder="Please Enter your password">
+               <span *ngIf="password.touched && password.invalid && (password.errors.required || password.errors.pattern)" class="alert alert-warning">
+                Invalid password or password cannot be empty!
+              </span>
+          </td></tr>
+  
+          <tr><td width="30%">User mobile no: </td>
+              <td><input type="text" name="userPhone" [(ngModel)]=user.userPhone #phone=ngModel required pattern="[6-9][0-9]{9}" placeholder="Please Enter your mobile number">
+               <span *ngIf="phone.touched && phone.invalid && (phone.errors.required || phone.errors.pattern)" class="alert alert-warning">
+                Invalid mobile no. or mobile no. cannot be empty!
+              </span>
+          </td></tr>
+  
+          <tr><td width="30%">User Email: </td>
+              <td><input type="email" name="userEmail" [(ngModel)]=user.userEmail #email=ngModel required pattern = "[\\w_]+@[a-z]{3,20}.[a-z]{2,4}" placeholder="Please Enter your Email">
+               <span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)" class="alert alert-warning">
+                Invalid mail id or mail id cannot be empty!
+              </span>
+          </td></tr>
+  
+          <tr><td width="30%">User favorite food: </td>
+              <td><input type="text" name="uerFavFood" [(ngModel)]=user.userFavFood #favFood=ngModel required pattern="[A-Za-z]{2,}" placeholder="Please Enter your favorite food">
+               <span *ngIf="favFood.touched && favFood.invalid && (favFood.errors.required || favFood.errors.pattern)" class="alert alert-warning">
+                Invalid animal name or animal name cannot be empty!
+              </span>
+          </td></tr>
+  
+          <tr><td width="30%">User favorite animal: </td>
+              <td><input type="text" name="userFavAnimal" [(ngModel)]=user.userFavAnimal #favAnimal=ngModel required pattern="[A-Za-z]{2,}"  placeholder="Please Enter favorite animal">
+               <span *ngIf="favAnimal.touched && favAnimal.invalid && (favAnimal.errors.required || favAnimal.errors.pattern)" class="alert alert-warning">
+                Invalid mail id or mail id cannot be empty!
+              </span>
+          </td></tr>
+  
+          <tr><td colspan="2" align="center">  
+              <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Sign up</button>
+          </td></tr>
+      </table>
+  
+  </form>
+  </div>

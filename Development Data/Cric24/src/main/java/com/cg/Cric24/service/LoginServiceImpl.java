@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.cg.Cric24.dao.LoginDao;
 import com.cg.Cric24.entity.User;
 import com.cg.Cric24.exception.UserNotFoundException;
+import com.cg.Cric24.repo.LoginDao;
 
 @Service
 public class LoginServiceImpl implements LoginService {
 	@Autowired
-	LoginDao dao;
+	private LoginDao dao;
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;

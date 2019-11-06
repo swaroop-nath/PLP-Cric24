@@ -27,8 +27,7 @@ public class User {
 	private String userFavFood;
 	@Column(name = "user_fav_animal")
 	private String userFavAnimal;
-	@Transient
-	private String confirmPassword;
+	
 
 	public String getUserId() {
 		return userId;

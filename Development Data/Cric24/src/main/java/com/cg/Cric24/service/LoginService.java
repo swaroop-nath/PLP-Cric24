@@ -7,16 +7,16 @@ import com.cg.Cric24.exception.UserNotFoundException;
 
 
 public interface LoginService {
-	// Regex to validate name- Must contain only letters, white spaces are allowed
+	// Regex to validate name- Must contain only letters, white spaces are allowed , also should start with capital latter
 	String USER_NAME_VALIDATOR = "[A-Z][A-Za-z ]+";
 	// Regex to validate phone number - Must contain 10 digits and the number should start from either 6,7,8 or 9. 
 	String USER_PHONE_VALIDATOR = "[6-9][0-9]{9}";
 	// Regex to validate email- Must contain only one @ and .
 	String USER_EMAIL_VALIDATOR = "[\\w_]+@[a-z]{3,20}.[a-z]{2,4}";
 	// Regex to validate user favorite food - Must be a word with more than 2 alphabets
-	String USER_FAV_FOOD_VALIDATOR = "[A-Za-z]";
+	String USER_FAV_FOOD_VALIDATOR = "[A-Za-z ]+";
 	// Regex to validate user favorite animal - Must be a word with more than 2 alphabets
-	String USER_FAV_ANIMAL_VALIDATOR = "([A-Za-z])\\w+";
+	String USER_FAV_ANIMAL_VALIDATOR = "[A-Za-z ]+";
 	// Regex to validate user Id - Must be a combination of words and numbers
 	String USER_ID_VALIDATOR = "[A-Za-z0-9]+";
 	// Regex to validate password - Must contain atleast one caps, one number and one special character (@, #, $, %).
@@ -44,7 +44,7 @@ public interface LoginService {
 	}
 
 	static boolean validateUserFavAnimal(String userFavAnimal) {
-		return userFavAnimal.matches(USER_EMAIL_VALIDATOR);
+		return userFavAnimal.matches(USER_FAV_ANIMAL_VALIDATOR);
 	}
 	
 	static boolean validatePassword(String userPassword) {

@@ -1,0 +1,28 @@
+<div class="container">
+
+  <form (ngSubmit)="login()" #loginForm="ngForm">
+    <table class="table table-striped">
+        <tr><th colspan="2">Login</th></tr>
+
+      <tr><td width="30%">User id: </td>
+          <td><input type="text" name="id" [(ngModel)]=id #userId=ngModel required pattern="[A-Za-z0-9]+" placeholder="User Id">
+           <span *ngIf="userId.touched && userId.invalid && (userId.errors.required || userId.errors.pattern)" class="alert alert-warning">
+            Invalid user Id or user Id cannot be empty!
+          </span>
+      </td></tr>
+        
+        <tr><td width="30%">Employee password: </td>
+          <td><input type="password" name="password" [(ngModel)]=password #userPassword=ngModel required placeholder="Password">
+           <span *ngIf="userPassword.touched && userPassword.invalid && (userPassword.errors.required || userPassword.errors.pattern)" class="alert alert-warning">
+            Invalid password or password cannot be empty!
+          </span>
+        </td></tr>
+
+        <tr><td colspan="2" align="center">  
+          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-info">Login</button>
+        </td></tr>
+
+  </table>
+
+</form>
+</div>
