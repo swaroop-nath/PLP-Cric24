@@ -17,7 +17,7 @@
       </td></tr>
   
       <tr><td><label for="roleType">Player Role</label><br>
-        <td><select  [(ngModel)]="player.role" name="roleType" #age=ngModel required>
+        <td><select  [(ngModel)]="player.roleType" name="roleType" #age=ngModel required>
           <option *ngFor="let r of roleTypes" [value]="r">{{r}}</option>
         </select>
       </td></tr>

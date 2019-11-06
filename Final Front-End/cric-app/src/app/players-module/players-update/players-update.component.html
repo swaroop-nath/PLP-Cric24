@@ -21,6 +21,14 @@
               <option *ngFor="let r of roleTypes" [value]="r">{{r}}</option>
             </select>
           </td></tr>
+          <tr>
+            <td><label for="teams">Team of Player</label><br>
+            <td>
+              <li *ngFor = "let team of teamSelection">
+                <input type="checkbox" [(ngModel)] = "team.isChecked" name = "team.team.teamName"> {{team.team.teamName}}
+              </li>
+            </td>
+          </tr>
       
           <tr><td width="15%"><label for="playNationality">Nationality</label></td>
             <td><input name="playerNationality" [(ngModel)]=player.nationality #nationality=ngModel required pattern="[A-Za-z ]{5,}" placeholder="Enter Nationality">

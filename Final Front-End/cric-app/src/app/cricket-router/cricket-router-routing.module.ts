@@ -13,17 +13,31 @@ import { TeamsCreateComponent } from '../teams-module/teams-create/teams-create.
 import { TeamsRetrieveAllComponent } from '../teams-module/teams-retrieve-all/teams-retrieve-all.component';
 import { TeamsRetrieveFieldComponent } from '../teams-module/teams-retrieve-field/teams-retrieve-field.component';
 import { TeamsUpdateComponent } from '../teams-module/teams-update/teams-update.component';
+import { BlogsCreateComponent } from '../blogs-module/blogs-create/blogs-create.component';
+import { BlogsRetreiveAllComponent } from '../blogs-module/blogs-retreive-all/blogs-retreive-all.component';
+import { LoginComponent } from '../auth-module/login/login.component';
+import { LogoutComponent } from '../auth-module/logout/logout.component';
+import { ForgotPasswordComponent } from '../auth-module/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from '../auth-module/reset-password/reset-password.component';
+import { SignUpComponent } from '../auth-module/sign-up/sign-up.component';
+import { RetrieveBloggersComponent } from '../auth-module/retrieve-bloggers/retrieve-bloggers.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: PlayersCreateComponent,
+    component: TeamsRetrieveAllComponent,
   },
   {
     path: 'teams-update',
     component: TeamsUpdateComponent
   }
+  // {path:'login', component:LoginComponent},
+  // {path:'signup', component:SignUpComponent},
+  // {path:'logout', component:LogoutComponent},
+  // {path:'forgotpassword', component:ForgotPasswordComponent},
+  // {path:'getall', component:RetrieveBloggersComponent},
+  // {path:'reset', component:ResetPasswordComponent}
 ];
 
 @NgModule({

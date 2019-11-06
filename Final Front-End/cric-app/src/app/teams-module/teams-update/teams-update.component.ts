@@ -27,13 +27,12 @@ export class TeamsUpdateComponent implements OnInit {
     this.matchFormats[1]= MatchFormat.T20;
     this.matchFormats[2]= MatchFormat.TEST;
     this.team = this.service.transitTeam;
-    // console.log(this.team.players)
+    console.log(this.team)
     this.service.fetchAllPlayers().subscribe(fetchedPlayers => {
       fetchedPlayers.forEach(player => {
         let flag = false;
         this.team.players.forEach(existentPlayer => {
           if (player.playerId === existentPlayer.playerId) {
-            this.playerSelection.push(new PlayerSelection(player, true))
             flag = true;
           }
         });
@@ -41,10 +40,15 @@ export class TeamsUpdateComponent implements OnInit {
           this.playerSelection.push(new PlayerSelection(player))
       });
       console.log(this.playerSelection)
-    })
+    });
   }
 
   update(){
+    this.playerSelection.forEach(player => {
+      if (player.isChecked)
+        this.team.players.push(player.player)
+    });
+    console.log(this.team)
     this.service.updateTeam(this.team).subscribe(data => {
       this.team=data;
       this.submitted=true;

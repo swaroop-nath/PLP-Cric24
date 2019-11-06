@@ -1,1 +1,6 @@
-<p>auth-module works!</p>
+<li><a [routerLink]="['login']">Login</a></li>
+<li><a [routerLink]="['signup']">Signup</a></li>
+<li><a [routerLink]="['logout']">Logout</a></li>
+<li><a [routerLink]="['forgotpassword']">forgotpassword?</a></li>
+<li><a [routerLink]="['getall']">get all bloggers</a></li>
+<li><a *ngIf="(service.isUserLoggedIn()==1||service.isUserLoggedIn()==2)" [routerLink]="['reset']">Reset Password</a></li>

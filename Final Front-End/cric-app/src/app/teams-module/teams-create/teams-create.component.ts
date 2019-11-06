@@ -37,10 +37,11 @@ export class TeamsCreateComponent implements OnInit {
         this.team.players.push(player.player)
       }
     });
+    console.log(this.team)
     this.service.saveTeam(this.team).subscribe(savedTeam => {
       this.team = new Team();
       this.team.players = [];
-      // this.route.navigate(['list']);
+      this.route.navigate(['teams-list']);
     });
   }
 }

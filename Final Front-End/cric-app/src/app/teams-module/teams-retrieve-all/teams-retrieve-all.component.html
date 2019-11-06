@@ -6,13 +6,13 @@
       <th>Format</th>
       <th>Leagues</th>
     </tr>
-    <tr *ngFor="let tl of teams;let i = index">
+    <tr *ngFor="let tl of teams">
       <td>{{tl.teamId}}</td>
       <td>{{tl.teamName}}</td>
       <td>{{tl.ranking}}</td>
       <td>{{tl.format}}</td>
       <td>{{tl.leagues}}</td>
-      <td><button class="btn btn-warning" (click)="delete(i)">Delete</button></td>
+      <td><button class="btn btn-primary" (click)="updateTeam(tl)">Update</button></td>
     </tr>
   </table>
   

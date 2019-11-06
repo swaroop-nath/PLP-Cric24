@@ -9,7 +9,7 @@
           <th>Runs</th>
           <th>Wickets</th>
           <th>Action</th>
-          <th>Action</th>
+          <!-- <th>Action</th> -->
         </tr>
         <tr *ngFor="let pla of players;let i = index">
           <td>{{pla.playerId}}</td>
@@ -21,7 +21,7 @@
           <td>{{pla.runs}}</td>
           <td>{{pla.wickets}}</td>
           <td><button class="btn btn-primary" (click)="update(i)">Update</button></td>
-          <td><button class="btn btn-warning" (click)="delete(i)">Delete</button></td>
+          <!-- <td><button class="btn btn-warning" (click)="delete(i)">Delete</button></td> -->
         </tr>
       </table>
       

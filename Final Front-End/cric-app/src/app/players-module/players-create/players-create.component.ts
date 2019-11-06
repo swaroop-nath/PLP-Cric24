@@ -47,7 +47,7 @@ export class PlayersCreateComponent implements OnInit {
     this.service.savePlayer(this.player).subscribe(savedPlayer => {
       this.player = new Player();
       this.player.teams = [];
-      // this.route.navigate(['list']);
+      this.route.navigate(['players-list']);
     });
   }
 
