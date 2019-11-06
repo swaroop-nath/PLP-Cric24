@@ -39,7 +39,7 @@
   </td></tr>
 
   <tr><td><label for="runs">Runs Scored</label></td>
-    <td><input name="runs" [(ngModel)]="player.runs" #runs=ngModel required pattern="[1-9][0-9]{1,4}" placeholder="Enter Runs Scored">
+    <td><input name="runs" [(ngModel)]="player.runs" #runs=ngModel required pattern="[0-9][0-9]{0,4}" placeholder="Enter Runs Scored">
     <span *ngIf="runs.touched && runs.invalid && 
     (runs.errors.required || runs.errors.pattern)" class="alert-warning">
       Invalid runs!
@@ -47,7 +47,7 @@
   </td></tr>
 
   <tr><td><label for="wickets">Wickets Taken</label></td>
-    <td><input name="wickets" [(ngModel)]="player.wickets" #wickets=ngModel required pattern="[1-9][0-9]{1,2}" placeholder="Enter Wickets Taken">
+    <td><input name="wickets" [(ngModel)]="player.wickets" #wickets=ngModel required pattern="[0-9][0-9]{0,2}" placeholder="Enter Wickets Taken">
     <span *ngIf="wickets.touched && wickets.invalid && 
     (wickets.errors.required || wickets.errors.pattern)" class="alert-warning">
       Invalid wickets!
