@@ -3,6 +3,7 @@ import { Match } from 'src/app/model/match.model';
 import { ArchivesService } from '../archives-service/archives-service.service';
 import { MatchFormat } from 'src/app/model/match-format.enum';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CricketService } from 'src/app/cricket-service/cricket-service.service';
 
 @Component({
   selector: 'app-archives-retrieve',
@@ -16,7 +17,7 @@ export class ArchivesRetrieveComponent implements OnInit {
   odi_matches: Match[];
   test_matches: Match[];
 
-  constructor(private archivesService: ArchivesService, private router: Router, private route: ActivatedRoute) {
+  constructor(private archivesService: ArchivesService, private router: Router, private cricService: CricketService) {
     this.matches_view = [];
   }
 
@@ -33,7 +34,7 @@ export class ArchivesRetrieveComponent implements OnInit {
 
   viewScoreCard(index: number) {
     this.archivesService.transitMatch = this.matches_view[index];
-    this.router.navigate([{outlets: {'archives': ['scorecard-view']}}], {relativeTo: this.route});
+    this.router.navigate([{outlets: {'archives': ['scorecard-view']}}], {relativeTo: this.cricService.parentRoute});
   }
 
 }

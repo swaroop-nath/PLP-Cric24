@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CricketService {
+  parentRoute: any;
 
   constructor(private client: HttpClient) { }
 

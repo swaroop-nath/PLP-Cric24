@@ -44,7 +44,7 @@ const routes: Routes = [
   {
     path: 'team-view',
     component: TeamViewComponent,
-    outlet: 'archives'
+    outlet: 'teams'
   }
 ];
 

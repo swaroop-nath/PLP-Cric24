@@ -1,1 +1,34 @@
-<p>team-view works!</p>
+<div class="team-overview">
+    <table class="table-hover">
+        <tr>
+            <td colspan="3"><h3>{{receivedTeam.teamName}}</h3></td>
+        </tr>
+        <tr>
+            <th><b>Win </b></th>
+            <th><b>Loss </b></th>
+            <th><b>Draw </b></th>
+        </tr>
+        <tr>
+            <td>{{wins}}</td>
+            <td>{{losses}}</td>
+            <td>{{draws}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="team-players-overview">
+    <table class="table-hover table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Runs</th>
+            <th>Wickets</th>
+        </tr>
+        <tr *ngFor = "let player of receivedTeam.players">
+            <td>{{player.name}}</td>
+            <td>{{player.roleType}}</td>
+            <td>{{player.runs}}</td>
+            <td>{{player.wickets}}</td>
+        </tr>
+    </table>
+</div>

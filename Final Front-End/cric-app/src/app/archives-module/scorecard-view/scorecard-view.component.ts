@@ -4,6 +4,7 @@ import { ArchivesService } from '../archives-service/archives-service.service';
 import * as $ from 'jquery';
 import { TeamsService } from 'src/app/teams-module/teams-service/teams-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CricketService } from 'src/app/cricket-service/cricket-service.service';
 
 @Component({
   selector: 'app-scorecard-view',
@@ -15,7 +16,7 @@ export class ScorecardViewComponent implements OnInit {
   receivedMatch: Match;
   wonBy: string;
   
-  constructor(private archiveService: ArchivesService, private teamsService: TeamsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private archiveService: ArchivesService, private teamsService: TeamsService, private cricService: CricketService, private router: Router) { }
 
   ngOnInit() {
     $(window).on('popstate', function(event) {
@@ -41,19 +42,22 @@ export class ScorecardViewComponent implements OnInit {
   }
 
   onForward() {
-    $('#archives-outlet').animate({height: '0px', width: '0px'}).hide()
-    $('#teams-outlet').animate({height: '100%', width: '100%'})
+    $('#schedules-outlet').animate({height: '150px', width: '100%'}).show()
+    $('#archives-outlet').animate({height: '100%', width: '25%'}, 500)
+    $('#blogs-outlet').animate({height: '100%', width: '70%'}).show()
+    $('#schedules-outlet-child').show()
+    $('#blogs-outlet-child').show()
   }
 
   viewTeamOne() {
     this.teamsService.transitTeam = this.receivedMatch.teamOne
     this.onForward()
-    this.router.navigate([{outlets: {'teams': ['team-view']}}], {relativeTo: this.route});
+    this.router.navigate([{outlets: {'teams': ['team-view']}}], {relativeTo: this.cricService.parentRoute});
   }
 
   viewTeamTwo() {
     this.teamsService.transitTeam = this.receivedMatch.teamOne
     this.onForward()
-    this.router.navigate([{outlets: {'teams': ['team-view']}}], {relativeTo: this.route});
+    this.router.navigate([{outlets: {'teams': ['team-view']}}], {relativeTo: this.cricService.parentRoute});
   }
 }
