@@ -45,9 +45,9 @@ public class Player {
 	@Column(length = 20)
 	private String nationality;
 	@Column(length = 5)
-	private double rating;
+	private int rating;
 	@Column(length = 7)
-	private double runs;
+	private int runs;
 	@Column(length = 5)
 	private int wickets;
 	
@@ -86,19 +86,19 @@ public class Player {
 		this.nationality = nationality;
 	}
 
-	public double getRating() {
+	public int getRating() {
 		return rating;
 	}
 
-	public void setRating(double rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
-	public double getRuns() {
+	public int getRuns() {
 		return runs;
 	}
 
-	public void setRuns(double runs) {
+	public void setRuns(int runs) {
 		this.runs = runs;
 	}
 

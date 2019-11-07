@@ -83,14 +83,15 @@ public class ArchivesServiceApplicationTests {
 //	@Ignore
 	@Test
 	public void testAddMatchDetails() {
-		Player viratKohli = new Player();
-		viratKohli.setPlayerId(1);
-		viratKohli.setName("Virat Kohli");
-		viratKohli.setAge(30);
-		viratKohli.setNationality("Indian");
-		viratKohli.setRating(933);
-		viratKohli.setRoleType(RoleType.BATSMAN);
-		viratKohli.setRuns(11154);
+		Player jaspritBumrah = new Player();
+		jaspritBumrah.setPlayerId(2);
+		jaspritBumrah.setName("Jasprit Bumrah");
+		jaspritBumrah.setAge(27);
+		jaspritBumrah.setNationality("Indian");
+		jaspritBumrah.setRating(786);
+		jaspritBumrah.setRoleType(RoleType.BOWLER);
+		jaspritBumrah.setRuns(901);
+		jaspritBumrah.setWickets(91);
 		
 		Team teamIndia = new Team();
 		teamIndia.setTeamId(1);
@@ -99,15 +100,15 @@ public class ArchivesServiceApplicationTests {
 		teamIndia.setLeagues("INTL");
 		
 		List<Player> players = new ArrayList<Player>();
-		players.add(viratKohli);
+		players.add(jaspritBumrah);
 		
 		teamIndia.setPlayers(players);
 		teamIndia.setRanking(1);
 		
 		List<Team> teams = new ArrayList<Team>();
 		teams.add(teamIndia);
-		viratKohli.setTeams(teams);
-		viratKohli.setWickets(0);
+		jaspritBumrah.setTeams(teams);
+		jaspritBumrah.setWickets(0);
 		
 		Team teamEngland = new Team();
 		teamEngland.setTeamId(2);
@@ -129,14 +130,14 @@ public class ArchivesServiceApplicationTests {
 		ScoreCard score = new ScoreCard();
 		
 		score.setTeamOne(teamIndia);
-		score.setTeamOneOvers(50);
-		score.setTeamOneScore(321);
-		score.setTeamOneWickets(7);
+		score.setTeamOneOvers(45.1);
+		score.setTeamOneScore(219);
+		score.setTeamOneWickets(10);
 		score.setTeamTwo(teamEngland);
-		score.setTeamTwoOvers(49.1);
-		score.setTeamTwoScore(284);
+		score.setTeamTwoOvers(45.3);
+		score.setTeamTwoScore(239);
 		score.setTeamTwoWickets(10);
-		score.setPlayerOfTheMatch(viratKohli);
+		score.setPlayerOfTheMatch(jaspritBumrah);
 		
 		Match match = new Match();
 		
@@ -149,11 +150,11 @@ public class ArchivesServiceApplicationTests {
 		match.setTeamOne(teamIndia);
 		match.setTeamTwo(teamEngland);
 		
-		match.setWinningTeam(teamEngland);
+		match.setWinningTeam(teamIndia);
 		
 		Match savedMatch = service.addMatchDetails(match);
 		
-		assertEquals(2, savedMatch.getMatchID());
+		assertEquals(3, savedMatch.getMatchID());
 	}
 
 	@Ignore

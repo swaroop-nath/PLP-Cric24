@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Team } from 'src/app/model/team.model';
 import { TeamsService } from '../teams-service/teams-service.service';
 import * as $ from 'jquery';
+import { Match } from 'src/app/model/match.model';
+import { MatchStatus } from 'src/app/model/match-status.enum';
 
 @Component({
   selector: 'app-team-view',
@@ -9,28 +11,46 @@ import * as $ from 'jquery';
   styleUrls: ['./team-view.component.css']
 })
 export class TeamViewComponent implements OnInit {
-
+ 
   receivedTeam: Team;
-  wins = 5;
-  losses = 1;
+  wins = 0;
+  losses = 0;
   draws = 0;
+  matchesForTeam: Match[];
 
   constructor(private service: TeamsService) { }
 
   ngOnInit() {
     this.receivedTeam = this.service.transitTeam;
-    console.log(this.receivedTeam);
+
+    this.service.fetchMatchesByTeam(this.receivedTeam).subscribe(fetchedMatches => {
+      this.matchesForTeam = fetchedMatches;
+
+      fetchedMatches.forEach(match => {
+        if(match.matchStatus === MatchStatus.CONCLUDED && match.winningTeam.teamId == this.receivedTeam.teamId)
+          this.wins += 1;
+        else if ((match.matchStatus === MatchStatus.CONCLUDED && match.winningTeam.teamId != this.receivedTeam.teamId) || (match.matchStatus === MatchStatus.FORFEITED))
+          this.losses += 1;
+        else 
+          this.draws += 1;
+      });
+    });
+
+    this.onStart()
+
+    $(window).on('popstate', (event) => {
+      $('#teams-outlet').animate({height: '0px', width: '0px'}).hide()
+      this.service.getFromBackStack().initializeComponent();
+    });
+  }
+
+  onStart() {
     $('#schedules-outlet').animate({height: '0px', width: '0px'}).hide()
     $('#archives-outlet').animate({height: '0px', width: '0px'}).hide()
     $('#blogs-outlet').animate({height: '0px', width: '0px'}).hide()
-    $('#schedules-outlet-child').hide()
-    $('#blogs-outlet-child').hide()
-    $('#teams-outlet').show().animate({height: '100%', width: '100%'}).click(function(){
-      alert('Hello')
-    })
-    $('#teams-outlet-child').show()
+    $('#teams-outlet').animate({height: '100%', width: '100%'}).show()
   }
 
-  // write a logic to fetch matches of the team to display total losses and total wins
+  //TODO: Have an update team button here for admin
 
 }

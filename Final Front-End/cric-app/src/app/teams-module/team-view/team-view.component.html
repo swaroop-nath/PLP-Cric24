@@ -1,17 +1,17 @@
 <div class="team-overview">
     <table class="table-hover">
         <tr>
-            <td colspan="3"><h3>{{receivedTeam.teamName}}</h3></td>
+            <td colspan="2"><h3>{{receivedTeam.teamName}}</h3></td>
         </tr>
         <tr>
-            <th><b>Win </b></th>
-            <th><b>Loss </b></th>
-            <th><b>Draw </b></th>
+            <th><b>Win&nbsp;</b></th>
+            <th><b>Loss&nbsp;</b></th>
+            <th><b>No Result&nbsp;</b></th>
         </tr>
         <tr>
-            <td>{{wins}}</td>
-            <td>{{losses}}</td>
-            <td>{{draws}}</td>
+            <td style="text-align: center;">&nbsp;&nbsp;{{wins}}&nbsp;&nbsp;</td>
+            <td style="text-align: center;">&nbsp;&nbsp;{{losses}}&nbsp;&nbsp;</td>
+            <td style="text-align: center;">&nbsp;&nbsp;{{draws}}&nbsp;&nbsp;</td>
         </tr>
     </table>
 </div>
@@ -19,16 +19,16 @@
 <div class="team-players-overview">
     <table class="table-hover table-striped">
         <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Runs</th>
-            <th>Wickets</th>
+            <th>&nbsp;&nbsp;Name&nbsp;&nbsp;</th>
+            <th>&nbsp;&nbsp;Type&nbsp;&nbsp;</th>
+            <th>&nbsp;&nbsp;Runs&nbsp;&nbsp;</th>
+            <th>&nbsp;&nbsp;Wickets&nbsp;&nbsp;</th>
         </tr>
         <tr *ngFor = "let player of receivedTeam.players">
-            <td>{{player.name}}</td>
-            <td>{{player.roleType}}</td>
-            <td>{{player.runs}}</td>
-            <td>{{player.wickets}}</td>
+            <td>&nbsp;&nbsp;{{player.name}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{player.roleType}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{player.runs}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{player.wickets}}&nbsp;&nbsp;</td>
         </tr>
     </table>
 </div>

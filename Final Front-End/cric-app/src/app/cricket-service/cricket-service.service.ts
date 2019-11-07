@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class CricketService {
   parentRoute: any;
 
-  constructor(private client: HttpClient) { }
+  componentBackStack: BackStack[];
+
+  constructor(private client: HttpClient) { 
+    this.componentBackStack = []
+  }
 
   fetchAll<T>(fetchUrl: string): Observable<T[]> {
     return this.client.get<T[]>(fetchUrl);
@@ -33,4 +38,5 @@ export class CricketService {
   deleteEntityForEntity<U>(deleteUrl: string): Observable<U> {
     return this.client.delete<U>(deleteUrl);
   }
+
 }

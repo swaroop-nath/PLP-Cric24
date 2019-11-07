@@ -37,7 +37,7 @@ export class TeamsRetrieveFieldComponent implements OnInit {
 
   updateTeam(team: Team) {
     this.service.transitTeam = team;
-    this.router.navigate(['teams-update']);
+    this.router.navigate([{outlets: {'teams': ['update-team']}}], {relativeTo: this.service.getParentRoute()})
   }
 
   deleteTeam(index: number) {

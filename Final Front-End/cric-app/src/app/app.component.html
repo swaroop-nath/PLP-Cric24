@@ -1,8 +1,14 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#"><i><em>Cric</em></i>-<b>24</b></a>
+      <a href="#" class="navbar-brand"><i><em>Cric</em></i>-<b>24</b></a>
     </div>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="[{outlets: {'teams': ['all-teams-view']}}]">View Teams</a></li>
+      <li><a [routerLink]="[{outlets: {'players': ['all-players-view']}}]">View Players</a></li>
+      <li><a [routerLink]="[{outlets: {'stadiums': ['all-stadiums-view']}}]">View Stadiums</a></li>
+      <li><a>About Us</a></li>
+    </ul>
     <button class="btn btn-danger navbar-btn navbar-right">Login</button>
   </div>
 </nav>
@@ -21,4 +27,12 @@
 
 <div id="teams-outlet" class="teams-body">
   <router-outlet id="teams-outlet-child" name="teams"></router-outlet>
+</div>
+
+<div id="players-outlet" class="players-body">
+  <router-outlet id="players-outlet-child" name="players"></router-outlet>
+</div>
+
+<div id="stadiums-outlet" class="stadiums-body">
+  <router-outlet id="stadiums-outlet-child" name="stadiums"></router-outlet>
 </div>

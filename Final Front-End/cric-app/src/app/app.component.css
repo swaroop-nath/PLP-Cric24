@@ -1,3 +1,7 @@
+a {
+    cursor: pointer;
+}
+
 .navbar-header {
     margin-left: 2.5%
 }
@@ -38,4 +42,18 @@
     width: 0%;
     height: 0%;
     background-color: red
+}
+
+.players-body {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    background-color: black
+}
+
+.stadiums-body {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    background-color: violet
 }

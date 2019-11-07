@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Component } from '@angular/core';
 import { CricketService } from 'src/app/cricket-service/cricket-service.service';
 import { Team } from 'src/app/model/team.model';
 import { Observable } from 'rxjs';
 import { PlayersService } from 'src/app/players-module/players-service/players-service.service';
 import { Player } from 'src/app/model/player.model';
+import { Match } from 'src/app/model/match.model';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -50,4 +52,20 @@ export class TeamsService {
     return this.cricService.fetchAll<Player>('http://localhost:8889/player/all') // To avoid circular dependency
   }
 
+  public fetchMatchesByTeam(team: Team): Observable<Match[]> {
+    // Circular dependency with Archives Service
+    return this.cricService.fetchEntityByDependentEntity<Match[], Team>('http://localhost:7170/archives-api/list-matches/by-team', team);
+  }
+
+  getFromBackStack() {
+    return this.cricService.componentBackStack.pop();
+  }
+
+  addToBackStack(component: BackStack) {
+    return this.cricService.componentBackStack.push(component)
+  }
+
+  getParentRoute() {
+    return this.cricService.parentRoute;
+  }
 }

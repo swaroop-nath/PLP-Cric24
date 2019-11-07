@@ -35,7 +35,7 @@ const routes: Routes = [
     path: '',
     component: BlogsRetreiveAllComponent,
     outlet: 'blogs'
-  },
+  }, // Include schedule retrieve all component too.
   {
     path: 'scorecard-view',
     component: ScorecardViewComponent,
@@ -45,6 +45,31 @@ const routes: Routes = [
     path: 'team-view',
     component: TeamViewComponent,
     outlet: 'teams'
+  },
+  {
+    path: 'all-teams-view',
+    component: TeamsRetrieveAllComponent,
+    outlet: 'teams'
+  },
+  {
+    path: 'update-team',
+    component: TeamsUpdateComponent,
+    outlet: 'teams'
+  },
+  {
+    path: 'find-teams',
+    component: TeamsRetrieveFieldComponent,
+    outlet: 'teams'
+  },
+  {
+    path: 'all-players-view',
+    component: PlayersRetrieveAllComponent,
+    outlet: 'players'
+  },
+  {
+    path: 'all-stadiums-view',
+    component: StadiumsRetrieveAllComponent,
+    outlet: 'stadiums'
   }
 ];
 
