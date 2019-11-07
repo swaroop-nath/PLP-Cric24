@@ -1,34 +1,11 @@
 <table class="table-hover">
-    <tr>
-        <td><h3>T20 Matches</h3></td>
-        <td>
-            <table class="table-striped">
-                <tr *ngFor="let match of t20_matches">
-                    <td><a>{{ match.teamOne.teamName }}&nbsp; vs &nbsp;{{ match.teamTwo.teamName }}</a></td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-
-    <tr>
-        <td><h3>ODI Matches</h3></td>
-        <td>
-            <table class="table-striped">
-                <tr *ngFor="let match of odi_matches">
-                    <td><a>{{ match.teamOne.teamName }}&nbsp; vs &nbsp;{{ match.teamTwo.teamName }}</a></td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-
-    <tr>
-        <td><h3>Test Matches</h3></td>
-        <td>
-            <table class="table-striped">
-                <tr *ngFor="let match of test_matches">
-                    <td><a>{{ match.teamOne.teamName }}&nbsp; vs &nbsp;{{ match.teamTwo.teamName }}</a></td>
-                </tr>
-            </table>
-        </td>
+    <tr *ngFor = "let match of matches_view; let i = index">
+        <div class="archived-match" (click)="viewScoreCard(i)">
+            <b>{{match.teamOne.teamName}}&nbsp; vs. {{match.teamTwo.teamName}}</b> <br>
+            <b>{{match.matchScoreCard.teamOneScore}}/{{match.matchScoreCard.teamOneWickets}} &nbsp;-&nbsp; {{match.matchScoreCard.teamTwoScore}}/{{match.matchScoreCard.teamTwoWickets}}</b> <br>
+            <span [hidden] = "match.matchStatus === CONCLUDED">
+                <b>{{match.winningTeam.teamName}} won.</b>
+            </span>
+        </div>
     </tr>
 </table>

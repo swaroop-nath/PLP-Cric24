@@ -19,6 +19,8 @@ export class ArchivesService {
   private LIST_BY_TEAM_EXT = '/list-matches/by-team';
   private UPDATE_EXT = '/update-match';
   private ADD_EXT = '/add-match';
+  
+  transitMatch: Match;
 
   constructor(private cricService: CricketService, private teamsService: TeamsService, private stadiumsService: StadiumsService) { 
     this.matches_master = [];

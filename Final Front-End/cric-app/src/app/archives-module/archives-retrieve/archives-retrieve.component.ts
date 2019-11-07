@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Match } from 'src/app/model/match.model';
 import { ArchivesService } from '../archives-service/archives-service.service';
 import { MatchFormat } from 'src/app/model/match-format.enum';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-archives-retrieve',
@@ -15,25 +16,24 @@ export class ArchivesRetrieveComponent implements OnInit {
   odi_matches: Match[];
   test_matches: Match[];
 
-  constructor(private archivesService: ArchivesService) {
+  constructor(private archivesService: ArchivesService, private router: Router, private route: ActivatedRoute) {
     this.matches_view = [];
-    this.t20_matches = [];
-    this.odi_matches = [];
-    this.test_matches = [];
   }
 
   ngOnInit() {
     this.archivesService.fetchAllMatches().subscribe(fetchedMatches => {
       this.archivesService.saveFetchedMatches(fetchedMatches);
-      this.t20_matches = this.archivesService.matches_master.filter(match => match.matchFormat === MatchFormat.T20 && match.matchSchedule.getFullYear() === 2019);
-      this.odi_matches = this.archivesService.matches_master.filter(match => match.matchFormat === MatchFormat.ODI && match.matchSchedule.getFullYear() === 2019);
-      this.t20_matches = this.archivesService.matches_master.filter(match => match.matchFormat === MatchFormat.TEST && match.matchSchedule.getFullYear() === 2019);
-
-      this.t20_matches.forEach(t20_match => this.matches_view.push(t20_match));
-      this.odi_matches.forEach(odi_match => this.matches_view.push(odi_match));
-      this.test_matches.forEach(test_match => this.matches_view.push(test_match));
-
+      
+      this.archivesService.matches_master.forEach(fetchedMatch => {
+        if (fetchedMatch.matchSchedule.getFullYear() == 2019)
+          this.matches_view.push(fetchedMatch);
+      });
     });
+  }
+
+  viewScoreCard(index: number) {
+    this.archivesService.transitMatch = this.matches_view[index];
+    this.router.navigate(['/scorecard-view', {outlets: 'archives'}]);
   }
 
 }

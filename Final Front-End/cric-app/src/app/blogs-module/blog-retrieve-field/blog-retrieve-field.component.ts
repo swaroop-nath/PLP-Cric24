@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Blog } from 'src/app/model/blog.model';
+import { BlogsService } from '../blogs-service/blogs-service.service';
 
 @Component({
   selector: 'app-blog-retrieve-field',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogRetrieveFieldComponent implements OnInit {
 
-  constructor() { }
+  blog:Blog[];
+  blogType:string;
+  submitted:boolean=false;
+
+  constructor(private service:BlogsService) { 
+   
+  }
 
   ngOnInit() {
+    this.blog=[];
+  }
+  searchByCategory(){
+     this.service.searchByCategory(this.blogType).subscribe(data => 
+      {this.blog = data; 
+      this.submitted=true});
   }
 
 }

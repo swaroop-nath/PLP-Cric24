@@ -73,11 +73,11 @@ public class ArchivesServiceApplicationTests {
 		assertEquals(2, matchesByInd.size());
 	}
 	
-	@Ignore
+//	@Ignore
 	@Test
 	public void testListAllMatches() throws NoMatchFoundException {
 		List<Match> fetchedMatches = service.listAllMatches();
-		assertEquals(2, fetchedMatches.size());
+		assertEquals(3, fetchedMatches.size());
 	}
 	
 //	@Ignore
@@ -129,13 +129,14 @@ public class ArchivesServiceApplicationTests {
 		ScoreCard score = new ScoreCard();
 		
 		score.setTeamOne(teamIndia);
-		score.setTeamOneOvers(42);
-		score.setTeamOneScore(201);
-		score.setTeamOneWickets(10);
+		score.setTeamOneOvers(50);
+		score.setTeamOneScore(321);
+		score.setTeamOneWickets(7);
 		score.setTeamTwo(teamEngland);
-		score.setTeamTwoOvers(45.3);
-		score.setTeamTwoScore(237);
+		score.setTeamTwoOvers(49.1);
+		score.setTeamTwoScore(284);
 		score.setTeamTwoWickets(10);
+		score.setPlayerOfTheMatch(viratKohli);
 		
 		Match match = new Match();
 		

@@ -21,23 +21,26 @@ import { ForgotPasswordComponent } from '../auth-module/forgot-password/forgot-p
 import { ResetPasswordComponent } from '../auth-module/reset-password/reset-password.component';
 import { SignUpComponent } from '../auth-module/sign-up/sign-up.component';
 import { RetrieveBloggersComponent } from '../auth-module/retrieve-bloggers/retrieve-bloggers.component';
+import { ScorecardViewComponent } from '../archives-module/scorecard-view/scorecard-view.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: TeamsRetrieveAllComponent,
+    component: ArchivesRetrieveComponent,
+    outlet: 'archives',
+    children: [
+      {
+        path: 'scorecard-view',
+        component: ScorecardViewComponent
+      }
+    ]
   },
   {
-    path: 'teams-update',
-    component: TeamsUpdateComponent
+    path: '',
+    component: BlogsRetreiveAllComponent,
+    outlet: 'blogs'
   }
-  // {path:'login', component:LoginComponent},
-  // {path:'signup', component:SignUpComponent},
-  // {path:'logout', component:LogoutComponent},
-  // {path:'forgotpassword', component:ForgotPasswordComponent},
-  // {path:'getall', component:RetrieveBloggersComponent},
-  // {path:'reset', component:ResetPasswordComponent}
 ];
 
 @NgModule({

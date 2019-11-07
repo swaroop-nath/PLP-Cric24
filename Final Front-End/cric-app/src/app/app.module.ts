@@ -35,6 +35,7 @@ import { LoginComponent } from './auth-module/login/login.component';
 import { ResetPasswordComponent } from './auth-module/reset-password/reset-password.component';
 import { SignUpComponent } from './auth-module/sign-up/sign-up.component';
 import { LogoutComponent } from './auth-module/logout/logout.component';
+import { ScorecardViewComponent } from './archives-module/scorecard-view/scorecard-view.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { LogoutComponent } from './auth-module/logout/logout.component';
     ResetPasswordComponent,
     SignUpComponent,
     LogoutComponent,
+    ScorecardViewComponent,
   ],
   imports: [
     BrowserModule,
