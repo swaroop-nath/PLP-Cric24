@@ -10,7 +10,7 @@ import { Blog } from '../model/blog';
 export class SearchblogComponent implements OnInit {
 
   blog:Blog[];
-  blogType:string;
+  bType:string;
   submitted:boolean=false;
 
   constructor(private service:BlogService) { 
@@ -21,7 +21,7 @@ export class SearchblogComponent implements OnInit {
     this.blog=[];
   }
   searchByCategory(){
-     this.service.searchByCategory(this.blogType).subscribe(data => 
+     this.service.searchByCategory(this.bType).subscribe(data => 
       {this.blog = data; 
       this.submitted=true});
   }

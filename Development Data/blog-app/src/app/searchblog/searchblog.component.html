@@ -1,7 +1,12 @@
 <form (ngSubmit)="searchByCategory()">
   <div class="form group">
       <label>Enter blog category</label><br>
-      <input type="text" [(ngModel)]=blogType name="type"><br><br> 
+      <select name="blogType" #blogType=ngModel [(ngModel)]=bType class = "form-control" >
+        <option value="Players">Players</option>
+        <option value="Tournaments">Tournaments</option>
+        <option value="Teams">Teams</option>
+        <option value="Miscelleous">Miscelleous</option>
+      </select> 
     </div>
   <div class="form group">
     <button type="submit" class="btn btn-success">Display Blogs</button><br><hr>

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AddblogComponent implements OnInit {
 
   blog:Blog;
-  blogType:string[]=['Players','Tournaments','Teams','Miscalleneous'];
+  
   
   constructor(private service:BlogService, private route:Router) { 
     this.blog=new Blog();
@@ -20,8 +20,7 @@ export class AddblogComponent implements OnInit {
   ngOnInit() {
   }
   addBlog(){
-    console.log(this.blog)
-  this.service.addBlog(this.blog).subscribe();
+  this.service.addBlog(this.blog).subscribe(data=> this.blog=data);
   this.blog = new Blog();
   this.route.navigate(['list']);
 }

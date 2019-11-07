@@ -7,12 +7,13 @@
      Invalid type or type cannot be empty!
    </span><br> -->
 
+
    <select name="blogType" #blogType=ngModel [(ngModel)]=blog.blogType class = "form-control" >
-     <option *ngFor="let blogs of blogType" [value]="blogs">{{blogs}}</option>
-    <!-- <option [value]="Players">Players</option>
-    <option [value]="Tournaments">Tournaments</option>
-    <option [value]="Teams">Teams</option>
-    <option [value]="Miscelleous">Miscelleous</option> -->
+    <option value="" selected disabled hidden>Choose type</option>
+    <option value="Players">Players</option>
+    <option value="Tournaments">Tournaments</option>
+    <option value="Teams">Teams</option>
+    <option value="Miscelleous">Miscelleous</option>
   </select>
   </div>
   <div class="form-group">
@@ -25,11 +26,17 @@
   </div>
   <div class="form group">
     <label>Write Blog Content</label><br>
-    <input type="text" [(ngModel)]=blog.blogContent name="content" #content=ngModel required pattern="[A-Za-z ]{3,}" placeholder="Enter Content">
+    <!-- <input type="text" [(ngModel)]=blog.blogContent name="content" #content=ngModel required pattern="[A-Za-z ]{3,}" placeholder="Enter Content">
     <span *ngIf="content.touched && content.invalid && 
     (content.errors.required || content.errors.pattern)" class="alert-warning">
      Invalid content or content cannot be empty!><br>
-     </span>
+     </span> -->
+
+     <textarea rows="7" cols="70" [(ngModel)]=blog.blogContent name="content" #content=ngModel required pattern="[A-Za-z ]{3,}" placeholder="Enter Content"></textarea>
+     <span *ngIf="content.touched && content.invalid && 
+     (content.errors.required || content.errors.pattern)" class="alert-warning">
+      Invalid content or content cannot be empty!><br>
+      </span>
   </div>
   <div class="form group">
     <br><br>
