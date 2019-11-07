@@ -22,6 +22,11 @@ public class LoginServiceTest {
 	
 	private User user;
 	
+	/* 
+	 * Test case to test if all dependency injection succeeds,
+	 * and the application loads successfully.
+	 */
+	
 	@Before
 	public void init() {
 		user = new User();

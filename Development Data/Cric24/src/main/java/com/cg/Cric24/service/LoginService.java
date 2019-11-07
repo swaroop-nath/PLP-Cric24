@@ -1,5 +1,10 @@
 package com.cg.Cric24.service;
 
+/**
+ * This is the interface of service layer
+ * @author Arvish
+ *
+ */
 import java.util.List;
 
 import com.cg.Cric24.entity.User;
@@ -7,65 +12,82 @@ import com.cg.Cric24.exception.UserNotFoundException;
 
 
 public interface LoginService {
-	// Regex to validate name- Must contain only letters, white spaces are allowed , also should start with capital latter
-	String USER_NAME_VALIDATOR = "[A-Z][A-Za-z ]+";
-	// Regex to validate phone number - Must contain 10 digits and the number should start from either 6,7,8 or 9. 
-	String USER_PHONE_VALIDATOR = "[6-9][0-9]{9}";
-	// Regex to validate email- Must contain only one @ and .
-	String USER_EMAIL_VALIDATOR = "[\\w_]+@[a-z]{3,20}.[a-z]{2,4}";
-	// Regex to validate user favorite food - Must be a word with more than 2 alphabets
-	String USER_FAV_FOOD_VALIDATOR = "[A-Za-z ]+";
-	// Regex to validate user favorite animal - Must be a word with more than 2 alphabets
-	String USER_FAV_ANIMAL_VALIDATOR = "[A-Za-z ]+";
-	// Regex to validate user Id - Must be a combination of words and numbers
-	String USER_ID_VALIDATOR = "[A-Za-z0-9]+";
-	// Regex to validate password - Must contain atleast one caps, one number and one special character (@, #, $, %).
-	String USER_PASSWORD_VALIDATOR="((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
 
-	static boolean validateUserId(String userId) {
-		return userId.matches(USER_ID_VALIDATOR);
-	}
-
-	static boolean validateUserPhone(String userPhone) {
-		return userPhone.matches(USER_PHONE_VALIDATOR);
-	}
-
-	static boolean validateUserEmail(String userEmail) {
-		return userEmail.matches(USER_EMAIL_VALIDATOR);
-	}
-
-	static boolean validateUserName(String userName) {
-		return userName.matches(USER_NAME_VALIDATOR);
-	}
-
-	static boolean validateUserFavFood(String userFavFood) {
-		return userFavFood.matches(USER_FAV_FOOD_VALIDATOR);
-
-	}
-
-	static boolean validateUserFavAnimal(String userFavAnimal) {
-		return userFavAnimal.matches(USER_FAV_ANIMAL_VALIDATOR);
-	}
-	
-	static boolean validatePassword(String userPassword) {
-		return userPassword.matches(USER_PASSWORD_VALIDATOR);
-	}
-
+	/**
+	 * This service is used to confirm entered userId and password. 
+	 * @param userId
+	 * @param userPassword
+	 * @return returns true if password is confirmed else throws exception
+	 * @throws UserNotFoundException
+	 */
 	boolean confirmPassword(String userId, String userPassword) throws UserNotFoundException;
 
+	/**
+	 * This service is called when a new user wants to create an account
+	 * @param user
+	 * @return created account details of new user
+	 */
 	User signUp(User user);
 	
+	/**
+	 * This service returns a  user based on his user-ID
+	 * @param userId
+	 * @return returns a user if present else throw exception
+	 * @throws UserNotFoundException
+	 */
 	User getUserById(String userId) throws UserNotFoundException;
 	
+	/**
+	 * This service deletes an already existing user based on user-ID.
+	 * @param userId
+	 * @return true if Id found and deleted else display exception message
+	 * @throws UserNotFoundException
+	 */
 	boolean deleteUserByUserId(String userId) throws UserNotFoundException;
 	
+	/**
+	 * This service returns list of the bloggers present for the application
+	 * @return all bloggers
+	 * @throws UserNotFoundException
+	 */
 	List<User> getAllBloggers() throws UserNotFoundException;
 	
+	/**
+	 * This service method is called if a user/admin forgets his password.
+	 * @param password
+	 * @param userId
+	 * @param favFood
+	 * @param favAnimal
+	 * @return integer value if password change is successful
+	 * @throws UserNotFoundException
+	 */
 	int changePassword(String password, String userId, String favFood, String favAnimal) throws UserNotFoundException;
 	
+	/**
+	 * This service is called to encrypt the entered password and then store into the database. 
+	 * This is done for security purposes.
+	 * @param userId
+	 * @param userPassword
+	 * @return an encrypted password
+	 * @throws UserNotFoundException
+	 */
 	String encryptPassword(String userId, String userPassword) throws UserNotFoundException;
 	
+	/**
+	 * This service method is called if a user/admin wants to change his password
+	 * @param userId
+	 * @param oldPassword
+	 * @param newPassword
+	 * @return true if password change is successful
+	 * @throws UserNotFoundException
+	 */
 	boolean updatePassword(String userId, String oldPassword, String newPassword) throws UserNotFoundException;
 	
+	/**
+	 * This service fetches a user based on his user-name
+	 * @param userName
+	 * @return details of user based on user-name if present else display exception
+	 * @throws UserNotFoundException
+	 */
 	User getByUserName(String userName) throws UserNotFoundException;
 }

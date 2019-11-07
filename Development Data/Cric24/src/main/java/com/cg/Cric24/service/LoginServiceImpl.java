@@ -2,6 +2,7 @@ package com.cg.Cric24.service;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,11 +18,14 @@ public class LoginServiceImpl implements LoginService {
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+	
+	static Logger serviceLogger = Logger.getLogger(LoginServiceImpl.class);
 
 	@Override
 	public User signUp(User user) {
 		System.out.println(passwordEncoder);
 		user.setUserPassword(passwordEncoder.encode(user.getUserPassword()));
+		serviceLogger.info("New user signing up");
 		return dao.save(user);
 	}
 
@@ -31,8 +35,10 @@ public class LoginServiceImpl implements LoginService {
 		try {
 			user = dao.findById(userId).get();
 		} catch (Exception exception) {
+			serviceLogger.error("user with given ID not present");
 			throw new UserNotFoundException("No user exists with id :" + userId);
 		}
+		serviceLogger.info("user with given user-id found");
 		return user;
 	}
 
@@ -42,9 +48,11 @@ public class LoginServiceImpl implements LoginService {
 		try {
 			user = dao.findById(userId).get();
 		} catch (Exception exception) {
+			serviceLogger.error("user with given ID not present");
 			throw new UserNotFoundException("No user exists with Id:" + userId);
 		}
 		dao.deleteById(userId);
+		serviceLogger.info("user with given user-id deleted");
 		return true;
 
 	}
@@ -52,10 +60,14 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public List<User> getAllBloggers() throws UserNotFoundException {
 		List<User> users = dao.getAllBloggers("blogger");
-		if (users.isEmpty())
+		if (users.isEmpty()) {
+			serviceLogger.error("no bloggers present");
 			throw new UserNotFoundException("No bloggers exits at the point");
-		else
+		}
+		else {
+			serviceLogger.info("list of all bloggers returned");
 			return users;
+		}
 	}
 
 	@Override
@@ -65,11 +77,13 @@ public class LoginServiceImpl implements LoginService {
 		try {
 			user = dao.findById(userId).get();
 		} catch (Exception exception) {
+			serviceLogger.error("no user with this ID present");
 			throw new UserNotFoundException("no user exists with id : " + userId);
 		}
 		if (user.getUserFavFood().equals(favFood) || user.getUserFavAnimal().equals(favAnimal)) {
 			password = passwordEncoder.encode(password);
 			int x = dao.changePassword(password, userId);
+			serviceLogger.info("send back the new encoded password with a user-ID");
 			return x;
 		} else
 			return 0;
@@ -79,10 +93,14 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public String encryptPassword(String userId, String userPassword) throws UserNotFoundException {
 		User user = dao.findById(userId).get();
-		if (user == null)
+		if (user == null) {
+			serviceLogger.error("user with given id and password not found");
 			throw new UserNotFoundException("No user exists with id :" + userId);
-		else
+		}
+		else {
+			serviceLogger.info("send the new encrypted password");
 			return passwordEncoder.encode(userPassword);
+		}
 
 	}
 
@@ -92,12 +110,14 @@ public class LoginServiceImpl implements LoginService {
 		try {
 			user = dao.findById(userId).get();
 		} catch (Exception exception) {
+			serviceLogger.error("user with given id and password not found");
 			throw new UserNotFoundException("No user exists with id :" + userId);
 		}
 		
 		if (passwordEncoder.matches(oldPassword, user.getUserPassword())) {
 			user.setUserPassword(passwordEncoder.encode(newPassword));
 			dao.save(user);
+			serviceLogger.info("updated and encrypted password sent");
 			return true;
 		} else
 			return false;
@@ -106,10 +126,14 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public User getByUserName(String userName) throws UserNotFoundException {
 		User user = dao.getByUserName(userName);
-		if (user == null)
+		if (user == null) {
+			serviceLogger.error("no user with this user name present");
 			throw new UserNotFoundException("no blogger exists with user name :" + userName);
-		else
+		}
+		else {
+			serviceLogger.info("user found");
 			return user;
+		}
 	}
 
 	@Override
@@ -118,10 +142,13 @@ public class LoginServiceImpl implements LoginService {
 		try {
 			user = dao.findById(userId).get();
 		} catch (Exception exception) {
+			serviceLogger.error("no user with this ID present");
 			throw new UserNotFoundException("No user exists with id :" + userId);
 		}
-		if (passwordEncoder.matches(userPassword,user.getUserPassword()))
+		if (passwordEncoder.matches(userPassword,user.getUserPassword())) {
+			serviceLogger.info("password confirmed");
 			return true;
+		}
 		else
 			return false;
 	}
