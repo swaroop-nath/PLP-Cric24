@@ -19,6 +19,7 @@ public class Stadium {
 
 	@Id
 	@GeneratedValue(generator = "stadiumseq")
+	@Column(name = "stadium_id")
 	private int stadiumId;
 	@Column(length = 30, name = "stadium_name", nullable=false)
 	private String stadiumName;
@@ -28,7 +29,7 @@ public class Stadium {
 	private String country;
 	@Column(name = "capacity")
 	private int capacity;
-	@Column(name = "view")
+	@Column(name = "view", length = 2048)
 	private String stadiumImage;
 	
 	
