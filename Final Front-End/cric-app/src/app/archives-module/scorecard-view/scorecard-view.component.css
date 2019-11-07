@@ -1,0 +1,8 @@
+.team-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.team-link :hover {
+    text-zoom: 1.15;
+}

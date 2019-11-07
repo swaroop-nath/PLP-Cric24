@@ -18,13 +18,41 @@
     background-color: green;
     top: 35%;
     padding: 5px;
+    width: 25%;
+    height: 100%;
 }
 
 .blogs-body {
     position: absolute;
     background-color: blue;
     top: 35%;
-    left: 30%;
+    left: 27.5%;
     padding-left: 5%;
     padding-right: 5%;
+    height: 100%;
+    width: 70%;
+}
+
+.teams-body {
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
+}
+
+.players-body {
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
+}
+
+.stadiums-body {
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
+}
+
+.auth-body {
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
 }

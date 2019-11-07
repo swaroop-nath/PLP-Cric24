@@ -1,1 +1,10 @@
-<p>scorecard-view works!</p>
+<h3> <b>
+    <a class="team-link" (click) = "viewTeamOne()">{{receivedMatch.teamOne.teamName}}</a> {{receivedMatch.matchScoreCard.teamOneScore}}/{{receivedMatch.matchScoreCard.teamOneWickets}} ({{receivedMatch.matchScoreCard.teamOneOvers}})
+    -
+    ({{receivedMatch.matchScoreCard.teamTwoOvers}}) {{receivedMatch.matchScoreCard.teamTwoScore}}/{{receivedMatch.matchScoreCard.teamTwoWickets}} <a class="team-link" (click) = "viewTeamTwo()">{{receivedMatch.teamTwo.teamName}}</a>
+    </b>
+</h3>
+
+<h4>
+    {{wonBy}}
+</h4>

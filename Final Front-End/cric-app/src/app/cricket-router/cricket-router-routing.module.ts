@@ -22,6 +22,7 @@ import { ResetPasswordComponent } from '../auth-module/reset-password/reset-pass
 import { SignUpComponent } from '../auth-module/sign-up/sign-up.component';
 import { RetrieveBloggersComponent } from '../auth-module/retrieve-bloggers/retrieve-bloggers.component';
 import { ScorecardViewComponent } from '../archives-module/scorecard-view/scorecard-view.component';
+import { TeamViewComponent } from '../teams-module/team-view/team-view.component';
 
 
 const routes: Routes = [
@@ -29,17 +30,21 @@ const routes: Routes = [
     path: '',
     component: ArchivesRetrieveComponent,
     outlet: 'archives',
-    children: [
-      {
-        path: 'scorecard-view',
-        component: ScorecardViewComponent
-      }
-    ]
   },
   {
     path: '',
     component: BlogsRetreiveAllComponent,
     outlet: 'blogs'
+  },
+  {
+    path: 'scorecard-view',
+    component: ScorecardViewComponent,
+    outlet: 'archives'
+  },
+  {
+    path: 'team-view',
+    component: TeamViewComponent,
+    outlet: 'archives'
   }
 ];
 

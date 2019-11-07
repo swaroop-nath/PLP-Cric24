@@ -7,15 +7,30 @@
   </div>
 </nav>
 
-<div class="schedule-banner">
-  <!-- <router-outlet name="schedules"></router-outlet> -->
-  <h1>Schedules Here</h1>
+<div id="schedules-outlet" class="schedule-banner">
+  <router-outlet id="schedules-outlet-child" name="schedules"></router-outlet>
 </div>
 
-<div class="archives-pane">
-  <router-outlet name="archives"></router-outlet>
+<div id="archives-outlet" class="archives-pane">
+  <router-outlet id="archives-outlet-child" name="archives"></router-outlet>
 </div>
 
-<div class="blogs-body">
-  <router-outlet name="blogs"></router-outlet>
+<div id="blogs-outlet" class="blogs-body">
+  <router-outlet id="blogs-outlet-child" name="blogs"></router-outlet>
+</div>
+
+<div id="teams-outlet" class="teams-body">
+    <router-outlet id="teams-outlet-child" name="teams"></router-outlet>
+</div>
+
+<div id="players-outlet" class="teams-body">
+  <router-outlet id="players-outlet-child" name="players"></router-outlet>
+</div>
+
+<div id="stadiums-outlet" class="teams-body">
+  <router-outlet id="stadiums-outlet-child" name="stadiums"></router-outlet>
+</div>
+
+<div id="auth-outlet" class="teams-body">
+  <router-outlet id="auth-outlet-child" name="auth"></router-outlet>
 </div>

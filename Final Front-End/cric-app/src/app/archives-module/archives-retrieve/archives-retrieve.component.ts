@@ -33,7 +33,7 @@ export class ArchivesRetrieveComponent implements OnInit {
 
   viewScoreCard(index: number) {
     this.archivesService.transitMatch = this.matches_view[index];
-    this.router.navigate(['/scorecard-view', {outlets: 'archives'}]);
+    this.router.navigate([{outlets: {'archives': ['scorecard-view']}}], {relativeTo: this.route});
   }
 
 }
