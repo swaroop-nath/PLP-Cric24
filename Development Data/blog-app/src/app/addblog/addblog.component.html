@@ -1,11 +1,19 @@
 <form (ngSubmit)="addBlog()" #addForm="ngForm">
   <div class="form-group">
     <label>Blog Type</label><br>
-    <input type="text" [(ngModel)]=blog.blogType name="type" #type=ngModel required pattern="[A-Za-z ]{3,}" placeholder="Enter type">
+    <!-- <input type="text" [(ngModel)]=blog.blogType name="type" #type=ngModel required pattern="[A-Za-z ]{3,}" placeholder="Enter type">
     <span *ngIf="type.touched && type.invalid && 
     (type.errors.required || type.errors.pattern)" class="alert-warning">
      Invalid type or type cannot be empty!
-   </span><br>
+   </span><br> -->
+
+   <select name="blogType" #blogType=ngModel [(ngModel)]=blog.blogType class = "form-control" >
+     <option *ngFor="let blogs of blogType" [value]="blogs">{{blogs}}</option>
+    <!-- <option [value]="Players">Players</option>
+    <option [value]="Tournaments">Tournaments</option>
+    <option [value]="Teams">Teams</option>
+    <option [value]="Miscelleous">Miscelleous</option> -->
+  </select>
   </div>
   <div class="form-group">
     <label>Enter Blog Heading</label><br>
