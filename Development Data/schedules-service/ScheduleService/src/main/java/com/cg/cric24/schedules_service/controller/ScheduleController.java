@@ -20,13 +20,13 @@ import com.cg.cric24.schedules_service.service.SchedulesService;
 
 @RestController
 @RequestMapping("/schedule")
-@CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET ,RequestMethod.POST})
+@CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET ,RequestMethod.POST, RequestMethod.PUT})
 public class ScheduleController {
 	
 	@Autowired
 	private SchedulesService service;
 	
-	@PostMapping(value = "/addMatch", consumes = "application/json", produces = "application/json")
+	@PostMapping(value = "/addMatch")
 	public Match addMatch(@RequestBody Match newMatch) throws ScheduleServicingException {
 		return service.addMAtch(newMatch);
 	}
@@ -36,7 +36,7 @@ public class ScheduleController {
 		return service.listAllMatches();
 	}
 	
-	@PutMapping(value = "/updateMatch", produces = "application/json", consumes = "applicatiopn/json")
+	@PutMapping(value = "/updateMatch", produces = "application/json", consumes = "application/json")
 	public Match updateMatch(@RequestBody Match updatedMatch) throws ScheduleServicingException {
 		return service.updateMatch(updatedMatch);
 	}

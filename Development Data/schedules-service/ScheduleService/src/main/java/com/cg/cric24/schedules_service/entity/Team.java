@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @NamedQuery(name = "allTeams", query = "SELECT t FROM Team t")
 @SequenceGenerator(name = "teamseq", sequenceName = "team_seq", initialValue = 1, allocationSize = 1)
@@ -30,6 +32,7 @@ public class Team {
 	@Column(length = 20)
 	private int ranking;
 	
+	@JsonIgnore
 	@ManyToMany(mappedBy = "teams", cascade = CascadeType.MERGE)
 	private Set<Player> players = new HashSet<Player>();
 	

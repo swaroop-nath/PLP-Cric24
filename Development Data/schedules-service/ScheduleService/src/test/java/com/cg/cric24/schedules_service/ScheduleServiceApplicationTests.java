@@ -39,7 +39,7 @@ public class ScheduleServiceApplicationTests {
 	@Autowired
 	private EntityManager mgr;
 			
-	@Ignore
+//	@Ignore
 	@Test
 	public void testAdd() throws ScheduleServicingException {
 		Match match = new Match();
@@ -55,7 +55,7 @@ public class ScheduleServiceApplicationTests {
 		Team teamIndia = new Team();
 		teamIndia.setTeamId(1);
 		teamIndia.setTeamName("India");
-		teamIndia.setFormat("ODI");
+		teamIndia.setFormat(MatchFormat.ODI);
 		teamIndia.setLeagues("INTL");
 		
 		Set<Player> players = new HashSet<Player>();
@@ -72,7 +72,7 @@ public class ScheduleServiceApplicationTests {
 		Team teamEngland = new Team();
 		teamEngland.setTeamId(2);
 		teamEngland.setTeamName("England");
-		teamEngland.setFormat("ODI");
+		teamEngland.setFormat(MatchFormat.ODI);
 		teamEngland.setLeagues("INTL");
 		
 		Set<Player> players2 = new HashSet<Player>();
@@ -85,6 +85,7 @@ public class ScheduleServiceApplicationTests {
 		wankhede.setStadiumName("Wankhede");
 		wankhede.setLocation("Mumbai");
 		wankhede.setCapacity(30000);
+		wankhede.setCountry("India");
 		
 //		mgr.persist(wankhede);
 //		mgr.persist(viratKohli);
@@ -117,17 +118,24 @@ public class ScheduleServiceApplicationTests {
 		service.listAllMatches();
 	}
 	
+	@Ignore
 	@Test
 	public void testUpdateStatus() throws ScheduleServicingException {
 		assertTrue(service.updateStatus(11, MatchStatus.FORFEITED));
 		
 	}
 	
+	@Ignore
 	@Test(expected = ScheduleServicingException.class)
 	public void testUpdateStausWithException() throws ScheduleServicingException {
 		service.updateStatus(4, MatchStatus.FORFEITED);
 	}
 	
+//	@Test
+//	public void testUpdate() {
+//		service.
+//	}
+//	
 	
 
 }

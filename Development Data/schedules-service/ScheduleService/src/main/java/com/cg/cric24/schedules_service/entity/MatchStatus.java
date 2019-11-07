@@ -5,7 +5,8 @@ public enum MatchStatus {
 	CONCLUDED ("CONCLUDED"),
 	FORFEITED ("FORFEITED"),
 	CANCELLED ("CANCELLED"),
-	SCHEDULED ("SCHEDULED");
+	SCHEDULED ("SCHEDULED"),
+	ONGOING ("ONGOING");
 	
 	private String statusValue;
 	
