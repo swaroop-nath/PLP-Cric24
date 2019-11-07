@@ -45,11 +45,6 @@ export class TeamsRetrieveAllComponent implements OnInit, BackStack {
     this.onStart()
   }
 
-  updateTeam(team: Team) {
-    this.service.transitTeam = team;
-    this.router.navigate([{outlets: {'teams': ['update-team']}}], {relativeTo: this.service.getParentRoute()})
-  }
-
   viewTeam(team) {
     this.service.transitTeam = team;
     this.service.addToBackStack(this);

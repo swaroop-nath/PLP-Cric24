@@ -1,10 +1,10 @@
 <button (click)="findTeams()">Find Team</button>
 
 <table class="table table-hover table-striped">
-  <tr *ngFor = "let team of teams">
+  <tr *ngFor = "let team of teams" (click) = "viewTeam(team)">
     <!-- <div class="team-details-container"> -->
-      <td class="team-rank-view" (click) = "viewTeam(team)">Rank #{{team.ranking}}</td>
-      <td class="team-details" (click) = "viewTeam(team)">
+      <td class="team-rank-view">Rank #{{team.ranking}}</td>
+      <td class="team-details">
         <table class="table table-striped">
           <tr>
             <td rowspan="2"><b>{{team.teamName}}</b></td>
@@ -15,7 +15,6 @@
           </tr>
         </table>
       </td>
-      <td><button class="btn btn-primary" (click)="updateTeam(team)">Update</button></td>
     <!-- </div> -->
   </tr>
 </table>

@@ -29,7 +29,7 @@
           <th>Wickets</th>
           <th>Role</th>
         </tr>
-        <tr *ngFor = "let player of players">
+        <tr *ngFor = "let player of players" (click)="viewPlayer(player)">
           <td>{{player.playerId}}</td>
           <td>{{player.name}}</td>
           <td>{{player.age}}</td>

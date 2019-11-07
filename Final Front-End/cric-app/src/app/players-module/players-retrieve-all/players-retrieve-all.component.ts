@@ -3,13 +3,15 @@ import { Player } from 'src/app/model/player.model';
 import { PlayersService } from '../players-service/players-service.service';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 
 @Component({
   selector: 'app-players-retrieve-all',
   templateUrl: './players-retrieve-all.component.html',
   styleUrls: ['./players-retrieve-all.component.css']
 })
-export class PlayersRetrieveAllComponent implements OnInit {
+export class PlayersRetrieveAllComponent implements OnInit, BackStack {
+  
   players:Player[];
 
   constructor(private service:PlayersService, private router: Router) {}
@@ -35,6 +37,10 @@ export class PlayersRetrieveAllComponent implements OnInit {
     $('#players-outlet').animate({height: '100%', width: '100%'}).show()
   }
 
+  initializeComponent() {
+    this.onStart();
+  }
+
   delete(index: number){
     let idDelete = this.players[index].playerId
     var ans = confirm("Are You Sure You Want To Delete?")
@@ -44,8 +50,13 @@ export class PlayersRetrieveAllComponent implements OnInit {
     }
   }
 
-  update(index: number) {
-    this.service.transitPlayer = this.players[index]
-    this.router.navigate(['players-update'])
+  viewPlayer(player: Player) {
+    this.service.transitPlayer = player;
+    this.service.addToBackStack(this);
+    this.router.navigate([{outlets: {'players': ['player-view']}}]), {relativeTo: this.service.getParentRoute()}
+  }
+
+  findPlayers() {
+    this.router.navigate([{outlets: {'players': ['find-players']}}], {relativeTo: this.service.getParentRoute()})
   }
 }

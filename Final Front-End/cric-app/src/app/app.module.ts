@@ -37,6 +37,7 @@ import { SignUpComponent } from './auth-module/sign-up/sign-up.component';
 import { LogoutComponent } from './auth-module/logout/logout.component';
 import { ScorecardViewComponent } from './archives-module/scorecard-view/scorecard-view.component';
 import { TeamViewComponent } from './teams-module/team-view/team-view.component';
+import { PlayerViewComponent } from './players-module/player-view/player-view.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { TeamViewComponent } from './teams-module/team-view/team-view.component'
     LogoutComponent,
     ScorecardViewComponent,
     TeamViewComponent,
+    PlayerViewComponent
   ],
   imports: [
     BrowserModule,

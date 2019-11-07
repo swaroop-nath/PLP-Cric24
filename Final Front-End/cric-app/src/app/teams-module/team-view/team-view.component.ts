@@ -4,6 +4,7 @@ import { TeamsService } from '../teams-service/teams-service.service';
 import * as $ from 'jquery';
 import { Match } from 'src/app/model/match.model';
 import { MatchStatus } from 'src/app/model/match-status.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-team-view',
@@ -18,7 +19,7 @@ export class TeamViewComponent implements OnInit {
   draws = 0;
   matchesForTeam: Match[];
 
-  constructor(private service: TeamsService) { }
+  constructor(private service: TeamsService, private router: Router) { }
 
   ngOnInit() {
     this.receivedTeam = this.service.transitTeam;
@@ -52,5 +53,10 @@ export class TeamViewComponent implements OnInit {
   }
 
   //TODO: Have an update team button here for admin
+
+  updateTeam(team: Team) {
+    this.service.transitTeam = team;
+    this.router.navigate([{outlets: {'teams': ['update-team']}}], {relativeTo: this.service.getParentRoute()})
+  }
 
 }

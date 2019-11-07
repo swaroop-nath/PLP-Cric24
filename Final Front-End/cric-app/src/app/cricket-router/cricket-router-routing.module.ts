@@ -23,6 +23,7 @@ import { SignUpComponent } from '../auth-module/sign-up/sign-up.component';
 import { RetrieveBloggersComponent } from '../auth-module/retrieve-bloggers/retrieve-bloggers.component';
 import { ScorecardViewComponent } from '../archives-module/scorecard-view/scorecard-view.component';
 import { TeamViewComponent } from '../teams-module/team-view/team-view.component';
+import { PlayerViewComponent } from '../players-module/player-view/player-view.component';
 
 
 const routes: Routes = [
@@ -62,8 +63,23 @@ const routes: Routes = [
     outlet: 'teams'
   },
   {
+    path: 'player-view',
+    component: PlayerViewComponent,
+    outlet: 'players'
+  },
+  {
     path: 'all-players-view',
     component: PlayersRetrieveAllComponent,
+    outlet: 'players'
+  },
+  {
+    path: 'update-player',
+    component: PlayersUpdateComponent,
+    outlet: 'players'
+  },
+  {
+    path: 'find-players',
+    component: PlayersRetrieveFieldComponent,
     outlet: 'players'
   },
   {
