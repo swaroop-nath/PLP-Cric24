@@ -1,0 +1,53 @@
+<form (ngSubmit)="updateSchedule()">
+    <table>
+        <tr>
+          <td><label for="matchSchedule">Match Schedule: </label></td>
+          <td><input type="datetime-local" [(ngModel)]="match.matchSchedule" #matchSchedule=ngModel name="matchSchedule"></td>
+        </tr>
+        <tr>
+          <td><label for="matchFormat">Match Format: </label></td>
+          <td><select [(ngModel)]= match.matchFormat name="matchFormat" #matchFormat=ngModel >
+              <option *ngFor="let format of matchFormats" [value]="format" >{{format}}</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="teamOne">Team One: </label></td>
+          <td><select [(ngModel)]= teamOneIndex name="teamOne" #teamOne=ngModel >
+              <option *ngFor="let one of teams; let i = index" [value]="i" >{{one.teamName}}</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="teamTwo">Team Two: </label></td>
+          <td><select [(ngModel)]= teamTwoIndex name="teamTwo" #teamTwo=ngModel >
+              <option *ngFor="let two of teams; let i = index" [value]="i" >{{two.teamName}}</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="matchStatus">Match status: </label></td>
+          <td><select [(ngModel)]= match.matchStatus name="matchStatus" #matchStatus=ngModel >
+              <option *ngFor="let status of matchStatuses" [value]="status" >{{status}}</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+            <td><label for="matchVenue">Match Venue: </label></td>
+            <td><select [(ngModel)]= stadiumIndex name="matchVenue" #matchVenue=ngModel >
+              <option *ngFor="let one of stadiums; let i = index" [value]="i" >{{one.stadiumName}}</option>
+              </select>
+          </td>
+          </tr>
+          
+          <tr>
+            <td><label for="matchLeague">Match League: </label></td>
+            <td><input type="text" [(ngModel)]= match.matchLeague name="matchLeague" #matchLeague=ngModel></td>
+          </tr>
+    
+          <tr>
+            <td><button type="submit" class="btn btn-info">Submit</button></td>
+          </tr>
+      </table>
+  </form>
+  

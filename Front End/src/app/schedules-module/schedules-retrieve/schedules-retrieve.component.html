@@ -1,0 +1,25 @@
+<table class="table table-bordered">
+    <tr>
+      <th>Match ID</th>
+      <th>Match Schedule</th>
+      <th>Match Venue</th>
+      <th>Match Format</th>
+      <th>Team One</th>
+      <th>Team Two</th>
+      <th>Match League</th>
+      <th>Match Status</th>
+    </tr>
+    <tr *ngFor="let match of matches">
+      <td>{{match.matchID}}</td>
+      <td>{{match.matchSchedule}}</td>
+      <td>{{match.matchVenue.stadiumName}}</td>
+      <td>{{match.matchFormat}}</td>
+      <td>{{match.teamOne.teamName}}</td>
+      <td>{{match.teamTwo.teamName}}</td>
+      <td>{{match.matchLeague}}</td>
+      <td>{{match.matchStatus}}</td>
+  
+      <td><button (click)=fetchData(match)>Update</button></td>
+  
+    </tr>
+  </table>

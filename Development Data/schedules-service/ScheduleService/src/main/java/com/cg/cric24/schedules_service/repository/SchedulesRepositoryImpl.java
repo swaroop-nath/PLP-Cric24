@@ -57,6 +57,7 @@ public class SchedulesRepositoryImpl implements SchedulesRepository {
 		}
 		else {
 			Match updatedMatch = repoLink.merge(newMatch);
+			repoLink.flush();
 			return updatedMatch;
 		}
 		

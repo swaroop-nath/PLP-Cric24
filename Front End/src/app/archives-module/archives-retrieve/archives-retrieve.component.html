@@ -1,0 +1,34 @@
+<table class="table-hover">
+    <tr>
+        <td><h3>T20 Matches</h3></td>
+        <td>
+            <table class="table-striped">
+                <tr *ngFor="let match of t20_matches">
+                    <td><a>{{ match.teamOne.teamName }}&nbsp; vs &nbsp;{{ match.teamTwo.teamName }}</a></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td><h3>ODI Matches</h3></td>
+        <td>
+            <table class="table-striped">
+                <tr *ngFor="let match of odi_matches">
+                    <td><a>{{ match.teamOne.teamName }}&nbsp; vs &nbsp;{{ match.teamTwo.teamName }}</a></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td><h3>Test Matches</h3></td>
+        <td>
+            <table class="table-striped">
+                <tr *ngFor="let match of test_matches">
+                    <td><a>{{ match.teamOne.teamName }}&nbsp; vs &nbsp;{{ match.teamTwo.teamName }}</a></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

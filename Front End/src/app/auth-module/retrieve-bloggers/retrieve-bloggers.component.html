@@ -1,0 +1,19 @@
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Mail id</th>
+        <th scope="col">Mobile no.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i=index">
+        <th>{{user.userId}}</th>
+        <th>{{user.userName}}</th>
+        <th>{{user.userEmail}}</th>
+        <th>{{user.userPhone}}</th>
+        <td><button class="btn btn-warning" (click)="delete(i)">Delete Trainer</button></td>
+      </tr>
+    </tbody>
+  </table>
