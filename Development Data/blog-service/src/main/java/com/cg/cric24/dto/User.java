@@ -29,16 +29,14 @@ public class User {
 	private String userFavFood;
 	@Column(name = "user_Fav_Animal")
 	private String userFavAnimal;
-	@OneToMany(mappedBy = "blogger", cascade = CascadeType.ALL)
-	private List<Blog> blogs;
-
-	public List<Blog> getBlogs() {
-		return blogs;
-	}
-
-	public void setBlogs(List<Blog> blogs) {
-		this.blogs = blogs;
-	}
+//
+//	public List<Blog> getBlogs() {
+//		return blogs;
+//	}
+//
+//	public void setBlogs(List<Blog> blogs) {
+//		this.blogs = blogs;
+//	}
 
 	public String getUserId() {
 		return userId;

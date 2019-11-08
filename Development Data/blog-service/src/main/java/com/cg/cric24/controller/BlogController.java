@@ -11,6 +11,8 @@ package com.cg.cric24.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.apache.log4j.Logger;
 import org.hibernate.query.criteria.internal.expression.ConcatExpression;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +46,7 @@ public class BlogController {
 	 * 
 	 */
 	@PostMapping(value = "/add",produces = "application/json",consumes = "application/json")
-	public Blog addNewBlog(@RequestBody Blog blog) {
+	public Blog addNewBlog(@Valid @RequestBody Blog blog) {
 		controllerLogger.info("To add a new blog");
 		return service.addBLog(blog);
 	}
@@ -90,6 +92,11 @@ public class BlogController {
 	@GetMapping(value="/search/{blogType}",produces = "application/json")
 	public List<Blog> searchByCategory(@PathVariable String blogType) throws BlogNotFoundException{
 		controllerLogger.info("Search blog on the basis of type");
-		return service.searchByCategory(blogType);
+		try {
+			return service.searchByCategory(blogType);
+		} catch (BlogNotFoundException e) {
+			e.setUriDetails("uri= /blog/search/" + blogType);
+			throw e;
+		}
 	}
 }

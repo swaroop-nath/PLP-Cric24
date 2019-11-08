@@ -8,3 +8,35 @@
 [http-nio-8183-exec-3] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
 [http-nio-8183-exec-2] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
 [http-nio-8183-exec-2] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-1] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-1] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-4] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-4] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-1] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-1] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-5] INFO  com.cg.cric24.controller.BlogController  - To get the list of all existing blogs
+[http-nio-8183-exec-5] INFO  com.cg.cric24.service.BlogServiceImpl  - List of all blogs added
+[http-nio-8183-exec-2] INFO  com.cg.cric24.controller.BlogController  - Search blog on the basis of type
+[http-nio-8183-exec-2] INFO  com.cg.cric24.service.BlogServiceImpl  - Search by category successful
+[http-nio-8183-exec-4] INFO  com.cg.cric24.controller.BlogController  - To get the list of all existing blogs
+[http-nio-8183-exec-5] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-5] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-4] INFO  com.cg.cric24.service.BlogServiceImpl  - List of all blogs added
+[http-nio-8183-exec-6] INFO  com.cg.cric24.controller.BlogController  - To get the list of all existing blogs
+[http-nio-8183-exec-6] INFO  com.cg.cric24.service.BlogServiceImpl  - List of all blogs added
+[http-nio-8183-exec-1] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-1] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-2] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-2] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-1] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-1] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-2] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-2] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-5] INFO  com.cg.cric24.controller.BlogController  - To get the list of all existing blogs
+[http-nio-8183-exec-5] INFO  com.cg.cric24.service.BlogServiceImpl  - List of all blogs added
+[http-nio-8183-exec-6] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-6] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-7] INFO  com.cg.cric24.controller.BlogController  - To get the list of all existing blogs
+[http-nio-8183-exec-7] INFO  com.cg.cric24.service.BlogServiceImpl  - List of all blogs added
+[http-nio-8183-exec-8] INFO  com.cg.cric24.controller.BlogController  - To get the list of all existing blogs
+[http-nio-8183-exec-8] INFO  com.cg.cric24.service.BlogServiceImpl  - List of all blogs added
