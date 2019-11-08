@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Team } from 'src/app/model/team.model';
 import { TeamsService } from '../teams-service/teams-service.service';
 import { Router } from '@angular/router';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-teams-retrieve-field',
   templateUrl: './teams-retrieve-field.component.html',
   styleUrls: ['./teams-retrieve-field.component.css']
 })
-export class TeamsRetrieveFieldComponent implements OnInit {
+export class TeamsRetrieveFieldComponent implements OnInit, BackStack {
+  
   teams: Team[];
   teamName: string;
   fetchId:number;
@@ -18,6 +21,19 @@ export class TeamsRetrieveFieldComponent implements OnInit {
 
   ngOnInit() {
     this.teams = [];
+  }
+
+  onStart() {
+    $('#schedules-outlet').animate({height: '0px', width: '0px'}).hide()
+    $('#archives-outlet').animate({height: '0px', width: '0px'}).hide()
+    $('#blogs-outlet').animate({height: '0px', width: '0px'}).hide()
+    $('#players-outlet').animate({height: '0px', width: '0px'}).hide()
+    $('#stadiums-outlet').animate({height: '0px', width: '0px'}).hide()
+    $('#teams-outlet').animate({height: '100%', width: '100%'}).show()
+  }
+
+  initializeComponent() {
+    this.onStart();
   }
 
   findTeamById(){
@@ -37,7 +53,13 @@ export class TeamsRetrieveFieldComponent implements OnInit {
 
   updateTeam(team: Team) {
     this.service.transitTeam = team;
-    this.router.navigate(['teams-update']);
+    this.router.navigate([{outlets: {'teams': ['update-team']}}], {relativeTo: this.service.getParentRoute()})
+  }
+
+  viewTeam(team) {
+    this.service.transitTeam = team;
+    this.service.addToBackStack(this);
+    this.router.navigate([{outlets: {'teams': ['team-view']}}], {relativeTo: this.service.getParentRoute()})
   }
 
   deleteTeam(index: number) {

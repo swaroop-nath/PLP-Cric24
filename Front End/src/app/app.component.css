@@ -1,3 +1,7 @@
+a {
+    cursor: pointer;
+}
+
 .navbar-header {
     margin-left: 2.5%
 }
@@ -34,25 +38,22 @@
 }
 
 .teams-body {
-    visibility: hidden;
+    position: absolute;
     width: 0%;
     height: 0%;
+    background-color: red
 }
 
 .players-body {
-    visibility: hidden;
+    position: absolute;
     width: 0%;
     height: 0%;
+    background-color: black
 }
 
 .stadiums-body {
-    visibility: hidden;
+    position: absolute;
     width: 0%;
     height: 0%;
-}
-
-.auth-body {
-    visibility: hidden;
-    width: 0%;
-    height: 0%;
+    background-color: violet
 }

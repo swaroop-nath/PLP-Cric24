@@ -9,7 +9,7 @@ export class Player {
         public roleType: RoleType = null,
         public age : number = 0,
         public nationality : string = '',
-        public rating : number = 0.0,
+        public rating : number = 0,
         public runs : number = 0,
         public wickets : number = 0
     ){}

@@ -15,22 +15,22 @@ export class BlogsRetreiveAllComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.listBlog().subscribe(fetchedBlogs => {
-      this.blogs = fetchedBlogs;
-    });
+    this.service.listBlog().subscribe(p => this.blogs=p);
   }
 
   approveBlogs(blog: Blog){
+    // console.log(blogId)
     let blogId = blog.blogId;
     this.service.approveBlogs(blogId).subscribe(val => {
       blog.status = 'Approved';
     });
   }
-
+  
   rejectBlogs(blog:Blog){
     let blogId = blog.blogId;
     this.service.rejectBlogs(blogId).subscribe(val => {
       blog.status = 'Rejected';
     });
   }
+
 }

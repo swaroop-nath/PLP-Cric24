@@ -1,3 +1,5 @@
+<button (click)="findPlayers()">Find Player</button>
+
 <table class="table table-bordered">
         <tr>
           <th>Id</th>
@@ -11,7 +13,7 @@
           <th>Action</th>
           <!-- <th>Action</th> -->
         </tr>
-        <tr *ngFor="let pla of players;let i = index">
+        <tr *ngFor="let pla of players" (click) = "viewPlayer(pla)">
           <td>{{pla.playerId}}</td>
           <td>{{pla.name}}</td>
           <td>{{pla.age}}</td>
@@ -20,8 +22,7 @@
           <td>{{pla.roleType}}</td>
           <td>{{pla.runs}}</td>
           <td>{{pla.wickets}}</td>
-          <td><button class="btn btn-primary" (click)="update(i)">Update</button></td>
           <!-- <td><button class="btn btn-warning" (click)="delete(i)">Delete</button></td> -->
         </tr>
-      </table>
+</table>
       

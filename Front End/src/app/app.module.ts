@@ -37,6 +37,7 @@ import { SignUpComponent } from './auth-module/sign-up/sign-up.component';
 import { LogoutComponent } from './auth-module/logout/logout.component';
 import { ScorecardViewComponent } from './archives-module/scorecard-view/scorecard-view.component';
 import { TeamViewComponent } from './teams-module/team-view/team-view.component';
+import { PlayerViewComponent } from './players-module/player-view/player-view.component';
 import { SchedulesCreateComponent } from './schedules-module/schedules-create/schedules-create.component';
 import { SchedulesRetrieveComponent } from './schedules-module/schedules-retrieve/schedules-retrieve.component';
 import { SchedulesUpdateComponent } from './schedules-module/schedules-update/schedules-update.component';
@@ -75,8 +76,9 @@ import { SchedulesUpdateComponent } from './schedules-module/schedules-update/sc
     ResetPasswordComponent,
     SignUpComponent,
     LogoutComponent,
-     ScorecardViewComponent,
+    ScorecardViewComponent,
     TeamViewComponent,
+    PlayerViewComponent,
     SchedulesCreateComponent,
     SchedulesRetrieveComponent,
     SchedulesUpdateComponent,

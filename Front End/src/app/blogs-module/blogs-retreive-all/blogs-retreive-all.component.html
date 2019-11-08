@@ -1,20 +1,20 @@
 <table class="table table-bordered">
-    <tr>
-      <th>Blog ID</th>
-      <th>Blog Type</th>
-      <th>Blog Heading</th>
-      <th>Blog Content</th>
-      <th>Blog Status</th>
+  <tr>
+    <th>Blog ID</th>
+    <th>Blog Type</th>
+    <th>Blog Heading</th>
+    <th>Blog Content</th>
+    <th>Blog Status</th>
+  </tr>
+  <tr *ngFor="let blg of blogs; let i of index">
+    <td>{{blg.blogId}}</td>
+    <td>{{blg.blogType}}</td>
+    <td>{{blg.blogHeading}}</td>
+    <td>{{blg.blogContent}}</td>
+    <td>{{blg.status}}</td>
+    <td><button [disabled]="blg.status==='Approved' || blg.status==='Rejected'" class="btn btn-info" (click)="approveBlogs(i)">Approve</button></td>
+    <td><button [disabled]="blg.status==='Approved' || blg.status==='Rejected'" class="btn btn-info" (click)="rejectBlogs(i)">Reject</button></td>
     </tr>
-    <tr *ngFor="let blg of blogs; let i of index">
-      <td>{{blg.blogId}}</td>
-      <td>{{blg.blogType}}</td>
-      <td>{{blg.blogHeading}}</td>
-      <td>{{blg.blogContent}}</td>
-      <td>{{blg.status}}</td>
-      <td><button [disabled]="blg.status==='Approved' || blg.status==='Rejected'" class="btn btn-info" (click)="approveBlogs(i)">Approve</button></td>
-      <td><button [disabled]="blg.status==='Approved' || blg.status==='Rejected'" class="btn btn-info" (click)="rejectBlogs(i)">Reject</button></td>
-      </tr>
-  
-  
-  </table>
+
+
+</table>

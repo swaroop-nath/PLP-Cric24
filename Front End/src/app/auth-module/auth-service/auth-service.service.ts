@@ -54,5 +54,4 @@ export class AuthService {
     sessionStorage.removeItem('type');
   }
 
-
 }

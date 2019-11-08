@@ -23,39 +23,73 @@ import { SignUpComponent } from '../auth-module/sign-up/sign-up.component';
 import { RetrieveBloggersComponent } from '../auth-module/retrieve-bloggers/retrieve-bloggers.component';
 import { ScorecardViewComponent } from '../archives-module/scorecard-view/scorecard-view.component';
 import { TeamViewComponent } from '../teams-module/team-view/team-view.component';
+import { PlayerViewComponent } from '../players-module/player-view/player-view.component';
 import { SchedulesRetrieveComponent } from '../schedules-module/schedules-retrieve/schedules-retrieve.component';
 import { SchedulesCreateComponent } from '../schedules-module/schedules-create/schedules-create.component';
 import { SchedulesUpdateComponent } from '../schedules-module/schedules-update/schedules-update.component';
 
 
 const routes: Routes = [
- 
-  //  {
-  //   path: '',
-  //   component: ArchivesRetrieveComponent,
-  //   outlet: 'archives',
-  // },
-  // {
-  //   path: '',
-  //   component: BlogsRetreiveAllComponent,
-  //   outlet: 'blogs'
-  // },
-  // {
-  //   path: 'scorecard-view',
-  //   component: ScorecardViewComponent,
-  //   outlet: 'archives'
-  // },
-  // {
-  //   path: 'team-view',
-  //   component: TeamViewComponent,
-  //   outlet: 'archives'
-  // },
-
-
-  // {path:'', component:SchedulesRetrieveComponent},
-  {path:'list', component:SchedulesRetrieveComponent},
-  {path:'add', component:SchedulesCreateComponent},
-  {path:'update', component:SchedulesUpdateComponent}
+  {
+    path: '',
+    component: ArchivesRetrieveComponent,
+    outlet: 'archives',
+  },
+  {
+    path: '',
+    component: BlogsRetreiveAllComponent,
+    outlet: 'blogs'
+  }, // Include schedule retrieve all component too.
+  {
+    path: 'scorecard-view',
+    component: ScorecardViewComponent,
+    outlet: 'archives'
+  },
+  {
+    path: 'team-view',
+    component: TeamViewComponent,
+    outlet: 'teams'
+  },
+  {
+    path: 'all-teams-view',
+    component: TeamsRetrieveAllComponent,
+    outlet: 'teams'
+  },
+  {
+    path: 'update-team',
+    component: TeamsUpdateComponent,
+    outlet: 'teams'
+  },
+  {
+    path: 'find-teams',
+    component: TeamsRetrieveFieldComponent,
+    outlet: 'teams'
+  },
+  {
+    path: 'player-view',
+    component: PlayerViewComponent,
+    outlet: 'players'
+  },
+  {
+    path: 'all-players-view',
+    component: PlayersRetrieveAllComponent,
+    outlet: 'players'
+  },
+  {
+    path: 'update-player',
+    component: PlayersUpdateComponent,
+    outlet: 'players'
+  },
+  {
+    path: 'find-players',
+    component: PlayersRetrieveFieldComponent,
+    outlet: 'players'
+  },
+  {
+    path: 'all-stadiums-view',
+    component: StadiumsRetrieveAllComponent,
+    outlet: 'stadiums'
+  }
 ];
 
 @NgModule({

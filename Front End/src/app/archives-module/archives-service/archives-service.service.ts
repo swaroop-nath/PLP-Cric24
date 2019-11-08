@@ -6,6 +6,7 @@ import { Team } from 'src/app/model/team.model';
 import { TeamsService } from 'src/app/teams-module/teams-service/teams-service.service';
 import { Stadium } from 'src/app/model/stadium.model';
 import { StadiumsService } from 'src/app/stadiums-module/stadiums-service/stadiums-service.service';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -53,5 +54,17 @@ export class ArchivesService {
 
   public fetchAllStadiums(): Observable<Stadium[]> {
     return this.stadiumsService.listStadium();
+  }
+
+  getParentRoute() {
+    return this.cricService.parentRoute;
+  }
+
+  getFromBackStack() {
+    return this.cricService.componentBackStack.pop();
+  }
+
+  addToBackStack(component: BackStack) {
+    return this.cricService.componentBackStack.push(component)
   }
 }

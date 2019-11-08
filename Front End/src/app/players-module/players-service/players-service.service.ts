@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CricketService } from 'src/app/cricket-service/cricket-service.service';
 import { TeamsService } from 'src/app/teams-module/teams-service/teams-service.service';
 import { Team } from 'src/app/model/team.model';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,17 @@ export class PlayersService {
 
   public fetchAllTeams(): Observable<Team[]> {
     return this.teamsService.fetchAllTeams();
+  }
+
+  getFromBackStack() {
+    return this.cricService.componentBackStack.pop();
+  }
+
+  addToBackStack(component: BackStack) {
+    return this.cricService.componentBackStack.push(component)
+  }
+
+  getParentRoute() {
+    return this.cricService.parentRoute;
   }
 }

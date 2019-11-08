@@ -17,7 +17,7 @@
   </form>
   
   <div [hidden]="!submitted">
-  <table class="table table-bordered">
+  <table class="table table-striped">
     <tr>
       <th>Id</th>
       <th>Name</th>
@@ -25,10 +25,9 @@
       <th>Format</th>
       <th>League</th>
       <th>Action</th>
-      <th>Action</th>
     </tr>
     <tr
-      *ngFor = "let team of teams; let i = index">
+      *ngFor = "let team of teams">
       <td>{{team.teamId}}</td>
       <td>{{team.teamName}}</td>
       <td>{{team.ranking}}</td>
