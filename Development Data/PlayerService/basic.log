@@ -1,0 +1,127 @@
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get a player on basis of ID
+2019-11-08-http-nio-8889-exec-2-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given Id not found else search successful
+2019-11-08-http-nio-8889-exec-2-ERROR-com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:PLayer with given Id not found
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get a player on basis of ID
+2019-11-08-http-nio-8889-exec-1-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given Id not found else search successful
+2019-11-08-http-nio-8889-exec-1-ERROR-com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:PLayer with given Id not found
+2019-11-08-http-nio-8889-exec-5-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get a player on basis of ID
+2019-11-08-http-nio-8889-exec-5-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given Id not found else search successful
+2019-11-08-http-nio-8889-exec-5-ERROR-com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:PLayer with given Id not found
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get a player on basis of ID
+2019-11-08-http-nio-8889-exec-2-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given Id not found else search successful
+2019-11-08-http-nio-8889-exec-2-ERROR-com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:PLayer with given Id not found
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:To add a new player
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Delete a player based on given ID
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:delete details of player
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:delete successful
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Delete a player based on given ID
+2019-11-08-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:delete details of player
+2019-11-08-http-nio-8889-exec-9-ERROR-com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:PLayer with given id not found
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-5-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-5-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:To add a new player
+2019-11-08-http-nio-8889-exec-8-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-8-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-8-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:To add a new player
+2019-11-08-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:To add a new player
+2019-11-08-http-nio-8889-exec-10-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-10-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Delete a player based on given ID
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:delete details of player
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:delete successful
+2019-11-08-http-nio-8889-exec-5-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Delete a player based on given ID
+2019-11-08-http-nio-8889-exec-5-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:delete details of player
+2019-11-08-http-nio-8889-exec-5-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:delete successful
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Delete a player based on given ID
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:delete details of player
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:delete successful
+2019-11-08-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-2-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To add a new player
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:To add a new player
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-3-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-4-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get a player on basis of ID
+2019-11-08-http-nio-8889-exec-6-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given Id not found else search successful
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:search successful
+2019-11-08-http-nio-8889-exec-5-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get a player on basis of ID
+2019-11-08-http-nio-8889-exec-5-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given Id not found else search successful
+2019-11-08-http-nio-8889-exec-5-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:search successful
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get a player on basis of ID
+2019-11-08-http-nio-8889-exec-7-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given Id not found else search successful
+2019-11-08-http-nio-8889-exec-7-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:search successful
+2019-11-08-http-nio-8889-exec-8-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get a player on basis of ID
+2019-11-08-http-nio-8889-exec-8-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given Id not found else search successful
+2019-11-08-http-nio-8889-exec-8-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:search successful
+2019-11-08-http-nio-8889-exec-10-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Get all players on basis of name
+2019-11-08-http-nio-8889-exec-10-ERROR-com.cg.Cric24.Player_Service.service.PlayerServiceImpl:PLayer with given name not found else search successful
+2019-11-08-http-nio-8889-exec-10-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:search successful
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-1-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
+2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added

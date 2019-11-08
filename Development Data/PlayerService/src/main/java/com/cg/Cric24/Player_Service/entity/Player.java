@@ -2,11 +2,18 @@ package com.cg.Cric24.Player_Service.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
+/**
+ * This is the entity for player
+ * 
+ * @author Akash Sarkar
+ *
+ */
 @Entity
 @NamedQuery(name = "allPlayers", query = "SELECT p FROM Player p")
 @NamedQuery(name = "byName", query = "SELECT p FROM Player p WHERE p.name=:nam")
@@ -17,31 +24,42 @@ public class Player {
 	@GeneratedValue(generator = "playseq")
 	@Column(name = "player_id")
 	private int playerId;
-	
+
+	@NotEmpty(message = "Player name cannot be empty")
 	@Column(length = 20)
 	private String name;
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name = "player_team_master", 
-	joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "player_id"), 
-	inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "team_id"))
-	
+	@JoinTable(name = "player_team_master", joinColumns = @JoinColumn(name = "player_id", referencedColumnName = "player_id"), inverseJoinColumns = @JoinColumn(name = "team_id", referencedColumnName = "team_id"))
+
 	private List<Team> teams = new ArrayList<Team>();
 
+	@Min(value = 10, message = "Age should not be less than 18")
+	@Max(value = 1000, message = "Age should not be greater than 100")
 	@Column(length = 5)
 	private int age;
+
+	@NotEmpty(message = "Player nationality cannot be empty")
 	@Column(length = 20)
 	private String nationality;
+
+	@Min(value = 10, message = "Rating should not be less than 100")
+	@Max(value = 1000, message = "Rating should not be greater than 1000")
 	@Column(length = 5)
 	private int rating;
+
+	@Min(value = 10)
 	@Column(length = 7)
 	private int runs;
+
+	@Min(value = 0)
 	@Column(length = 5)
 	private int wickets;
 	
+	@NotEmpty(message = "Role type cannot be empty")
 	@Enumerated(EnumType.STRING)
 	private RoleType roleType;
-	
+
 	public int getPlayerId() {
 		return playerId;
 	}
@@ -101,11 +119,11 @@ public class Player {
 	public RoleType getRoleType() {
 		return roleType;
 	}
-	
+
 	public void setRoleType(RoleType roleType) {
 		this.roleType = roleType;
 	}
-	
+
 	public void addToTeams(Team newTeam) {
 		this.teams.add(newTeam);
 	}
@@ -117,5 +135,5 @@ public class Player {
 	public void setTeams(List<Team> teams) {
 		this.teams = teams;
 	}
-	
-} 
+
+}
