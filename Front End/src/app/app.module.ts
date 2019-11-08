@@ -41,6 +41,7 @@ import { PlayerViewComponent } from './players-module/player-view/player-view.co
 import { SchedulesCreateComponent } from './schedules-module/schedules-create/schedules-create.component';
 import { SchedulesRetrieveComponent } from './schedules-module/schedules-retrieve/schedules-retrieve.component';
 import { SchedulesUpdateComponent } from './schedules-module/schedules-update/schedules-update.component';
+import { AuthLoginComponent } from './auth-module/auth-login/auth-login.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { SchedulesUpdateComponent } from './schedules-module/schedules-update/sc
     SchedulesCreateComponent,
     SchedulesRetrieveComponent,
     SchedulesUpdateComponent,
+    AuthLoginComponent,
   ],
   imports: [
     BrowserModule,

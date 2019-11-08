@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CricketService } from './cricket-service/cricket-service.service';
 
 @Component({
@@ -12,11 +12,16 @@ export class AppComponent implements OnInit {
   
   title = 'cric-app';
 
-  constructor(private route: ActivatedRoute, private cricService: CricketService) {
+  constructor(private route: ActivatedRoute, private cricService: CricketService, private router:Router) {
     cricService.parentRoute = route;
   }
 
   ngOnInit(): void {
+  }
+
+  loginPopUp(){
+    this.router.navigate([{outlets: {'auth':'auth-login'}}]);
+    $(window).blur();
   }
 
   

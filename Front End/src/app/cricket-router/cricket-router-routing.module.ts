@@ -27,6 +27,7 @@ import { PlayerViewComponent } from '../players-module/player-view/player-view.c
 import { SchedulesRetrieveComponent } from '../schedules-module/schedules-retrieve/schedules-retrieve.component';
 import { SchedulesCreateComponent } from '../schedules-module/schedules-create/schedules-create.component';
 import { SchedulesUpdateComponent } from '../schedules-module/schedules-update/schedules-update.component';
+import { AuthLoginComponent } from '../auth-module/auth-login/auth-login.component';
 
 
 const routes: Routes = [
@@ -89,6 +90,11 @@ const routes: Routes = [
     path: 'all-stadiums-view',
     component: StadiumsRetrieveAllComponent,
     outlet: 'stadiums'
+  },
+  {
+    path: 'auth-login',
+    component:AuthLoginComponent,
+    outlet: 'auth'
   }
 ];
 

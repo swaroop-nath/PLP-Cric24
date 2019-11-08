@@ -1,0 +1,18 @@
+<div class="container">
+    <form (ngSubmit)="login()" #loginForm="ngForm" class="box">
+      
+    <h1>Sign in</h1>
+    <input type="text" name="id" [(ngModel)]=id #userId=ngModel required pattern="[A-Za-z0-9]+" placeholder="User Id">
+    <span *ngIf="userId.touched && userId.invalid && (userId.errors.required || userId.errors.pattern)" class="warning">
+        Invalid User ID or user Id cannot be empty!
+    </span>
+    <br>
+    <input type="password" name="password" [(ngModel)]=password #userPassword=ngModel required placeholder="Password">
+    <span *ngIf="userPassword.touched && userPassword.invalid && (userPassword.errors.required || userPassword.errors.pattern)" class="warning">
+        Invalid password or password cannot be empty!
+    </span>
+    <br>
+    <button type="submit" [disabled]="!loginForm.valid" >Login</button>
+ 
+  </form>
+</div>
