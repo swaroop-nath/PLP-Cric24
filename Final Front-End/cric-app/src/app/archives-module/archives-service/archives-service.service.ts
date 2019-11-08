@@ -67,4 +67,8 @@ export class ArchivesService {
   addToBackStack(component: BackStack) {
     return this.cricService.componentBackStack.push(component)
   }
+  
+  getUser(): string {
+    return this.authService.isUserLoggedIn();
+  }
 }

@@ -3,6 +3,7 @@ import { Blog } from 'src/app/model/blog.model';
 import { CricketService } from 'src/app/cricket-service/cricket-service.service';
 import { Observable } from 'rxjs';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface';
+import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,11 @@ export class BlogsService {
   private FETCH_BY_CAT_EXT = '/search/';
   private APPROVE_EXT = '/approve/';
   private REJECT_EXT = '/reject/';
-  transitBlog: Blog;
 
-  constructor(private cricService: CricketService) { }
+  transitBlog: Blog;
+  blogs_master: Blog[];
+
+  constructor(private cricService: CricketService, private authService: AuthService) { }
 
   addBlog(blog:Blog): Observable<Blog>{
     return this.cricService.persistEntityForEntity<Blog, Blog>(this.BASE_URL + this.ADD_EXT, blog);
@@ -49,5 +52,9 @@ export class BlogsService {
 
   addToBackStack(component: BackStack) {
     return this.cricService.componentBackStack.push(component)
+  }
+
+  getUser(): string {
+    return this.authService.isUserLoggedIn();
   }
 }

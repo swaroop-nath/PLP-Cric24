@@ -3,6 +3,7 @@ import { CricketService } from 'src/app/cricket-service/cricket-service.service'
 import { Observable } from 'rxjs';
 import { Stadium } from 'src/app/model/stadium.model';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface';
+import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class StadiumsService {
 
   transitStadium: Stadium;
 
-  constructor(private cricService: CricketService) { }
+  constructor(private cricService: CricketService, private authService: AuthService) { }
 
   saveStadium(stad : Stadium){
     return this.cricService.persistEntityForEntity<Stadium, Stadium>(this.BASE_URL + this.ADD_EXT, stad);
@@ -60,5 +61,9 @@ export class StadiumsService {
 
   getParentRoute() {
     return this.cricService.parentRoute;
+  }
+
+  getUser(): string {
+    return this.authService.isUserLoggedIn();
   }
 }

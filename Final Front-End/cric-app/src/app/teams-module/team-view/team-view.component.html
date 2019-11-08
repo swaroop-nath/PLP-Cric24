@@ -32,3 +32,7 @@
         </tr>
     </table>
 </div>
+
+<div [hidden]="isNotAdmin">
+    <button class="btn btn-primary" (click)="updateTeam()"></button>
+</div>

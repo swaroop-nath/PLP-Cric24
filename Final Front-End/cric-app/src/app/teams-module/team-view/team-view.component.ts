@@ -18,12 +18,15 @@ export class TeamViewComponent implements OnInit {
   losses = 0;
   draws = 0;
   matchesForTeam: Match[];
+  isNotAdmin: boolean = true;
 
   constructor(private service: TeamsService, private router: Router) { }
 
   ngOnInit() {
     this.receivedTeam = this.service.transitTeam;
 
+    this.isNotAdmin = this.service.getUser() != 'admin';
+ 
     this.service.fetchMatchesByTeam(this.receivedTeam).subscribe(fetchedMatches => {
       this.matchesForTeam = fetchedMatches;
 
@@ -54,8 +57,8 @@ export class TeamViewComponent implements OnInit {
 
   //TODO: Have an update team button here for admin
 
-  updateTeam(team: Team) {
-    this.service.transitTeam = team;
+  updateTeam() {
+    this.service.transitTeam = this.receivedTeam;
     this.router.navigate([{outlets: {'teams': ['update-team']}}], {relativeTo: this.service.getParentRoute()})
   }
 

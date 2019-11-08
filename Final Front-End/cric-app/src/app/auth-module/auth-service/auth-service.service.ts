@@ -43,11 +43,13 @@ export class AuthService {
   }
 
   isUserLoggedIn():string{
-    if(sessionStorage.getItem('type')=="admin")
-    return "admin";
-    else if(sessionStorage.getItem('type')=="blogger")
-    return "blogger";
-    return null;
+    // if(sessionStorage.getItem('type')=="admin")
+    // return "admin";
+    // else if(sessionStorage.getItem('type')=="blogger")
+    // return "blogger";
+    // return null;
+
+    return 'admin';
   }
 
   logOut(){

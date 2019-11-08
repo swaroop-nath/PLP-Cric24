@@ -6,6 +6,7 @@ import { PlayersService } from 'src/app/players-module/players-service/players-s
 import { Player } from 'src/app/model/player.model';
 import { Match } from 'src/app/model/match.model';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface'
+import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class TeamsService {
 
   transitTeam: Team;
 
-  constructor(private cricService: CricketService) { }
+  constructor(private cricService: CricketService, private authService: AuthService) { }
 
   public fetchAllTeams(): Observable<Team[]> {
     return this.cricService.fetchAll<Team>(this.BASE_URL + this.LIST_ALL_EXT);
@@ -67,5 +68,9 @@ export class TeamsService {
 
   getParentRoute() {
     return this.cricService.parentRoute;
+  }
+
+  getUser(): string {
+    return this.authService.isUserLoggedIn();
   }
 }

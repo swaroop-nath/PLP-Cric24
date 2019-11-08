@@ -11,11 +11,13 @@ import { Router } from '@angular/router';
 export class StadiumViewComponent implements OnInit {
 
   private receivedStadium: Stadium;
+  private isNotAdmin: boolean = true;
 
   constructor(private service: StadiumsService, private router: Router) { }
 
   ngOnInit() {
     this.receivedStadium = this.service.transitStadium;
+    this.isNotAdmin = this.service.getUser() != 'admin';
   }
 
   update() {

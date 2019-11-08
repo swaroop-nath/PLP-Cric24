@@ -12,43 +12,39 @@ import * as $ from 'jquery';
 })
 export class BlogsRetreiveAllComponent implements OnInit, BackStack {
 
-  blogs_master: Blog[];
   blogs_view: Blog[]
 
   constructor(private service:BlogsService, private router:Router) { 
   }
 
   ngOnInit() {
-    // Using sessionStorage to list unapproved blogs if admin is logged in
     this.blogs_view = []
+
+    let viewFilter = this.determineViewFilter();
+
     this.service.listBlog().subscribe(fetchedBlogs => {
-      this.blogs_master=fetchedBlogs;
-      this.blogs_master.forEach(blog => {
-        if (blog.status=='Approved')
+      this.service.blogs_master=fetchedBlogs;
+      
+      this.service.blogs_master.forEach(blog => {
+        if (blog.status == viewFilter)
           this.blogs_view.push(blog)
       })
     });
+  }
+
+  determineViewFilter() {
+    let loggedInUser = this.service.getUser()
+
+    if(loggedInUser == 'admin')
+      return 'Unapproved';
+    else if (loggedInUser == 'blogger' || loggedInUser == null)
+      return 'Approved';
   }
 
   initializeComponent() {
     $('#schedules-outlet').animate({height: '150px', width: '100%'}).show()
     $('#archives-outlet').animate({height: '100%', width: '25%'}, 500).show()
     $('#blogs-outlet').animate({height: '100%', width: '70%'})
-  }
-
-  approveBlogs(blog: Blog){
-    // console.log(blogId)
-    let blogId = blog.blogId;
-    this.service.approveBlogs(blogId).subscribe(val => {
-      blog.status = 'Approved';
-    });
-  }
-  
-  rejectBlogs(blog:Blog){
-    let blogId = blog.blogId;
-    this.service.rejectBlogs(blogId).subscribe(val => {
-      blog.status = 'Rejected';
-    });
   }
 
   findBlogs() {

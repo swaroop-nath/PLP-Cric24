@@ -1,1 +1,9 @@
-<p>blog-view works!</p>
+<h2>{{receivedBlog.blogHeading}}</h2>
+<p>
+    {{receivedBlog.blogContent}}
+</p>
+
+<div [hidden]="isNotAdmin">
+    <button class="btn btn-primary" (click)="approveBlog()">Approve Blog</button>
+    <button class="btn btn-primary" (click)="rejectBlog()">Reject Blog</button>
+</div>

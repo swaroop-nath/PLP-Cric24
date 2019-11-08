@@ -1,1 +1,5 @@
-<div style="color: white;" (click)="update()">{{receivedPlayer.name}}</div>
+<div style="color: white;">{{receivedPlayer.name}}</div>
+
+<div [hidden]="isNotAdmin">
+    <button class = "btn btn-primary" (click)="update()"></button>
+</div>

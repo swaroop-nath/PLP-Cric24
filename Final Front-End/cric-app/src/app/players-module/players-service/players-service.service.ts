@@ -6,6 +6,7 @@ import { CricketService } from 'src/app/cricket-service/cricket-service.service'
 import { TeamsService } from 'src/app/teams-module/teams-service/teams-service.service';
 import { Team } from 'src/app/model/team.model';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface';
+import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class PlayersService {
   private UDPATE_EXT = '/update';
   private DELETE_EXT = '/delete/';
 
-  constructor(private cricService: CricketService, private teamsService: TeamsService) { }
+  constructor(private cricService: CricketService, private teamsService: TeamsService, private authService: AuthService) { }
 
   savePlayer(player : Player){
     return this.cricService.persistEntityForEntity<Player, Player>(this.BASE_URL + this.ADD_EXT, player);
@@ -62,5 +63,9 @@ export class PlayersService {
 
   getParentRoute() {
     return this.cricService.parentRoute;
+  }
+
+  getUser(): string {
+    return this.authService.isUserLoggedIn();
   }
 }

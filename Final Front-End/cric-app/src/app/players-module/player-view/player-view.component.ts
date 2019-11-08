@@ -12,11 +12,15 @@ import { Router } from '@angular/router';
 export class PlayerViewComponent implements OnInit {
 
   receivedPlayer: Player;
+  private isNotAdmin: boolean = true;
 
   constructor(private playerService: PlayersService, private router: Router) { }
 
   ngOnInit() {
     this.receivedPlayer = this.playerService.transitPlayer; 
+
+    this.isNotAdmin = this.playerService.getUser() != 'admin';
+
     console.log(this.receivedPlayer)
     this.onStart();
 

@@ -1,3 +1,6 @@
-<h1 (click)="update()">{{receivedStadium.stadiumName}}</h1>
+<h1>{{receivedStadium.stadiumName}}</h1>
 
-<!-- Give update button -->
+<div [hidden]="isNotAdmin">
+    <button (click)="update()" class="btn btn-primary">Update Stadium</button>
+</div>
+
