@@ -9,7 +9,7 @@
       <th>Match League</th>
       <th>Match Status</th>
     </tr>
-    <tr *ngFor="let match of matches">
+    <tr *ngFor="let match of matches" (click)="viewSchedule(match)">
       <td>{{match.matchID}}</td>
       <td>{{match.matchSchedule}}</td>
       <td>{{match.matchVenue.stadiumName}}</td>
@@ -19,7 +19,7 @@
       <td>{{match.matchLeague}}</td>
       <td>{{match.matchStatus}}</td>
   
-      <td><button (click)=fetchData(match)>Update</button></td>
+      <!-- <td><button (click)=fetchData(match)>Update</button></td> -->
   
     </tr>
   </table>

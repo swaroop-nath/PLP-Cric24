@@ -8,6 +8,7 @@ import { Stadium } from 'src/app/model/stadium.model';
 import { StadiumsService } from 'src/app/stadiums-module/stadiums-service/stadiums-service.service';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
+import { AfterBadRoute } from 'src/app/cricket-service/after-bad-route.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -67,6 +68,10 @@ export class ArchivesService {
 
   addToBackStack(component: BackStack) {
     return this.cricService.componentBackStack.push(component)
+  }
+
+  addToHomeStack(component: AfterBadRoute) {
+    return this.cricService.homeComponents.push(component)
   }
   
   getUser(): string {

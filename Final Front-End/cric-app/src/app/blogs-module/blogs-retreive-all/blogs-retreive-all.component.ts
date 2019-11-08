@@ -4,13 +4,14 @@ import { BlogsService } from '../blogs-service/blogs-service.service';
 import { Router } from '@angular/router';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 import * as $ from 'jquery';
+import { AfterBadRoute } from 'src/app/cricket-service/after-bad-route.interface';
 
 @Component({
   selector: 'app-blogs-retreive-all',
   templateUrl: './blogs-retreive-all.component.html',
   styleUrls: ['./blogs-retreive-all.component.css']
 })
-export class BlogsRetreiveAllComponent implements OnInit, BackStack {
+export class BlogsRetreiveAllComponent implements OnInit, BackStack, AfterBadRoute {
 
   blogs_view: Blog[]
 
@@ -18,6 +19,14 @@ export class BlogsRetreiveAllComponent implements OnInit, BackStack {
   }
 
   ngOnInit() {
+    this.initialize()
+  }
+
+  onBadRouteProvided() {
+    this.initialize();
+  }
+
+  initialize() {
     this.blogs_view = []
 
     let viewFilter = this.determineViewFilter();

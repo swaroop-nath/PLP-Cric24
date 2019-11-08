@@ -21,7 +21,7 @@ import javax.persistence.Table;
 @Table(name = "match_master")
 @SequenceGenerator(name = "mat_seq", sequenceName = "matches_sequence", allocationSize = 1)
 @NamedQueries({
-	@NamedQuery(name = "all_matches", query = "from Match"),
+	@NamedQuery(name = "all_matches", query = "from Match where matchStatus = :status_concluded or matchStatus = :status_cancelled or matchStatus = :status_forfeited"),
 	@NamedQuery(name = "all_matches_for_team", query = "select m from Match m where m.teamOne = :team or m.teamTwo = :team")
 })
 public class Match {

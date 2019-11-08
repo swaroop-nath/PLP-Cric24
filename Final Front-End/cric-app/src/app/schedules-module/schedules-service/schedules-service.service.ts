@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { CricketService } from 'src/app/cricket-service/cricket-service.service';
 import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface';
+import { AfterBadRoute } from 'src/app/cricket-service/after-bad-route.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -55,6 +56,10 @@ export class SchedulesService {
 
   addToBackStack(component: BackStack) {
     return this.cricService.componentBackStack.push(component)
+  }
+
+  addToHomeStack(component: AfterBadRoute) {
+    return this.cricService.homeComponents.push(component)
   }
   
   getUser(): string {

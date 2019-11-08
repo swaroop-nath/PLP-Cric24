@@ -13,22 +13,27 @@ import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 })
 export class ScheduleViewComponent implements OnInit, BackStack {
 
+  isNotAdmin: boolean = true;
+
   receivedMatch: Match;
   constructor(private service: SchedulesService, private teamsService: TeamsService, private router: Router) { }
 
   ngOnInit() {
     $(window).on('popstate', function(event) {
       $('#schedules-outlet').animate({height: '150px', width: '100%'}).show()
-      $('#archives-outlet').animate({height: '100%', width: '25%'}, 500)
+      $('#archives-outlet').animate({height: '100%', width: '25%'}, 500).show()
       $('#blogs-outlet').animate({height: '100%', width: '70%'}).show()
     });
 
+    this.isNotAdmin = this.service.getUser() != 'admin';
+    
     this.receivedMatch = this.service.transitSchedule;
 
+    this.onStart()
   }
 
   initializeComponent() {
-    $('#schedules-outlet').animate({height: '100%', width: '100%'}, 500).show()
+    this.onStart()
   }
   
   onStart() {
@@ -58,8 +63,6 @@ export class ScheduleViewComponent implements OnInit, BackStack {
   updateSchedule() {
     // navigate to update
     this.service.transitSchedule = this.receivedMatch
-    this.onStop()
-    this.service.addToBackStack(this);
     this.router.navigate([{outlets: {'schedules': ['schedules-update']}}], {relativeTo: this.service.getParentRoute()});
   }
 }

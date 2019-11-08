@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface'
+import { AfterBadRoute } from './after-bad-route.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class CricketService {
   parentRoute: any;
 
   componentBackStack: BackStack[];
+
+  homeComponents: AfterBadRoute[];
 
   constructor(private client: HttpClient) { 
     this.componentBackStack = []

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cg.cric24.archives_service.entity.Match;
+import com.cg.cric24.archives_service.entity.MatchStatus;
 import com.cg.cric24.archives_service.entity.Team;
 import com.cg.cric24.archives_service.exception.NoMatchFoundException;
 
@@ -18,7 +19,11 @@ public class ArchivesRepoImpl implements ArchivesRepo {
 	
 	@Override
 	public List<Match> findAll() throws NoMatchFoundException {
-		List<Match> fetchedMatches = manager.createNamedQuery("all_matches").getResultList();
+		List<Match> fetchedMatches = manager.createNamedQuery("all_matches")
+				.setParameter("status_concluded", MatchStatus.CONCLUDED)
+				.setParameter("status_cancelled", MatchStatus.CANCELLED)
+				.setParameter("status_forfeited", MatchStatus.FORFEITED)
+				.getResultList();
 		if (fetchedMatches.size() == 0)
 			throw new NoMatchFoundException("No matches added yet in the server.\nWe will be returning with our services soon!");
 		return fetchedMatches;

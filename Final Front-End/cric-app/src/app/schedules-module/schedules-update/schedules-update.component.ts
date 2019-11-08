@@ -30,9 +30,8 @@ export class SchedulesUpdateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.match = new Match();
-
-    this.match = this.service.getUpdateMatch();
+    this.match = this.service.transitSchedule;
+    console.log(this.match)
 
     this.matchFormats[0] = MatchFormat.T20;
     this.matchFormats[1] = MatchFormat.ODI;
@@ -47,22 +46,13 @@ export class SchedulesUpdateComponent implements OnInit {
 
   }
 
-  addMatch() {
-    console.log(this.match);
-    
-    console.log(this.teams[this.teamOneIndex]);
-   
-
-    this.service.addMatch(this.match).subscribe(data => { this.updatedMatch = data; console.log(this.updatedMatch) })
-    // console.log("added");
-  }
-
   updateSchedule(){
     this.match.teamOne=this.teams[this.teamOneIndex];
     this.match.teamTwo= this.teams[this.teamTwoIndex];
     this.match.matchVenue= this.stadiums[this.stadiumIndex];
-    this.service.updateMatch(this.match).subscribe(data => {this.match = data; console.log(this.match)});
-    this.route.navigate(['list'])
+    this.service.updateMatch(this.match).subscribe(data => {
+      //do something to go back
+    });
   }
 
 
