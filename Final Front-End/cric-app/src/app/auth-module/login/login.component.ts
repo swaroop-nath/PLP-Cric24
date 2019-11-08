@@ -22,14 +22,16 @@ export class LoginComponent implements OnInit {
     this.service.login(this.id,this.password).subscribe(data=>{
       this.result = data;
       console.log(this.result);
-      if(this.result == "admin"||this.result == "blogger"){
+      if(this.result == "admin"){
         sessionStorage.setItem('type', this.result);
-        alert("login successful");
-      }else {
-        alert("login unsuccessful")
+        alert("Login successful as an Admin!");
+      }else if(this.result == "blogger") {
+        alert("Login successful as Blogger!")
+      }
+      else{
+        alert("Login unsuccessful! Enter valid credentials!")
       }
     });
-    //this.route.navigate(['getall']);
   }
 
 }

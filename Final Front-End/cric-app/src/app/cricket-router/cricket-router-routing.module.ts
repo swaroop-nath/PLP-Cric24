@@ -24,6 +24,9 @@ import { RetrieveBloggersComponent } from '../auth-module/retrieve-bloggers/retr
 import { ScorecardViewComponent } from '../archives-module/scorecard-view/scorecard-view.component';
 import { TeamViewComponent } from '../teams-module/team-view/team-view.component';
 import { PlayerViewComponent } from '../players-module/player-view/player-view.component';
+import { SchedulesRetrieveComponent } from '../schedules-module/schedules-retrieve/schedules-retrieve.component';
+import { SchedulesCreateComponent } from '../schedules-module/schedules-create/schedules-create.component';
+import { SchedulesUpdateComponent } from '../schedules-module/schedules-update/schedules-update.component';
 
 
 const routes: Routes = [

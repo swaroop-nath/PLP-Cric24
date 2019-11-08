@@ -1,0 +1,85 @@
+<form (ngSubmit)="addMatch()" #addForm="ngForm" >
+    <table class="table table-bordered">
+      <tr>
+        <td width="20%"><label for="matchSchedule">Match Schedule: </label></td>
+        <td><input type="datetime-local" [(ngModel)]="match.matchSchedule" #matchSchedule=ngModel name="matchSchedule">
+          <span *ngIf="matchSchedule.touched && matchSchedule.invalid && 
+          matchSchedule.errors.required " class="alert-warning">
+          matchSchedule cannot be empty!
+        </span>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="matchFormat">Match Format: </label></td>
+        <td><select [(ngModel)]= match.matchFormat name="matchFormat" #matchFormat=ngModel required >
+            <option *ngFor="let format of matchFormats" [value]="format" >{{format}}</option>
+            
+            <span *ngIf="matchFormat.touched && matchFormat.invalid && 
+          matchFormat.errors.required " class="alert-warning">
+          matchFormat cannot be empty!
+        </span>
+      </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="teamOne">Team One: </label></td>
+        <td><select [(ngModel)]= teamOneIndex name="teamOne" #teamOne=ngModel >
+            <option *ngFor="let one of teams; let i = index" [value]="i" >{{one.teamName}}</option>
+            <span *ngIf="teamOne.touched && teamOne.invalid && 
+          teamOne.errors.required " class="alert-warning">
+          teamOne cannot be empty!
+        </span>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="teamTwo">Team Two: </label></td>
+        <td><select [(ngModel)]= teamTwoIndex name="teamTwo" #teamTwo=ngModel >
+            <option *ngFor="let two of teams; let i = index" [value]="i" >{{two.teamName}}</option>
+            <span *ngIf="teamTwo.touched && teamTwo.invalid && 
+          teamTwo.errors.required " class="alert-warning">
+          teamTwo cannot be empty!
+        </span>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="matchStatus">Match status: </label></td>
+        <td><select [(ngModel)]= match.matchStatus name="matchStatus" #matchStatus=ngModel >
+          <option value="null" disabled selected >--SELECT--</option>  
+          <option *ngFor="let status of matchStatuses" [value]="status" >{{status}}</option>
+            </select>
+            <span *ngIf="matchStatus.touched && matchStatus.invalid && 
+          matchStatus.errors.required " class="alert-warning">
+          matchStatus cannot be empty!
+        </span>
+        </td>
+      </tr>
+      <tr>
+          <td><label for="matchVenue">Match Venue: </label></td>
+          <td><select [(ngModel)]= stadiumIndex name="matchVenue" #matchVenue=ngModel >
+            <option *ngFor="let one of stadiums; let i = index" [value]="i" >{{one.stadiumName}}</option>
+            <span *ngIf="matchVenue.touched && matchVenue.invalid && 
+          matchVenue.errors.required " class="alert-warning">
+          matchVenue cannot be empty!
+        </span>
+          </select>
+        </td>
+        </tr>
+        
+        <tr>
+          <td><label for="matchLeague">Match League: </label></td>
+          <td><input type="text" [(ngModel)]= match.matchLeague name="matchLeague" #matchLeague=ngModel required>
+            <span *ngIf="matchLeague.touched && matchLeague.invalid && 
+            matchLeague.errors.required " class="alert-warning">
+            matchLeague cannot be empty!
+          </span>
+          </td>
+        </tr>
+  
+        <tr>
+          <td colspan="2"><button type="submit" [disabled]="!addForm.valid" class="btn btn-success">Submit</button></td>
+        </tr>
+    </table>
+  </form>
+  

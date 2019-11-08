@@ -38,20 +38,20 @@ export class AuthService {
     return this.http.get<User[]>(this.BASE_URL + this.FETCH_ALL_EXT);
   }
 
-  loggOut(){
-    sessionStorage.removeItem('type');
-  }
-
   deleteBlogger(userId : string): Observable<boolean>{
     return this.http.delete<boolean>(this.BASE_URL + this.DELETE_EXT + userId);
   }
 
-  isUserLoggedIn():number{
+  isUserLoggedIn():string{
     if(sessionStorage.getItem('type')=="admin")
-      return 1;
+    return "admin";
     else if(sessionStorage.getItem('type')=="blogger")
-      return 2;
-    return 0;
+    return "blogger";
+    return null;
+  }
+
+  logOut(){
+    sessionStorage.removeItem('type');
   }
 
 }

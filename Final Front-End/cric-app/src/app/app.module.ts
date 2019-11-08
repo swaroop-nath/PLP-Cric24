@@ -38,6 +38,9 @@ import { LogoutComponent } from './auth-module/logout/logout.component';
 import { ScorecardViewComponent } from './archives-module/scorecard-view/scorecard-view.component';
 import { TeamViewComponent } from './teams-module/team-view/team-view.component';
 import { PlayerViewComponent } from './players-module/player-view/player-view.component';
+import { SchedulesCreateComponent } from './schedules-module/schedules-create/schedules-create.component';
+import { SchedulesRetrieveComponent } from './schedules-module/schedules-retrieve/schedules-retrieve.component';
+import { SchedulesUpdateComponent } from './schedules-module/schedules-update/schedules-update.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +78,10 @@ import { PlayerViewComponent } from './players-module/player-view/player-view.co
     LogoutComponent,
     ScorecardViewComponent,
     TeamViewComponent,
-    PlayerViewComponent
+    PlayerViewComponent,
+    SchedulesCreateComponent,
+    SchedulesRetrieveComponent,
+    SchedulesUpdateComponent,
   ],
   imports: [
     BrowserModule,
