@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
+import { User } from '../login-model/user.model';
 
 @Component({
   selector: 'app-reset-password',
@@ -9,24 +10,28 @@ import { Router } from '@angular/router';
 })
 export class ResetPasswordComponent implements OnInit {
   empId:string;
-  prevpass:string;
-  newpass:string;
+  
   result:boolean;
   previousPass:string;
   newPassword:string;
   userId:string;
+  user:User;
 
-  constructor(private service : AuthService, private route: Router) { }
+  constructor(private service : AuthService, private route: Router) {
+    this.user = new User();
+   }
 
   ngOnInit() {
+    this.user = this.service.getUserBean();
   }
   resetPassword(){
-    this.service.resetPassword(this.userId, this.previousPass, this.newPassword).subscribe(data =>{
+    
+    this.service.resetPassword(this.user.userId, this.previousPass, this.newPassword).subscribe(data =>{
       this.result=data;
       if(this.result == true){
         alert("password successfully changed");
       }else{
-        alert("password not changed");
+        alert("Wrong Password! If you dont remember your password , Logout and go to reset Password");
       }
     })
   }

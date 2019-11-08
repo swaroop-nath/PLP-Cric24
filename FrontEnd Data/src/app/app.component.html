@@ -1,10 +1,31 @@
-<li><a [routerLink]="['login']">Login</a></li>
-<li><a [routerLink]="['signup']">Signup</a></li>
-<li><a [routerLink]="['logout']">Logout</a></li>
-<li><a [routerLink]="['forgotpassword']">forgotpassword?</a></li>
-<li><a [routerLink]="['getall']">get all bloggers</a></li>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body><h2 class="align">CRIC-24</h2>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+<li><a *ngIf="!(service.isUserLoggedIn()==1||service.isUserLoggedIn()==2)" [routerLink]="['login']" style="color: black">Login</a></li>
+<!-- <li><a [routerLink]="['signup']">Signup</a></li> -->
+<li><a *ngIf="(service.isUserLoggedIn()==1||service.isUserLoggedIn()==2)" [routerLink]="['logout']">Logout</a></li>
+<li><a *ngIf="(!service.isUserLoggedIn()==1||!service.isUserLoggedIn()==2)"[routerLink]="['signup']">Signup</a></li>
+<li><a *ngIf="(!service.isUserLoggedIn()==1||!service.isUserLoggedIn()==2)" [routerLink]="['forgotpassword']">forgotpassword?</a></li>
+<li><a *ngIf="(service.isUserLoggedIn()==1)"[routerLink]="['getall']">get all bloggers</a></li>
 <li><a *ngIf="(service.isUserLoggedIn()==1||service.isUserLoggedIn()==2)" [routerLink]="['reset']">Reset Password</a></li>
+</ul>
+<div class="middle">
+  <form class="search-box" action="app.component.html" method="POST">
+    <input type="text" class="input" name="" value="">
+    <button type="button" class="btn" name="button"></button>
+  </form>
+</div>
+</div>
+
+</nav>
 
 <div>
   <router-outlet></router-outlet>
 </div>
+</body>

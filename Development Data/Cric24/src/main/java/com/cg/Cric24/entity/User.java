@@ -1,17 +1,21 @@
 package com.cg.Cric24.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-
-
 
 @Entity
 @Table(name = "users")
 public class User {
 	@Id
+	@Column(name = "user_Id")
 	private String userId;
 	@Column(name = "user_Name")
 	private String userName;
@@ -19,15 +23,24 @@ public class User {
 	private String userPassword;
 	@Column(name = "user_Phone")
 	private String userPhone;
-	@Column(name = "user_email")
+	@Column(name = "user_Email")
 	private String userEmail;
 	@Column(name = "user_Type")
 	private String userType;
-	@Column(name = "user_fav_food")
+	@Column(name = "user_Fav_Food")
 	private String userFavFood;
-	@Column(name = "user_fav_animal")
+	@Column(name = "user_Fav_Animal")
 	private String userFavAnimal;
-	
+	@OneToMany(mappedBy = "blogger", cascade = CascadeType.ALL)
+	private List<Blog> blogs ;
+
+	public List<Blog> getBlogs() {
+		return blogs;
+	}
+
+	public void setBlogs(List<Blog> blogs) {
+		this.blogs = blogs;
+	}
 
 	public String getUserId() {
 		return userId;

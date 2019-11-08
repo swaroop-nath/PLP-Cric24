@@ -1,3 +1,109 @@
 2019-11-07 13:16:10,982 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
 2019-11-07 13:16:10,983 - com.cg.Cric24.service.LoginServiceImpl - INFO - user with given user-id found
 2019-11-07 13:16:10,984 - com.cg.Cric24.web.LoginController - INFO - get login details of a user
+2019-11-07 18:54:01,667 - com.cg.Cric24.web.LoginController - INFO - new user sign up
+2019-11-07 18:54:01,800 - com.cg.Cric24.service.LoginServiceImpl - INFO - New user signing up
+2019-11-07 19:26:16,539 - com.cg.Cric24.web.LoginController - INFO - new user sign up
+2019-11-07 19:26:16,679 - com.cg.Cric24.service.LoginServiceImpl - INFO - New user signing up
+2019-11-08 10:41:02,671 - com.cg.Cric24.web.LoginController - INFO - new user sign up
+2019-11-08 10:41:02,800 - com.cg.Cric24.service.LoginServiceImpl - INFO - New user signing up
+2019-11-08 10:44:32,867 - com.cg.Cric24.service.LoginServiceImpl - INFO - user with given user-id deleted
+2019-11-08 10:44:32,867 - com.cg.Cric24.web.LoginController - INFO - delete user with given ID
+2019-11-08 11:25:22,953 - com.cg.Cric24.web.LoginController - INFO - new user sign up
+2019-11-08 11:25:23,078 - com.cg.Cric24.service.LoginServiceImpl - INFO - New user signing up
+2019-11-08 11:25:38,410 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 11:26:10,003 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 11:26:50,976 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 11:42:40,822 - com.cg.Cric24.web.LoginController - INFO - new user sign up
+2019-11-08 11:42:40,945 - com.cg.Cric24.service.LoginServiceImpl - INFO - New user signing up
+2019-11-08 11:42:59,180 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 11:42:59,197 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 11:44:23,365 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 11:44:23,381 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 11:47:18,468 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 11:47:34,866 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 11:48:36,928 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 11:54:00,364 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 11:55:24,078 - com.cg.Cric24.web.LoginController - INFO - new user sign up
+2019-11-08 11:55:24,204 - com.cg.Cric24.service.LoginServiceImpl - INFO - New user signing up
+2019-11-08 11:59:52,774 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 11:59:53,974 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 11:59:53,974 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:01:03,766 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:01:05,501 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:01:05,501 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:02:01,146 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:02:02,289 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:02:02,289 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:02:43,667 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:02:45,243 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:02:45,243 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:03:58,171 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:03:59,227 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:03:59,227 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:05:28,947 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:05:30,026 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:05:30,026 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:06:59,887 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:07:01,279 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:07:01,279 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:07:34,557 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:07:34,557 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:07:42,554 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:07:44,731 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:07:44,731 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:08:43,887 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:08:53,211 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:09:37,908 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 12:09:37,920 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 12:09:59,789 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:10:01,860 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:10:01,860 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:16:49,430 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:16:50,649 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:16:50,650 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:29:24,298 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:29:25,661 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:29:25,661 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:29:34,932 - com.cg.Cric24.service.LoginServiceImpl - INFO - updated and encrypted password sent
+2019-11-08 12:29:34,932 - com.cg.Cric24.web.LoginController - INFO - update old password
+2019-11-08 12:30:05,452 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:45:33,739 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:45:33,739 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:45:51,074 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:45:51,074 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:46:16,205 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:46:16,205 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:47:02,492 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:47:02,492 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:47:10,113 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 12:47:10,114 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 12:47:30,153 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:47:51,471 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 12:47:51,483 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 12:48:01,259 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:50:54,214 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 12:51:37,867 - com.cg.Cric24.service.LoginServiceImpl - INFO - updated and encrypted password sent
+2019-11-08 12:51:37,867 - com.cg.Cric24.web.LoginController - INFO - update old password
+2019-11-08 12:53:01,640 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 13:15:44,322 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 13:15:53,977 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 13:15:54,987 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 13:15:54,987 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 13:35:13,720 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 13:35:13,720 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 15:20:38,814 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 15:20:38,845 - com.cg.Cric24.service.LoginServiceImpl - ERROR - no user with this ID present
+2019-11-08 15:21:31,496 - com.cg.Cric24.service.LoginServiceImpl - INFO - send back the new encoded password with a user-ID
+2019-11-08 15:21:31,496 - com.cg.Cric24.web.LoginController - INFO - change password if forgot
+2019-11-08 15:21:42,228 - com.cg.Cric24.service.LoginServiceImpl - INFO - password confirmed
+2019-11-08 15:21:45,210 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 15:21:45,210 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 15:28:03,554 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 15:28:03,554 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 15:31:31,837 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 15:31:31,838 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 15:35:11,065 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 15:35:11,066 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers
+2019-11-08 15:35:20,420 - com.cg.Cric24.service.LoginServiceImpl - INFO - list of all bloggers returned
+2019-11-08 15:35:20,420 - com.cg.Cric24.web.LoginController - INFO - list of all bloggers

@@ -15,6 +15,7 @@ import { AuthService } from './auth/auth.service';
 import { HttpErrorInterceptor } from './http-interceptor';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { GetBloggersComponent } from './get-bloggers/get-bloggers.component';
+import { RoleGuard } from './guard/role-guard.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { GetBloggersComponent } from './get-bloggers/get-bloggers.component';
     provide: HTTP_INTERCEPTORS,
     useClass: HttpErrorInterceptor,
     multi: true
-  },AuthGuard, DeactivateGuard, AuthService],
+  },AuthGuard, DeactivateGuard, RoleGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

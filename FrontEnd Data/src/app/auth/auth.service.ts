@@ -8,14 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  constructor(public http:HttpClient) { }
+  user:User;
+
+  constructor(public http:HttpClient) { 
+    this.user = new User();
+  }
 
   signup(user : User){
     return this.http.post<User>("http://localhost:9898/login/add", user);
   }
 
-  login(userId : string, userPassword : string):Observable<string>{
-    return this.http.get("http://localhost:9898/login/enter/"+userId+"/"+userPassword, {responseType : 'text'});
+  login(userId : string, userPassword : string):Observable<User>{
+    return this.http.get<User>("http://localhost:9898/login/enter/"+userId+"/"+userPassword);
   }
 
   resetPassword(userId: string, previousPass: string, newPassword: string){
@@ -46,5 +50,11 @@ export class AuthService {
     return this.http.delete<boolean>("http://localhost:9898/login/admin/delete/"+userId).subscribe();
   }
 
-  
+  setUserBean(user:User){
+    this.user = user;
+  }
+
+  getUserBean(){
+    return this.user;
+  }
 }

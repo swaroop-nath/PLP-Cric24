@@ -20,7 +20,7 @@ public interface LoginService {
 	 * @return returns true if password is confirmed else throws exception
 	 * @throws UserNotFoundException
 	 */
-	boolean confirmPassword(String userId, String userPassword) throws UserNotFoundException;
+	User confirmPassword(String userId, String userPassword) throws UserNotFoundException;
 
 	/**
 	 * This service is called when a new user wants to create an account

@@ -39,15 +39,15 @@ public class LoginServiceTest {
 		user.setUserFavAnimal("cat");
 	}
 	
-	@Test
-	public void testConfirmPassword() throws UserNotFoundException {
-		assertTrue(service.confirmPassword("neha3108", "neha123"));
-	}
-	
-	@Test(expected = UserNotFoundException.class)
-	public void testFailConfirmPassword() throws UserNotFoundException {
-		assertTrue(service.confirmPassword("cfcd", "neha123"));
-	}
+//	@Test
+//	public void testConfirmPassword() throws UserNotFoundException {
+//		assertTrue(service.confirmPassword("neha3108", "neha123"));
+//	}
+//	
+//	@Test(expected = UserNotFoundException.class)
+//	public void testFailConfirmPassword() throws UserNotFoundException {
+//		assertTrue(service.confirmPassword("cfcd", "neha123"));
+//	}
 
 	@Test
 	public void testSignUp() {

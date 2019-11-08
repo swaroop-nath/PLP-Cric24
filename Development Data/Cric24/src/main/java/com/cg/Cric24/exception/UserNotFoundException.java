@@ -1,6 +1,16 @@
 package com.cg.Cric24.exception;
 
 public class UserNotFoundException extends Exception {
+	private String uriDetails;
+
+	public String getUriDetails() {
+	
+		return uriDetails;
+	}
+
+	public void setUriDetails(String uriDetails) {
+		this.uriDetails = uriDetails;
+	}
 
 	public UserNotFoundException() {
 		super();

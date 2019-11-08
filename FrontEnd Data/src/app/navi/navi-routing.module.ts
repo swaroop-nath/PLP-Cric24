@@ -8,14 +8,17 @@ import { LogoutComponent } from '../logout/logout.component';
 import { DeactivateGuard } from '../guard/deactivate-guard.service';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 import { GetBloggersComponent } from '../get-bloggers/get-bloggers.component';
+import { RoleGuard } from '../guard/role-guard.service';
 
 const routes: Routes = [
-  {path:'login', component:LoginComponent},
+  {path: '',redirectTo:'/login', pathMatch:'full'},
+  {path:'login', component:LoginComponent, canActivate:[DeactivateGuard]},
   {path:'signup', component:SignupComponent},
   {path:'logout', component:LogoutComponent},
   {path:'forgotpassword', component:ForgotPasswordComponent},
-  {path:'getall', component:GetBloggersComponent},
-  {path:'reset', component:ResetPasswordComponent, canActivate:[AuthGuard]}
+  {path:'getall', component:GetBloggersComponent, canActivate:[RoleGuard]},
+  {path:'reset', component:ResetPasswordComponent, canActivate:[AuthGuard]},
+  {path: '**',redirectTo:'/login', pathMatch:'full'}
 ];
 
 @NgModule({

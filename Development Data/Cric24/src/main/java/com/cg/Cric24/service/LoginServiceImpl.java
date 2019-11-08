@@ -137,20 +137,23 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
-	public boolean confirmPassword(String userId, String userPassword) throws UserNotFoundException {
+	public User confirmPassword(String userId, String userPassword) throws UserNotFoundException {
 		User user;
 		try {
 			user = dao.findById(userId).get();
+		
+		if (passwordEncoder.matches(userPassword,user.getUserPassword())) {
+			serviceLogger.info("password confirmed");
+			return user;
+		}
+		
 		} catch (Exception exception) {
 			serviceLogger.error("no user with this ID present");
 			throw new UserNotFoundException("No user exists with id :" + userId);
 		}
-		if (passwordEncoder.matches(userPassword,user.getUserPassword())) {
-			serviceLogger.info("password confirmed");
-			return true;
-		}
-		else
-			return false;
+		
+		return null;
+		
 	}
 
 }

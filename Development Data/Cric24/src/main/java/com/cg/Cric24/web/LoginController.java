@@ -35,7 +35,7 @@ public class LoginController {
 	LoginService service;
 
 	static Logger controllerLogger = Logger.getLogger(LoginController.class);
-	
+
 	/*
 	 * Access URL - "http://localhost:9898/login/add"
 	 */
@@ -50,13 +50,18 @@ public class LoginController {
 	 */
 	@DeleteMapping("/admin/delete/{userId}")
 	public String deleteUserByUserId(@PathVariable String userId) throws UserNotFoundException {
-		service.deleteUserByUserId(userId);
+		try {
+			service.deleteUserByUserId(userId);
+		} catch (UserNotFoundException e) {
+			e.setUriDetails("uri=/user/id" +userId);
+		}
 		controllerLogger.info("delete user with given ID");
 		return "User deleted with Id:" + userId;
 	}
 
 	/*
-	 * Access URL - "http://localhost:9898/login/forgetPassword/arvish/arvish0609/hakka noodles/elephant"
+	 * Access URL -
+	 * "http://localhost:9898/login/forgetPassword/arvish/arvish0609/hakka noodles/elephant"
 	 */
 	@PutMapping("/forgetPassword/{password}/{userId}/{favFood}/{favAnimal}")
 	public boolean forgetPassword(@PathVariable String password, @PathVariable String userId,
@@ -64,8 +69,7 @@ public class LoginController {
 		if (service.changePassword(password, userId, favFood, favAnimal) == 1) {
 			controllerLogger.info("change password if forgot");
 			return true;
-		}
-		else
+		} else
 			return false;
 
 	}
@@ -84,15 +88,10 @@ public class LoginController {
 	 * Access URL - "http://localhost:9898/login/enter/arvish0609/hesoyam"
 	 */
 	@GetMapping(value = "/enter/{userId}/{userPassword}", produces = "application/json")
-	public String loginCredentials(@PathVariable String userId, @PathVariable String userPassword)
+	public User loginCredentials(@PathVariable String userId, @PathVariable String userPassword)
 			throws UserNotFoundException {
-		if (service.confirmPassword(userId, userPassword)) {
-			String s = service.getUserById(userId).getUserType();
-			controllerLogger.info("get login details of a user");
-			return s ;
-		}
-		else
-			return null;
+		return service.confirmPassword(userId, userPassword);
+
 	}
 
 	/*
@@ -104,18 +103,22 @@ public class LoginController {
 		if (service.updatePassword(userId, oldPassword, newPassword)) {
 			controllerLogger.info("update old password");
 			return true;
-		}
-		else
+		} else
 			return false;
 	}
-	
+
 	/*
 	 * Access URL - "http://localhost:9898/login/getBlogger/arvish saluja"
 	 */
 	@GetMapping("/getBlogger/{userName}")
 	public User getBlogger(@PathVariable String userName) throws UserNotFoundException {
 		controllerLogger.info("get a blogger with user-name entered");
-		return service.getByUserName(userName);
+		try {
+			return service.getByUserName(userName);
+		} catch (UserNotFoundException e) {
+			e.setUriDetails("uri= /user/name/" + userName);
+			throw e;
+		}
 	}
 
 }

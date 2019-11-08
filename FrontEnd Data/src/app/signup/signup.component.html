@@ -15,7 +15,7 @@
           <tr><td width="30%">Name: </td>
               <td><input type="text" name="userName" [(ngModel)]=user.userName #name=ngModel required pattern="[A-Z][A-Za-z ]+" placeholder="Please Enter your Name">
                <span *ngIf="name.touched && name.invalid && (name.errors.required || name.errors.pattern)" class="alert alert-warning">
-                Invalid name or name cannot be empty!
+                First letter should be capital or name cannot be empty!
               </span>
           </td></tr>
   
@@ -34,7 +34,7 @@
           </td></tr>
   
           <tr><td width="30%">User Email: </td>
-              <td><input type="email" name="userEmail" [(ngModel)]=user.userEmail #email=ngModel required pattern = "[\\w_]+@[a-z]{3,20}.[a-z]{2,4}" placeholder="Please Enter your Email">
+              <td><input type="email" name="userEmail" [(ngModel)]=user.userEmail #email=ngModel required pattern = "[\w_]+@[a-z]{3,20}.[a-z]{2,4}" placeholder="Please Enter your Email">
                <span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)" class="alert alert-warning">
                 Invalid mail id or mail id cannot be empty!
               </span>
