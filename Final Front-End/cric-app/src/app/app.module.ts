@@ -42,6 +42,7 @@ import { SchedulesCreateComponent } from './schedules-module/schedules-create/sc
 import { SchedulesRetrieveComponent } from './schedules-module/schedules-retrieve/schedules-retrieve.component';
 import { SchedulesUpdateComponent } from './schedules-module/schedules-update/schedules-update.component';
 import { StadiumViewComponent } from './stadiums-module/stadium-view/stadium-view.component';
+import { BlogViewComponent } from './blogs-module/blog-view/blog-view.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { StadiumViewComponent } from './stadiums-module/stadium-view/stadium-vie
     SchedulesRetrieveComponent,
     SchedulesUpdateComponent,
     StadiumViewComponent,
+    BlogViewComponent,
   ],
   imports: [
     BrowserModule,

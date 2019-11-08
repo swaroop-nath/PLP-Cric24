@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Blog } from 'src/app/model/blog.model';
 import { CricketService } from 'src/app/cricket-service/cricket-service.service';
 import { Observable } from 'rxjs';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class BlogsService {
   private FETCH_BY_CAT_EXT = '/search/';
   private APPROVE_EXT = '/approve/';
   private REJECT_EXT = '/reject/';
+  transitBlog: Blog;
 
   constructor(private cricService: CricketService) { }
 
@@ -35,5 +37,17 @@ export class BlogsService {
 
   rejectBlogs(blogId:number): Observable<number>{
     return this.cricService.updateEntityForEntity<number, void>(this.BASE_URL + this.REJECT_EXT + blogId, null);
+  }
+
+  getParentRoute() {
+    return this.cricService.parentRoute;
+  }
+
+  getFromBackStack() {
+    return this.cricService.componentBackStack.pop();
+  }
+
+  addToBackStack(component: BackStack) {
+    return this.cricService.componentBackStack.push(component)
   }
 }

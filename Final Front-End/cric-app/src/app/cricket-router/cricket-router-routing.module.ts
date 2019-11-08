@@ -28,6 +28,8 @@ import { SchedulesRetrieveComponent } from '../schedules-module/schedules-retrie
 import { SchedulesCreateComponent } from '../schedules-module/schedules-create/schedules-create.component';
 import { SchedulesUpdateComponent } from '../schedules-module/schedules-update/schedules-update.component';
 import { StadiumViewComponent } from '../stadiums-module/stadium-view/stadium-view.component';
+import { BlogRetrieveFieldComponent } from '../blogs-module/blog-retrieve-field/blog-retrieve-field.component';
+import { BlogViewComponent } from '../blogs-module/blog-view/blog-view.component';
 
 
 const routes: Routes = [
@@ -105,6 +107,16 @@ const routes: Routes = [
     path: 'find-stadiums',
     component: StadiumsRetrieveFieldComponent,
     outlet: 'stadiums'
+  },
+  {
+    path: 'blog-view',
+    component: BlogViewComponent,
+    outlet: 'blogs'
+  },
+  {
+    path: 'find-blogs',
+    component: BlogRetrieveFieldComponent,
+    outlet: 'blogs'
   }
 ];
 

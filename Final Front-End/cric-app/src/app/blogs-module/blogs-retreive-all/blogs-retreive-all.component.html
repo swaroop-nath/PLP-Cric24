@@ -6,15 +6,17 @@
     <th>Blog Content</th>
     <th>Blog Status</th>
   </tr>
-  <tr *ngFor="let blg of blogs; let i of index">
+  <tr *ngFor="let blg of blogs_view" (click)="viewBlog(blg)">
     <td>{{blg.blogId}}</td>
     <td>{{blg.blogType}}</td>
     <td>{{blg.blogHeading}}</td>
     <td>{{blg.blogContent}}</td>
     <td>{{blg.status}}</td>
-    <td><button [disabled]="blg.status==='Approved' || blg.status==='Rejected'" class="btn btn-info" (click)="approveBlogs(i)">Approve</button></td>
-    <td><button [disabled]="blg.status==='Approved' || blg.status==='Rejected'" class="btn btn-info" (click)="rejectBlogs(i)">Reject</button></td>
+    <!-- <td><button [disabled]="blg.status==='Approved' || blg.status==='Rejected'" class="btn btn-info" (click)="approveBlogs(i)">Approve</button></td>
+    <td><button [disabled]="blg.status==='Approved' || blg.status==='Rejected'" class="btn btn-info" (click)="rejectBlogs(i)">Reject</button></td> -->
     </tr>
 
 
 </table>
+
+<button class="btn btn-primary" (click)="findBlogs()">Find Blogs</button>

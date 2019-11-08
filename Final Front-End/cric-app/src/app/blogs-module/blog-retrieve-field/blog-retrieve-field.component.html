@@ -17,7 +17,7 @@
       <th>Content</th>
       <th>Status</th>
     </tr>
-    <tr *ngFor="let blg of blog">
+    <tr *ngFor="let blg of blogs" (click)="viewBlog(blg)">
       <td>{{blg.blogId}}</td>
       <td>{{blg.blogType}}</td>
       <td>{{blg.blogHeading}}</td>
