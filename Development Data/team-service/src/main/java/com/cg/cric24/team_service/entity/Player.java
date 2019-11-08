@@ -1,5 +1,13 @@
 package com.cg.cric24.team_service.entity;
 
+/**
+ * This is the player class for entity layer
+ * 
+ * @author Pranav
+ * @Version 1.0
+ * 
+ * */
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

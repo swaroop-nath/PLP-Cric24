@@ -1,4 +1,11 @@
 package com.cg.cric24.team_service.entity;
+/**
+ * This is the enumeration of MatchFormat for entity layer
+ * 
+ * @author Pranav
+ * @Version 1.0
+ * 
+ * */
 
 public enum MatchFormat {
 
