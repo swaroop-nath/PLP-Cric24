@@ -10,3 +10,58 @@
 2019-11-07-http-nio-8890-exec-7-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium details found
 2019-11-07-http-nio-8890-exec-8-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get list of all stadiums by its country
 2019-11-07-http-nio-8890-exec-8-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given country
+2019-11-08-http-nio-8890-exec-2-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its ID
+2019-11-08-http-nio-8890-exec-2-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium details found for given ID
+2019-11-08-http-nio-8890-exec-5-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-5-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given name
+2019-11-08-http-nio-8890-exec-6-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get list of all stadiums by its country
+2019-11-08-http-nio-8890-exec-6-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given country
+2019-11-08-http-nio-8890-exec-7-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-7-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium details found
+2019-11-08-http-nio-8890-exec-9-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:delete stadium
+2019-11-08-http-nio-8890-exec-1-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its ID
+2019-11-08-http-nio-8890-exec-1-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium details found for given ID
+2019-11-08-http-nio-8890-exec-2-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-2-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium details found
+2019-11-08-http-nio-8890-exec-3-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To add a new stadium
+2019-11-08-http-nio-8890-exec-3-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:To add a new stadium
+2019-11-08-http-nio-8890-exec-4-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-4-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-7-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-7-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-3-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-3-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-5-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-5-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-2-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To add a new stadium
+2019-11-08-http-nio-8890-exec-2-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:To add a new stadium
+2019-11-08-http-nio-8890-exec-3-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-3-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-8-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-8-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-9-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-9-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-10-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its ID
+2019-11-08-http-nio-8890-exec-10-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-1-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get list of all stadiums by its country
+2019-11-08-http-nio-8890-exec-1-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-2-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-2-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given name
+2019-11-08-http-nio-8890-exec-3-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-3-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given name
+2019-11-08-http-nio-8890-exec-4-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-4-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given name
+2019-11-08-http-nio-8890-exec-6-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-6-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given name
+2019-11-08-http-nio-8890-exec-5-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-5-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given name
+2019-11-08-http-nio-8890-exec-7-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-7-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given name
+2019-11-08-http-nio-8890-exec-8-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-8-ERROR-com.cg.cric24.stadium_service.dao.StadiumDaoImpl:No stadium found for the given name
+2019-11-08-http-nio-8890-exec-9-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its name
+2019-11-08-http-nio-8890-exec-9-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-2-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To dispaly list of all stadiums
+2019-11-08-http-nio-8890-exec-2-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful
+2019-11-08-http-nio-8890-exec-6-INFO -com.cg.cric24.stadium_service.service.StadiumServiceImpl:To get a stadium by its ID
+2019-11-08-http-nio-8890-exec-6-INFO -com.cg.cric24.stadium_service.dao.StadiumDaoImpl:search successful

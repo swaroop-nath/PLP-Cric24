@@ -11,6 +11,8 @@ package com.cg.cric24.stadium_service.web;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,12 +25,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.cg.cric24.stadium_service.entity.Stadium;
 import com.cg.cric24.stadium_service.exception.NoRegisteredStadiumException;
 import com.cg.cric24.stadium_service.exception.StadiumNotFoundException;
 import com.cg.cric24.stadium_service.service.IStadiumService;
-
 
 @RestController
 @RequestMapping("/stadium")
@@ -37,53 +37,73 @@ public class StadiumController {
 
 	@Autowired
 	IStadiumService service;
-	
+
 	static Logger controllerLogger = Logger.getLogger(StadiumController.class);
-	
+
 	/*
 	 * Access URL - "http://localhost:8890/stadium/add"
 	 */
-	@PostMapping(value = "/add",produces = "application/json",consumes = "application/json")
-	public Stadium addStadium(@RequestBody Stadium stadium) {
+	@PostMapping(value = "/add", produces = "application/json", consumes = "application/json")
+	public Stadium addStadium(@Valid @RequestBody Stadium stadium) {
 		return service.addStadium(stadium);
 	}
-	
+
 	/*
 	 * Access URL - "http://localhost:8890/stadium/id/5"
 	 */
-	@GetMapping(value = "/id/{stadiumId}",produces = "application/json")
+	@GetMapping(value = "/id/{stadiumId}", produces = "application/json")
 	public Stadium fetchById(@PathVariable int stadiumId) throws StadiumNotFoundException {
-		return service.fetchById(stadiumId);
+		try {
+			return service.fetchById(stadiumId);
+		} catch (StadiumNotFoundException e) {
+			e.setUriDetails("uri=/stadium/id/" + stadiumId);
+			throw e;
+		}
 	}
-	
+
 	/*
 	 * Access URL - "http://localhost:8890/stadium/name/Wankhede Stadium"
 	 */
-	@GetMapping(value = "/name/{stadiumName}",produces = "application/json")
+	@GetMapping(value = "/name/{stadiumName}", produces = "application/json")
 	public List<Stadium> fetchByName(@PathVariable String stadiumName) throws StadiumNotFoundException {
-		return service.fetchByName(stadiumName);
+		try {
+			return service.fetchByName(stadiumName);
+		} catch (StadiumNotFoundException e) {
+			e.setUriDetails("uri=/stadium/name/" + stadiumName);
+			throw e;
+		}
 	}
-	
+
 	/*
 	 * Access URL - "http://localhost:8890/stadium/country/India"
 	 */
-	@GetMapping(value = "/country/{country}",produces = "application/json")
+	@GetMapping(value = "/country/{country}", produces = "application/json")
 	public List<Stadium> fetchByCountry(@PathVariable String country) throws NoRegisteredStadiumException {
-		return service.fetchByCountry(country);
+		try {
+			return service.fetchByCountry(country);
+		} catch (NoRegisteredStadiumException e) {
+			e.setUriDetails("uri=/stadium/country/" + country);
+			throw e;
+		}
 	}
-	
+
 	/*
 	 * Access URL - "http://localhost:8890/stadium/all"
 	 */
-	@GetMapping(value = "/all",produces = "application/json")
+	@GetMapping(value = "/all", produces = "application/json")
 	public List<Stadium> fetchAll() throws StadiumNotFoundException {
-		return service.fetchAll();
+		try {
+			return service.fetchAll();
+		} catch (StadiumNotFoundException e) {
+			e.setUriDetails("uri=/stadium/all/");
+			throw e;
+		}
 	}
-	
+
 	/*
 	 * Access URL - "http://localhost:8890/stadium/update"
 	 */
-	@PutMapping(value = "/update",consumes = "application/json",produces = "application/json")
+	@PutMapping(value = "/update", consumes = "application/json", produces = "application/json")
 	public Stadium updateStadium(@RequestBody Stadium stadium) {
 		return service.updateStadium(stadium);
 	}
@@ -94,6 +114,11 @@ public class StadiumController {
 	@DeleteMapping(value = "/delete/{stadiumId}")
 	public Boolean deleteStadium(@PathVariable int stadiumId) throws StadiumNotFoundException {
 		System.out.println("Delete req" + stadiumId);
-		return service.deleteStadium(stadiumId);
+		try {
+			return service.deleteStadium(stadiumId);
+		} catch (StadiumNotFoundException e) {
+			e.setUriDetails("uri=/stadium/delete/" + stadiumId);
+			throw e;
+		}
 	}
 }

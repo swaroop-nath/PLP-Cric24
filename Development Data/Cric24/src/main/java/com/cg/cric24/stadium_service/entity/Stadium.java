@@ -4,10 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
 
 @Entity
 @SequenceGenerator(name = "stadiumseq" , sequenceName = "seq_stadium", allocationSize = 1)
@@ -21,14 +23,24 @@ public class Stadium {
 	@GeneratedValue(generator = "stadiumseq")
 	@Column(name = "stadium_id")
 	private int stadiumId;
-	@Column(length = 30, name = "stadium_name", nullable=false)
+	
+	@NotEmpty(message = "Stadium name cannot be empty")
+	@Column(length = 30, name = "stadium_name")
 	private String stadiumName;
+	
+	@NotEmpty(message = "Stadium location cannot be empty")
 	@Column(name = "location", length = 50)
 	private String location;
+	
+	@NotEmpty(message = "Country name cannot be empty")
 	@Column(name = "country")
 	private String country;
+	
+	@Min(value= 1000,message = "Capacity of stadium cannot be less than 1000")
 	@Column(name = "capacity")
 	private int capacity;
+	
+	@NotEmpty(message = "Stadium image cannot be empty")
 	@Column(name = "view", length = 2048)
 	private String stadiumImage;
 	

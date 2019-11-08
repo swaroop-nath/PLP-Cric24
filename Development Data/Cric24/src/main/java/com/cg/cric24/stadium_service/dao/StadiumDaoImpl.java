@@ -32,7 +32,7 @@ public class StadiumDaoImpl implements IStadiumDao {
 		Stadium stadium = manager.find(Stadium.class, stadiumId);
 		if(stadium == null) {
 			daoLogger.error("No stadium details found for given ID");
-			throw new StadiumNotFoundException("Stadium with id "+stadiumId+"not found");
+			throw new StadiumNotFoundException("Stadium with id "+ stadiumId + " not found");
 		}
 		daoLogger.info("search successful");	
 		return stadium;
@@ -65,7 +65,7 @@ public class StadiumDaoImpl implements IStadiumDao {
 		List<Stadium> stadium = manager.createNamedQuery("byCountry").setParameter("country", country).getResultList();
 		if(stadium.size() == 0) {
 			daoLogger.error("No stadium found for the given country");
-			throw new NoRegisteredStadiumException("Stadiums of this country is not present" + country);
+			throw new NoRegisteredStadiumException("Stadiums of this country is not present " + country);
 		}
 		daoLogger.info("search successful");
 		return stadium;
