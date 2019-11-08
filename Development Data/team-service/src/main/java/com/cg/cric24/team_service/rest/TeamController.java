@@ -100,7 +100,7 @@ public class TeamController {
 	 * 
 	 */
 	@PutMapping(value = "/update", consumes = "application/json", produces = "application/json")
-	public Team updateTeam(@RequestBody Team teams) {
+	public Team updateTeam(@Valid @RequestBody Team teams) {
 		controllerLogger.info("Team Updated successfully");
 		return service.updateTeams(teams);
 	}

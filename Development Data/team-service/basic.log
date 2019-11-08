@@ -35,3 +35,48 @@
 2019-11-08-http-nio-8888-exec-1-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team added successfully
 2019-11-08-http-nio-8888-exec-1-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:New Team added
 2019-11-08-http-nio-8888-exec-1-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:New Team added
+2019-11-08-http-nio-8888-exec-7-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by ID successful
+2019-11-08-http-nio-8888-exec-7-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by ID successful
+2019-11-08-http-nio-8888-exec-7-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by ID successful
+2019-11-08-http-nio-8888-exec-8-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by ID successful
+2019-11-08-http-nio-8888-exec-8-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by ID successful
+2019-11-08-http-nio-8888-exec-8-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by ID successful
+2019-11-08-http-nio-8888-exec-9-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by name successfully
+2019-11-08-http-nio-8888-exec-9-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by name successful
+2019-11-08-http-nio-8888-exec-9-ERROR-com.cg.cric24.team_service.dao.TeamDaoImpl:Invalid team name to search
+2019-11-08-http-nio-8888-exec-10-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by name successfully
+2019-11-08-http-nio-8888-exec-10-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by name successful
+2019-11-08-http-nio-8888-exec-10-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by name successful
+2019-11-08-http-nio-8888-exec-1-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:displayed List of all teams added
+2019-11-08-http-nio-8888-exec-1-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-1-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team added successfully
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:New Team added
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:New Team added
+2019-11-08-http-nio-8888-exec-4-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by name successfully
+2019-11-08-http-nio-8888-exec-4-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team search by name successful
+2019-11-08-http-nio-8888-exec-4-ERROR-com.cg.cric24.team_service.dao.TeamDaoImpl:Invalid team name to search
+2019-11-08-http-nio-8888-exec-10-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team added successfully
+2019-11-08-http-nio-8888-exec-10-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:New Team added
+2019-11-08-http-nio-8888-exec-10-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:New Team added
+2019-11-08-http-nio-8888-exec-2-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:displayed List of all teams added
+2019-11-08-http-nio-8888-exec-2-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-2-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:displayed List of all teams added
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-5-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:displayed List of all teams added
+2019-11-08-http-nio-8888-exec-5-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-5-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-8-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team deleted successfully
+2019-11-08-http-nio-8888-exec-8-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team deleted successfully
+2019-11-08-http-nio-8888-exec-8-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Team Deleted Successfully
+2019-11-08-http-nio-8888-exec-9-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:displayed List of all teams added
+2019-11-08-http-nio-8888-exec-9-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-9-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-2-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:displayed List of all teams added
+2019-11-08-http-nio-8888-exec-2-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-2-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:displayed List of all teams added
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
+2019-11-08-http-nio-8888-exec-3-INFO -com.cg.cric24.team_service.dao.TeamDaoImpl:Display List of all teams added
