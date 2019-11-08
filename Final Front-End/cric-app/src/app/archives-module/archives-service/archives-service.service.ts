@@ -7,6 +7,7 @@ import { TeamsService } from 'src/app/teams-module/teams-service/teams-service.s
 import { Stadium } from 'src/app/model/stadium.model';
 import { StadiumsService } from 'src/app/stadiums-module/stadiums-service/stadiums-service.service';
 import { BackStack } from 'src/app/cricket-service/back-stack.interface';
+import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class ArchivesService {
   
   transitMatch: Match;
 
-  constructor(private cricService: CricketService, private teamsService: TeamsService, private stadiumsService: StadiumsService) { 
+  constructor(private cricService: CricketService, private authService: AuthService, private teamsService: TeamsService, private stadiumsService: StadiumsService) { 
     this.matches_master = [];
   }
 

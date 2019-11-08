@@ -30,6 +30,8 @@ import { SchedulesUpdateComponent } from '../schedules-module/schedules-update/s
 import { StadiumViewComponent } from '../stadiums-module/stadium-view/stadium-view.component';
 import { BlogRetrieveFieldComponent } from '../blogs-module/blog-retrieve-field/blog-retrieve-field.component';
 import { BlogViewComponent } from '../blogs-module/blog-view/blog-view.component';
+import { ScheduleViewComponent } from '../schedules-module/schedule-view/schedule-view.component';
+import { AuthGuard } from '../cricket-guards/auth-guard.service';
 
 
 const routes: Routes = [
@@ -42,7 +44,12 @@ const routes: Routes = [
     path: '',
     component: BlogsRetreiveAllComponent,
     outlet: 'blogs'
-  }, // Include schedule retrieve all component too.
+  },
+  {
+    path: '',
+    component: SchedulesRetrieveComponent,
+    outlet: 'schedules'
+  },
   {
     path: 'scorecard-view',
     component: ScorecardViewComponent,
@@ -117,6 +124,17 @@ const routes: Routes = [
     path: 'find-blogs',
     component: BlogRetrieveFieldComponent,
     outlet: 'blogs'
+  },
+  {
+    path: 'schedule-view',
+    component: ScheduleViewComponent,
+    outlet: 'schedules',
+    // canActivate: [RoleGuard]
+  },
+  {
+    path: 'schedule-update',
+    component: SchedulesUpdateComponent,
+    outlet: 'schedules'
   }
 ];
 

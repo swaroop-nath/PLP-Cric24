@@ -4,19 +4,18 @@ import { Team } from 'src/app/model/team.model';
 import { Player } from 'src/app/model/player.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { CricketService } from 'src/app/cricket-service/cricket-service.service';
+import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SchedulesService {
   match:Match;
-  matches:Match[];
-  team: Team;
-  teams:Team[];
-  player:Player;
-  players:Player[];
+  transitSchedule: Match;
 
-  constructor(public httpClient: HttpClient) { }
+  constructor(public httpClient: HttpClient, private cricService: CricketService, private authService: AuthService) { }
 
   addMatch(match:Match):Observable<Match>{
     return this.httpClient.post<Match>("http://localhost:8085/schedule/addMatch", match);
@@ -44,5 +43,21 @@ export class SchedulesService {
 
   getUpdateMatch(){
     return this.match;
+  }
+
+  getParentRoute() {
+    return this.cricService.parentRoute;
+  }
+
+  getFromBackStack() {
+    return this.cricService.componentBackStack.pop();
+  }
+
+  addToBackStack(component: BackStack) {
+    return this.cricService.componentBackStack.push(component)
+  }
+  
+  getUser(): string {
+    return this.authService.isUserLoggedIn();
   }
 }
