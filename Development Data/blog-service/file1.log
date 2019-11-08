@@ -1,0 +1,10 @@
+[main] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[main] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-1] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-1] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-2] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-2] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-3] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-3] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added
+[http-nio-8183-exec-2] INFO  com.cg.cric24.controller.BlogController  - To add a new blog
+[http-nio-8183-exec-2] INFO  com.cg.cric24.service.BlogServiceImpl  - Blog to be added

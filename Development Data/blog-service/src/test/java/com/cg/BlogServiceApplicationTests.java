@@ -2,7 +2,6 @@ package com.cg;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
 
 import java.util.List;
 
@@ -22,6 +21,11 @@ public class BlogServiceApplicationTests {
 
 	@Autowired
 	private BlogService service;
+	
+	/* 
+	 * Test case to test if all dependency injection succeeds,
+	 * and the application loads successfully.
+	 */
 
 	@Test
 	public void testAddBLog() {
@@ -31,7 +35,7 @@ public class BlogServiceApplicationTests {
 		newBlog.setBlogContent("Captain");
 		
 		Blog savedBlog = service.addBLog(newBlog);
-		assertEquals(15, savedBlog.getBlogId());
+		assertEquals(1, savedBlog.getBlogId());
 	}
 	
 	@Test
@@ -62,7 +66,7 @@ public class BlogServiceApplicationTests {
 	
 	@Test(expected = BlogNotFoundException.class)
 	public void testSearchByCategoryWithException() throws BlogNotFoundException {
-		List<Blog> blogs=service.searchByCategory("Playe");
+		service.searchByCategory("Playe");
 		
 	}
 	

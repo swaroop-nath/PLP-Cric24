@@ -1,0 +1,180 @@
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-2-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-6-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-2-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-4-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-5-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-7-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-10-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-1-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-3-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-5-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-7-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-9-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-10-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-1-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-10-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-5-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-8-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-2-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To add a new blog
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:Blog to be added
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-8-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-9-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-2-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-2-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-1-ERROR-com.cg.cric24.service.BlogServiceImpl:Invalid blog type
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-6-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.controller.BlogController:Search blog on the basis of type
+2019-11-07-http-nio-8183-exec-7-INFO -com.cg.cric24.service.BlogServiceImpl:search successful
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-1-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.controller.BlogController:Approve/Reject a particular blog
+2019-11-07-http-nio-8183-exec-3-INFO -com.cg.cric24.service.BlogServiceImpl:Blog yet to be approved/rejected
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.controller.BlogController:To get the list of all existing blogs
+2019-11-07-http-nio-8183-exec-4-INFO -com.cg.cric24.service.BlogServiceImpl:List of all blogs added
