@@ -32,6 +32,7 @@ export class TeamsRetrieveAllComponent implements OnInit, BackStack {
   }
 
   onStart() {
+    // do horizontal stacking between teams, stadiums and players
     $('#schedules-outlet').animate({height: '0px', width: '0px'}).hide()
     $('#archives-outlet').animate({height: '0px', width: '0px'}).hide()
     $('#blogs-outlet').animate({height: '0px', width: '0px'}).hide()

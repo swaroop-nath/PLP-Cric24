@@ -1,3 +1,5 @@
+<button class="btn btn-primary" (click)="findStadiums()">Find Teams</button>
+
 <table class="table table-bordered">
     <tr>
        <th>ID</th>
@@ -8,7 +10,7 @@
       <th>View</th>
       </tr>
   
-       <tr *ngFor="let std of stadiums">
+       <tr *ngFor="let std of stadiums" (click)="viewStadium(std)">
         <td>{{std.stadiumId}}</td>
         <td>{{std.stadiumName}}</td>
         <td>{{std.location}}</td>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CricketService } from 'src/app/cricket-service/cricket-service.service';
 import { Observable } from 'rxjs';
 import { Stadium } from 'src/app/model/stadium.model';
+import { BackStack } from 'src/app/cricket-service/back-stack.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +48,17 @@ export class StadiumsService {
 
   deleteStadium(id:number):Observable<boolean>{
     return this.cricService.deleteEntityForEntity<boolean>(this.BASE_URL + this.DELETE_EXT + id);
+  }
+
+  getFromBackStack() {
+    return this.cricService.componentBackStack.pop();
+  }
+
+  addToBackStack(component: BackStack) {
+    return this.cricService.componentBackStack.push(component)
+  }
+
+  getParentRoute() {
+    return this.cricService.parentRoute;
   }
 }

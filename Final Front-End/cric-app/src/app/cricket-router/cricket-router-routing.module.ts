@@ -27,13 +27,14 @@ import { PlayerViewComponent } from '../players-module/player-view/player-view.c
 import { SchedulesRetrieveComponent } from '../schedules-module/schedules-retrieve/schedules-retrieve.component';
 import { SchedulesCreateComponent } from '../schedules-module/schedules-create/schedules-create.component';
 import { SchedulesUpdateComponent } from '../schedules-module/schedules-update/schedules-update.component';
+import { StadiumViewComponent } from '../stadiums-module/stadium-view/stadium-view.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: ArchivesRetrieveComponent,
-    outlet: 'archives',
+    outlet: 'archives'
   },
   {
     path: '',
@@ -86,8 +87,23 @@ const routes: Routes = [
     outlet: 'players'
   },
   {
+    path: 'stadium-view',
+    component: StadiumViewComponent,
+    outlet: 'stadiums'
+  },
+  {
     path: 'all-stadiums-view',
     component: StadiumsRetrieveAllComponent,
+    outlet: 'stadiums'
+  },
+  {
+    path: 'update-stadium',
+    component: StadiumsUpdateComponent,
+    outlet: 'stadiums'
+  },
+  {
+    path: 'find-stadiums',
+    component: StadiumsRetrieveFieldComponent,
     outlet: 'stadiums'
   }
 ];

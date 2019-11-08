@@ -46,13 +46,4 @@ export class StadiumsRetrieveFieldComponent implements OnInit {
     });
   }
 
-  update(stadium: Stadium) {
-    this.service.transitStadium = stadium;
-    this.router.navigate(['stadiums-update']);
-  }
-
-  delete(stadium: Stadium) {
-    this.service.deleteStadium(stadium.stadiumId);
-  }
-
 }
