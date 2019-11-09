@@ -33,23 +33,28 @@ import { BlogViewComponent } from '../blogs-module/blog-view/blog-view.component
 import { ScheduleViewComponent } from '../schedules-module/schedule-view/schedule-view.component';
 import { AuthGuard } from '../cricket-guards/auth-guard.service';
 import { RoleGuard } from '../cricket-guards/role-guard.service';
+import { ArchivesCreateComponent } from '../archives-module/archives-create/archives-create.component';
 
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: ArchivesRetrieveComponent,
+  //   outlet: 'archives'
+  // },
+  // {
+  //   path: '',
+  //   component: BlogsRetreiveAllComponent,
+  //   outlet: 'blogs'
+  // },
+  // {
+  //   path: '',
+  //   component: SchedulesRetrieveComponent,
+  //   outlet: 'schedules'
+  // },
   {
     path: '',
-    component: ArchivesRetrieveComponent,
-    outlet: 'archives'
-  },
-  {
-    path: '',
-    component: BlogsRetreiveAllComponent,
-    outlet: 'blogs'
-  },
-  {
-    path: '',
-    component: SchedulesRetrieveComponent,
-    outlet: 'schedules'
+    component: ArchivesCreateComponent
   },
   {
     path: 'scorecard-view',

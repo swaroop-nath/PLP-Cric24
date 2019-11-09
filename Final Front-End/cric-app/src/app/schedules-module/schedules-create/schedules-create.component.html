@@ -2,7 +2,7 @@
     <table class="table table-bordered">
       <tr>
         <td width="20%"><label for="matchSchedule">Match Schedule: </label></td>
-        <td><input type="datetime-local" [(ngModel)]="match.matchSchedule" #matchSchedule=ngModel name="matchSchedule">
+        <td><input type="datetime-local" [(ngModel)]="match.matchSchedule" #matchSchedule=ngModel [min]="today" name="matchSchedule">
           <span *ngIf="matchSchedule.touched && matchSchedule.invalid && 
           matchSchedule.errors.required " class="alert-warning">
           matchSchedule cannot be empty!

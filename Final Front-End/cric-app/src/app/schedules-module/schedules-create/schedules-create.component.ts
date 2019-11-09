@@ -23,14 +23,15 @@ export class SchedulesCreateComponent implements OnInit {
   teamOneIndex: number;
   teamTwoIndex: number;
   stadiumIndex:number;
+  today: string;
+
   constructor(private service: SchedulesService, private teamService:TeamsService, private stadiumService:StadiumsService) { 
     this.match = new Match();
     this.teams = [];
+    this.today = '2019-11-10T00:00:00';
   }
 
   ngOnInit() {
-    this.match = new Match();
-
     this.matchFormats[0] = MatchFormat.T20;
     this.matchFormats[1] = MatchFormat.ODI;
     this.matchFormats[2] = MatchFormat.TEST;

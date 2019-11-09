@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Player</a>
+    </div>
+    <ul class="nav navbar-nav">
+
+      <li><a [routerLink]="['add']">Add Player</a></li>
+      <li><a [routerLink]="['list']">List</a></li>
+      <li><a [routerLink]="['find']">Search</a></li>
+      <li><a [routerLink]="['update']">Update</a></li>
+
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
