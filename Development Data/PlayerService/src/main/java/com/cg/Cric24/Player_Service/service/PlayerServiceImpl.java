@@ -37,7 +37,7 @@ public class PlayerServiceImpl implements PlayerService {
 
 	@Override
 	public Player getPlayerById(int id) throws PlayerNotfoundException {
-		serviceLogger.error("PLayer with given Id not found else search successful");
+		serviceLogger.error("Player with given Id not found else search successful");
 		return dao.getPlayerById(id);
 	}
 

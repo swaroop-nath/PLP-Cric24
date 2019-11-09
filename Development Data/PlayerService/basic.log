@@ -125,3 +125,6 @@
 2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.web.PlayerController:To get the list of all existing players
 2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:Display list of all players added
 2019-11-08-http-nio-8889-exec-6-INFO -com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:Display list of all players added
+2019-11-09-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.web.PlayerController:Delete a player based on given ID
+2019-11-09-http-nio-8889-exec-9-INFO -com.cg.Cric24.Player_Service.service.PlayerServiceImpl:delete details of player
+2019-11-09-http-nio-8889-exec-9-ERROR-com.cg.Cric24.Player_Service.repo.PlayerDaoImpl:PLayer with given id not found

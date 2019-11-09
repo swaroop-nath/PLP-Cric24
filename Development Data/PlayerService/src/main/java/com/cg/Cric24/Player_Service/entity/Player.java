@@ -56,7 +56,6 @@ public class Player {
 	@Column(length = 5)
 	private int wickets;
 	
-	@NotEmpty(message = "Role type cannot be empty")
 	@Enumerated(EnumType.STRING)
 	private RoleType roleType;
 
