@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   forgotPassword(newPassword: string, userId: string, userFavFood: string, userFavAnimal: string){
-    return this.http.put<boolean>("http://localhost:9898/login/forgetPassword/"+newPassword+"/"+userId+"/"+userFavFood+"/"+userFavAnimal, userId);
+    return this.http.put<number>("http://localhost:9898/login/forgetPassword/"+newPassword+"/"+userId+"/"+userFavFood+"/"+userFavAnimal, userId);
   }
 
   getBloggers():Observable<User[]>{

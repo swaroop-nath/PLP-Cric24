@@ -20,6 +20,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import com.cg.Cric24.entity.UDEDetails;
 import com.cg.Cric24.exception.UserNotFoundException;
+import com.cg.Cric24.exception.WrongPasswordException;
+import com.cg.Cric24.exception.WrongSecurityAnswerException;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
@@ -29,6 +31,26 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(UserNotFoundException.class)
 	@ResponseBody
 	public ResponseEntity<Object> handleInvalidEntry(UserNotFoundException ex) {
+		UDEDetails error = new UDEDetails();
+		error.setTimestamp(new Date());
+		error.setMessage(ex.getMessage());
+		error.setDetails(ex.getUriDetails());
+		return new ResponseEntity<Object>(error, HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(WrongPasswordException.class)
+	@ResponseBody
+	public ResponseEntity<Object> handleInvalidPassword(WrongPasswordException ex) {
+		UDEDetails error = new UDEDetails();
+		error.setTimestamp(new Date());
+		error.setMessage(ex.getMessage());
+		error.setDetails(ex.getUriDetails());
+		return new ResponseEntity<Object>(error, HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(WrongSecurityAnswerException.class)
+	@ResponseBody
+	public ResponseEntity<Object> handleInvalidSecurityAnswer(WrongSecurityAnswerException ex) {
 		UDEDetails error = new UDEDetails();
 		error.setTimestamp(new Date());
 		error.setMessage(ex.getMessage());

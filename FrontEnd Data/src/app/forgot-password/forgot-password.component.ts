@@ -13,7 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
   newPassword:string;
   userFavFood:string;
   userFavAnimal:string;
-  result:boolean;
+  result:number;
 
   constructor(private service : AuthService, private route: Router) { }
 
@@ -22,7 +22,7 @@ export class ForgotPasswordComponent implements OnInit {
   forgotPassword(){
     this.service.forgotPassword(this.newPassword,this.userId,this.userFavFood,this.userFavAnimal).subscribe(data=>{
       this.result= data;
-      if(this.result == true){
+      if(this.result == 1){
         alert("password changed successfully");
       }else{
         alert("Security questions answered wrong");

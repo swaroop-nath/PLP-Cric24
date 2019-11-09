@@ -9,6 +9,8 @@ import java.util.List;
 
 import com.cg.Cric24.entity.User;
 import com.cg.Cric24.exception.UserNotFoundException;
+import com.cg.Cric24.exception.WrongPasswordException;
+import com.cg.Cric24.exception.WrongSecurityAnswerException;
 
 
 public interface LoginService {
@@ -19,8 +21,9 @@ public interface LoginService {
 	 * @param userPassword
 	 * @return returns true if password is confirmed else throws exception
 	 * @throws UserNotFoundException
+	 * @throws WrongPasswordException 
 	 */
-	User confirmPassword(String userId, String userPassword) throws UserNotFoundException;
+	User confirmPassword(String userId, String userPassword) throws UserNotFoundException, WrongPasswordException;
 
 	/**
 	 * This service is called when a new user wants to create an account
@@ -60,8 +63,9 @@ public interface LoginService {
 	 * @param favAnimal
 	 * @return integer value if password change is successful
 	 * @throws UserNotFoundException
+	 * @throws WrongSecurityAnswerException 
 	 */
-	int changePassword(String password, String userId, String favFood, String favAnimal) throws UserNotFoundException;
+	int changePassword(String password, String userId, String favFood, String favAnimal) throws UserNotFoundException, WrongSecurityAnswerException;
 	
 	/**
 	 * This service is called to encrypt the entered password and then store into the database. 
@@ -90,4 +94,5 @@ public interface LoginService {
 	 * @throws UserNotFoundException
 	 */
 	User getByUserName(String userName) throws UserNotFoundException;
+	
 }

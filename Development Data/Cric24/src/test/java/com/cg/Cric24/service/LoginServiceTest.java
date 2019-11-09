@@ -11,6 +11,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.cg.Cric24.entity.User;
 import com.cg.Cric24.exception.UserNotFoundException;
+import com.cg.Cric24.exception.WrongPasswordException;
+import com.cg.Cric24.exception.WrongSecurityAnswerException;
 
 @RunWith(SpringRunner.class)
 
@@ -37,17 +39,23 @@ public class LoginServiceTest {
 		user.setUserPhone("9877598822");
 		user.setUserFavFood("hakka noodles");
 		user.setUserFavAnimal("cat");
+		user.setUserType("blogger");
 	}
 	
-//	@Test
-//	public void testConfirmPassword() throws UserNotFoundException {
-//		assertTrue(service.confirmPassword("neha3108", "neha123"));
-//	}
-//	
-//	@Test(expected = UserNotFoundException.class)
-//	public void testFailConfirmPassword() throws UserNotFoundException {
-//		assertTrue(service.confirmPassword("cfcd", "neha123"));
-//	}
+	@Test
+	public void testConfirmPassword() throws UserNotFoundException, WrongPasswordException {
+		assertTrue(service.confirmPassword("neha3108", "neha123").getUserType().equals("blogger"));
+	}
+	
+	@Test(expected = UserNotFoundException.class)
+	public void testFailConfirmPassword() throws UserNotFoundException, WrongPasswordException {
+		assertTrue(service.confirmPassword("cfcd", "neha123").getUserType().equals("blogger"));
+	}
+	
+	@Test(expected = WrongPasswordException.class)
+	public void testFailConfirmWrongPassword() throws UserNotFoundException, WrongPasswordException {
+		assertTrue(service.confirmPassword("neha3108", "cdcdc").getUserType().equals("blogger"));
+	}
 
 	@Test
 	public void testSignUp() {
@@ -92,17 +100,22 @@ public class LoginServiceTest {
 	}
 
 	@Test
-	public void testChangePassword() throws UserNotFoundException {
+	public void testChangePassword() throws UserNotFoundException, WrongSecurityAnswerException {
 		assertTrue(service.changePassword("neha123","neha3108", "maggi" , "cat")>0);
 	}
 	
 	@Test(expected = UserNotFoundException.class)
-	public void testFailChangePassword() throws UserNotFoundException {
+	public void testFailChangePassword() throws UserNotFoundException, WrongSecurityAnswerException {
 		assertTrue(service.changePassword("neha123","revr", "maggi" , "cat")>0);
 	}
 	
-	@Test
-	public void testFailChangeWrongPassword() throws UserNotFoundException {
+	@Test(expected = WrongSecurityAnswerException.class)
+	public void testFailChangePasswordWrongSecurity() throws UserNotFoundException, WrongSecurityAnswerException {
+		assertTrue(service.changePassword("neha123","neha3108", "csdcdsc" , "cdscsd")>0);
+	}
+	
+	@Test(expected = WrongSecurityAnswerException.class)
+	public void testFailChangeWrongPassword() throws UserNotFoundException, WrongSecurityAnswerException {
 		assertFalse(service.changePassword("neha123","neha3108", "cwece" , "cacwect")>0);
 	}
 	

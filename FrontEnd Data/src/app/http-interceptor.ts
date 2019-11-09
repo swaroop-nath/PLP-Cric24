@@ -15,6 +15,10 @@ intercept(request:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>>
     .pipe(
         retry(1),
         catchError((error: HttpErrorResponse)=>{
+            let error_timestamp = error.error.timestamp;
+            let error_message = error.error.message;
+            let error_details = error.error.details;
+
             let errorFlag=true;
             let errorMessage='';
             if(error.error instanceof ErrorEvent){
@@ -24,7 +28,7 @@ intercept(request:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>>
                 console.log(errorMessage);
             }
             if(errorFlag){
-                window.alert(errorMessage);
+                window.alert(error_message);
             }
             return throwError(errorMessage);
         })

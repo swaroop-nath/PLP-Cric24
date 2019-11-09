@@ -2,7 +2,7 @@ package com.cg.Cric24.entity;
 import java.util.Date;
 /**
  * THis is a user defined exception layer comprising of all the fields along with their respective getters and setters
- * @author Pranav 
+ * @author Arvish
  * @version 1.0
  */
 

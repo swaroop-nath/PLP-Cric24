@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cg</groupId>
-	<artifactId>Cric24</artifactId>
+	<artifactId>Cric24Login</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Cric24</name>
 	<description>Project for Cric24 App</description>

@@ -31,7 +31,7 @@ export class ResetPasswordComponent implements OnInit {
       if(this.result == true){
         alert("password successfully changed");
       }else{
-        alert("Wrong Password! If you dont remember your password , Logout and go to reset Password");
+        alert("Wrong Password! If you dont remember your password , Logout and go to forgot Password");
       }
     })
   }

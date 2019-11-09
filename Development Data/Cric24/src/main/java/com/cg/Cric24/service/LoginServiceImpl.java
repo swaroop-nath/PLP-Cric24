@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.cg.Cric24.entity.User;
 import com.cg.Cric24.exception.UserNotFoundException;
+import com.cg.Cric24.exception.WrongPasswordException;
+import com.cg.Cric24.exception.WrongSecurityAnswerException;
 import com.cg.Cric24.repo.LoginDao;
 
 @Service
@@ -18,7 +20,7 @@ public class LoginServiceImpl implements LoginService {
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
-	
+
 	static Logger serviceLogger = Logger.getLogger(LoginServiceImpl.class);
 
 	@Override
@@ -63,8 +65,7 @@ public class LoginServiceImpl implements LoginService {
 		if (users.isEmpty()) {
 			serviceLogger.error("no bloggers present");
 			throw new UserNotFoundException("No bloggers exits at the point");
-		}
-		else {
+		} else {
 			serviceLogger.info("list of all bloggers returned");
 			return users;
 		}
@@ -72,13 +73,13 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public int changePassword(String password, String userId, String favFood, String favAnimal)
-			throws UserNotFoundException {
+			throws UserNotFoundException, WrongSecurityAnswerException {
 		User user;
 		try {
 			user = dao.findById(userId).get();
 		} catch (Exception exception) {
 			serviceLogger.error("no user with this ID present");
-			throw new UserNotFoundException("no user exists with id : " + userId);
+			throw new UserNotFoundException("No users exists with userId: " + userId);
 		}
 		if (user.getUserFavFood().equals(favFood) || user.getUserFavAnimal().equals(favAnimal)) {
 			password = passwordEncoder.encode(password);
@@ -86,7 +87,7 @@ public class LoginServiceImpl implements LoginService {
 			serviceLogger.info("send back the new encoded password with a user-ID");
 			return x;
 		} else
-			return 0;
+			throw new WrongSecurityAnswerException("Sercurity questions answered wrong for userId: " + userId);
 
 	}
 
@@ -96,8 +97,7 @@ public class LoginServiceImpl implements LoginService {
 		if (user == null) {
 			serviceLogger.error("user with given id and password not found");
 			throw new UserNotFoundException("No user exists with id :" + userId);
-		}
-		else {
+		} else {
 			serviceLogger.info("send the new encrypted password");
 			return passwordEncoder.encode(userPassword);
 		}
@@ -113,7 +113,7 @@ public class LoginServiceImpl implements LoginService {
 			serviceLogger.error("user with given id and password not found");
 			throw new UserNotFoundException("No user exists with id :" + userId);
 		}
-		
+
 		if (passwordEncoder.matches(oldPassword, user.getUserPassword())) {
 			user.setUserPassword(passwordEncoder.encode(newPassword));
 			dao.save(user);
@@ -129,31 +129,30 @@ public class LoginServiceImpl implements LoginService {
 		if (user == null) {
 			serviceLogger.error("no user with this user name present");
 			throw new UserNotFoundException("no blogger exists with user name :" + userName);
-		}
-		else {
+		} else {
 			serviceLogger.info("user found");
 			return user;
 		}
 	}
 
 	@Override
-	public User confirmPassword(String userId, String userPassword) throws UserNotFoundException {
+	public User confirmPassword(String userId, String userPassword)
+			throws UserNotFoundException, WrongPasswordException {
+
 		User user;
 		try {
 			user = dao.findById(userId).get();
-		
-		if (passwordEncoder.matches(userPassword,user.getUserPassword())) {
+		} catch (Exception exception) {
+			throw new UserNotFoundException("No user exists with user id: " + userId);
+		}
+		if (passwordEncoder.matches(userPassword, user.getUserPassword())) {
 			serviceLogger.info("password confirmed");
 			return user;
+		} else {
+			throw new WrongPasswordException("Hey " + user.getUserName()
+					+ ", have you forgot your password? Kindly refer to forgot password to change your password");
 		}
-		
-		} catch (Exception exception) {
-			serviceLogger.error("no user with this ID present");
-			throw new UserNotFoundException("No user exists with id :" + userId);
-		}
-		
-		return null;
-		
+
 	}
 
 }
