@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cg.cric24.archives_service.entity.Match;
 import com.cg.cric24.archives_service.entity.MatchStatus;
+import com.cg.cric24.archives_service.entity.ScoreCard;
 import com.cg.cric24.archives_service.entity.Team;
 import com.cg.cric24.archives_service.exception.NoMatchFoundException;
 
@@ -47,6 +48,8 @@ public class ArchivesRepoImpl implements ArchivesRepo {
 
 	@Override
 	public Match save(Match newMatch) {
+		ScoreCard mergedScoreCard = manager.merge(newMatch.getMatchScoreCard());
+		manager.flush();
 		Match savedMatch = manager.merge(newMatch);
 		manager.flush();
 		return savedMatch;

@@ -1,11 +1,11 @@
 <form (ngSubmit)="addMatch()" #addForm="ngForm" >
-    <table class="table table-bordered">
+    <table class="table table-hover">
         <tr>
             <h4>Match Details:</h4>
         </tr>
       <tr>
-        <td width="20%"><label for="matchSchedule">Match Schedule: </label></td>
-        <td><input type="datetime-local" [(ngModel)]="match.matchSchedule" #matchSchedule=ngModel [min]="today" name="matchSchedule">
+        <td><label for="matchSchedule">Match Schedule: </label></td>
+        <td><input type="datetime-local" [(ngModel)]="match.matchSchedule" #matchSchedule=ngModel [max]="today" name="matchSchedule">
           <span *ngIf="matchSchedule.touched && matchSchedule.invalid && 
           matchSchedule.errors.required " class="alert-warning">
           matchSchedule cannot be empty!
@@ -48,7 +48,7 @@
       </tr>
       <tr>
         <td><label for="matchStatus">Match Status: </label></td>
-        <td><select [(ngModel)]= match.matchStatus name="matchStatus" #matchStatus=ngModel >
+        <td><select id="matchStatus" [(ngModel)]= match.matchStatus name="matchStatus" #matchStatus=ngModel >
           <option value="null" disabled selected >--SELECT--</option>  
           <option *ngFor="let status of matchStatuses" [value]="status" >{{status}}</option>
             </select>
@@ -79,8 +79,8 @@
           </span>
           </td>
         </tr>
-        <tr>
-            <td><label for="winningTeam">Team Two: </label></td>
+        <tr [hidden] = "isMatchCancelled">
+            <td><label for="winningTeam">Winner: </label></td>
             <td><select [(ngModel)]= winningTeamIndex name="winningTeam" #winningTeam=ngModel >
                 <option *ngFor="let two of winnings_team_view; let i = index" [value]="i" >{{two.teamName}}</option>
                 <span *ngIf="winningTeam.touched && winningTeam.invalid && 
@@ -91,6 +91,8 @@
             </td>
         </tr>
 
+    </table>
+    <table class="table table-hover" [hidden]="isMatchCancelled">
         <tr>
             <h4>Scorecard Details:</h4>
         </tr>
@@ -105,20 +107,72 @@
             </td>
         </tr>
 
+        <tr>
+            <td><label for="teamOneOvers">Team One Overs: </label></td>
+                <td><input type="text" [(ngModel)]= match.matchScoreCard.teamOneOvers name="teamOneOvers" #teamOneOvers=ngModel required>
+                    <span *ngIf="teamOneOvers.touched && teamOneOvers.invalid && 
+                    teamOneOvers.errors.required " class="alert-warning">
+                    matchLeague cannot be empty!
+                </span>
+            </td>
+        </tr>
 
         <tr>
-                <td><label for="teamTwoScore">Team One Score: </label></td>
+                <td><label for="teamOneWickets">Team One Wickets: </label></td>
+                    <td><input type="text" [(ngModel)]= match.matchScoreCard.teamOneWickets name="teamOneWickets" #teamOneWickets=ngModel required>
+                        <span *ngIf="teamOneWickets.touched && teamOneWickets.invalid && 
+                        teamOneWickets.errors.required " class="alert-warning">
+                        matchLeague cannot be empty!
+                    </span>
+                </td>
+        </tr>
+
+        <tr>
+                <td><label for="teamTwoScore">Team Two Score: </label></td>
                     <td><input type="text" [(ngModel)]= match.matchScoreCard.teamTwoScore name="teamTwoScore" #teamTwoScore=ngModel required>
                       <span *ngIf="teamTwoScore.touched && teamTwoScore.invalid && 
                       teamTwoScore.errors.required " class="alert-warning">
                       matchLeague cannot be empty!
                     </span>
                 </td>
+        </tr>
+
+        <tr>
+                <td><label for="teamTwoOvers">Team Two Overs: </label></td>
+                    <td><input type="text" [(ngModel)]= match.matchScoreCard.teamTwoOvers name="teamTwoOvers" #teamTwoOvers=ngModel required>
+                        <span *ngIf="teamTwoOvers.touched && teamTwoOvers.invalid && 
+                        teamTwoOvers.errors.required " class="alert-warning">
+                        matchLeague cannot be empty!
+                    </span>
+                </td>
+            </tr>
+    
+            <tr>
+                    <td><label for="teamTwoWickets">Team Two Wickets: </label></td>
+                        <td><input type="text" [(ngModel)]= match.matchScoreCard.teamTwoWickets name="teamTwoWickets" #teamTwoWickets=ngModel required>
+                            <span *ngIf="teamTwoWickets.touched && teamTwoWickets.invalid && 
+                            teamTwoWickets.errors.required " class="alert-warning">
+                            matchLeague cannot be empty!
+                        </span>
+                    </td>
+            </tr>
+
+            <tr>
+                    <td><label for="playerOfTheMatch">Man of the Match: </label></td>
+                    <td><select [(ngModel)]= playerOfTheMatchIndex name="playerOfTheMatch" #playerOfTheMatch=ngModel >
+                        <option *ngFor="let player of players_view; let i = index" [value]="i" >{{player.name}}</option>
+                        <span *ngIf="playerOfTheMatch.touched && playerOfTheMatch.invalid && 
+                        playerOfTheMatch.errors.required " class="alert-warning">
+                      teamTwo cannot be empty!
+                    </span>
+                      </select>
+                    </td>
             </tr>
   
-        <tr>
-          <td colspan="2"><button type="submit" [disabled]="!addForm.valid" class="btn btn-success">Submit</button></td>
-        </tr>
     </table>
+    
+    <tr>
+        <td colspan="2"><button type="submit" [disabled]="!addForm.valid" class="btn btn-success">Submit</button></td>
+      </tr>
   </form>
   

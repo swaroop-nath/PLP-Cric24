@@ -36,9 +36,10 @@ export class ArchivesRetrieveComponent implements OnInit, AfterBadRoute {
   initialize() {
     this.archivesService.fetchAllMatches().subscribe(fetchedMatches => {
       this.archivesService.saveFetchedMatches(fetchedMatches);
+      console.log(fetchedMatches.length);
       
       this.archivesService.matches_master.forEach(fetchedMatch => {
-        if (fetchedMatch.matchSchedule.getFullYear() == 2019)
+        if (true) // Change this
           this.matches_view.push(fetchedMatch);
       });
     });

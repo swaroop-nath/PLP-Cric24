@@ -50,6 +50,11 @@ export class ScorecardViewComponent implements OnInit, BackStack {
     this.onStart()
   }
 
+  updateMatch() {
+    this.teamsService.transitTeam = this.receivedMatch.teamOne
+    this.router.navigate([{outlets: {'archives': ['archives-update']}}], {relativeTo: this.archiveService.getParentRoute()});
+  }
+
   viewTeamOne() {
     this.teamsService.transitTeam = this.receivedMatch.teamOne
     this.onStop()

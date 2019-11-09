@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,7 +34,7 @@ public class Match {
 	
 	private LocalDateTime matchSchedule;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "stadium_id", nullable = false)
 	private Stadium matchVenue;
 	
@@ -41,11 +42,11 @@ public class Match {
 	@Column(name = "match_type", nullable = false)
 	private MatchFormat matchFormat;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamOne;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamTwo;
 	
@@ -57,7 +58,7 @@ public class Match {
 	 * Cascade specifies that, any action on the Match entity
 	 * shall be cascaded to the child ScoreCard.
 	 */
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "score_card_id", referencedColumnName = "score_card_id")
 	private ScoreCard matchScoreCard;
 	
@@ -65,7 +66,7 @@ public class Match {
 	@Column(name = "match_status", nullable = false)
 	private MatchStatus matchStatus;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "winning_team", referencedColumnName = "team_id")
 	private Team winningTeam;
 	

@@ -15,7 +15,8 @@ export class CricketService {
   homeComponents: AfterBadRoute[];
 
   constructor(private client: HttpClient) { 
-    this.componentBackStack = []
+    this.componentBackStack = [];
+    this.homeComponents = [];
   }
 
   fetchAll<T>(fetchUrl: string): Observable<T[]> {

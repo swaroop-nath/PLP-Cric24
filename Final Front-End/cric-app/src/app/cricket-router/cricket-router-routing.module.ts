@@ -34,28 +34,29 @@ import { ScheduleViewComponent } from '../schedules-module/schedule-view/schedul
 import { AuthGuard } from '../cricket-guards/auth-guard.service';
 import { RoleGuard } from '../cricket-guards/role-guard.service';
 import { ArchivesCreateComponent } from '../archives-module/archives-create/archives-create.component';
+import { ArchivesUpdateComponent } from '../archives-module/archives-update/archives-update.component';
 
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: ArchivesRetrieveComponent,
-  //   outlet: 'archives'
-  // },
-  // {
-  //   path: '',
-  //   component: BlogsRetreiveAllComponent,
-  //   outlet: 'blogs'
-  // },
-  // {
-  //   path: '',
-  //   component: SchedulesRetrieveComponent,
-  //   outlet: 'schedules'
-  // },
   {
     path: '',
-    component: ArchivesCreateComponent
+    component: ArchivesRetrieveComponent,
+    outlet: 'archives'
   },
+  {
+    path: '',
+    component: BlogsRetreiveAllComponent,
+    outlet: 'blogs'
+  },
+  {
+    path: '',
+    component: SchedulesRetrieveComponent,
+    outlet: 'schedules'
+  },
+  // {
+  //   path: '',
+  //   component: ArchivesCreateComponent
+  // },
   {
     path: 'scorecard-view',
     component: ScorecardViewComponent,
@@ -144,6 +145,12 @@ const routes: Routes = [
     path: 'schedules-update',
     component: SchedulesUpdateComponent,
     outlet: 'schedules',
+    canActivate: [RoleGuard]
+  },
+  {
+    path: 'archives-update',
+    component: ArchivesUpdateComponent,
+    outlet: 'archives',
     canActivate: [RoleGuard]
   }
 ];

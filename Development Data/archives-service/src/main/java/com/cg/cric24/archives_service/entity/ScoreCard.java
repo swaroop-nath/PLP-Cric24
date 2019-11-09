@@ -3,6 +3,7 @@ package com.cg.cric24.archives_service.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,11 +22,11 @@ public class ScoreCard {
 	@Column(name = "score_card_id")
 	private int scoreCardID;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamOne;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(referencedColumnName = "team_id")
 	private Team teamTwo;
 	
@@ -41,7 +42,7 @@ public class ScoreCard {
 	
 	private double teamTwoOvers;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "player_id", referencedColumnName = "player_id")
 	private Player playerOfTheMatch;
 	
