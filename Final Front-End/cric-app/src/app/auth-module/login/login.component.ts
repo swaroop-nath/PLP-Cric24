@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth-service/auth-service.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/model/user.model';
+import { AuthService } from '../auth-service/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ export class LoginComponent implements OnInit {
   id : string;
   password : string;
   result : string;
+  user : User;
 
   constructor(private service:AuthService, private route:Router) { }
 
@@ -20,18 +22,19 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.service.login(this.id,this.password).subscribe(data=>{
-      this.result = data;
-      console.log(this.result);
-      if(this.result == "admin"){
-        sessionStorage.setItem('type', this.result);
-        alert("Login successful as an Admin!");
-      }else if(this.result == "blogger") {
-        alert("Login successful as Blogger!")
+      this.user = data;
+      console.log(this.user);
+      if(this.user == null){
+        alert("wrong password")
       }
-      else{
-        alert("Login unsuccessful! Enter valid credentials!")
-      }
+      else if(this.user.userType == "admin"||this.user.userType == "blogger"){
+        sessionStorage.setItem('type', this.user.userType);
+        alert("welcome " + this.user.userName);
+        this.service.setUserBean(this.user);
+        this.route.navigate(['getall'])
+      } 
     });
+    //this.route.navigate(['getall']);
   }
 
 }

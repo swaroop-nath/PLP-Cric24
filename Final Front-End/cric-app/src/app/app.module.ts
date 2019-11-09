@@ -29,7 +29,6 @@ import { TeamsUpdateComponent } from './teams-module/teams-update/teams-update.c
 import { BlogsCreateComponent } from './blogs-module/blogs-create/blogs-create.component';
 import { BlogRetrieveFieldComponent } from './blogs-module/blog-retrieve-field/blog-retrieve-field.component';
 import { BlogsRetreiveAllComponent } from './blogs-module/blogs-retreive-all/blogs-retreive-all.component';
-import { RetrieveBloggersComponent } from './auth-module/retrieve-bloggers/retrieve-bloggers.component';
 import { ForgotPasswordComponent } from './auth-module/forgot-password/forgot-password.component';
 import { LoginComponent } from './auth-module/login/login.component';
 import { ResetPasswordComponent } from './auth-module/reset-password/reset-password.component';
@@ -73,7 +72,6 @@ import { ScheduleViewComponent } from './schedules-module/schedule-view/schedule
     BlogsCreateComponent,
     BlogRetrieveFieldComponent,
     BlogsRetreiveAllComponent,
-    RetrieveBloggersComponent,
     ForgotPasswordComponent,
     LoginComponent,
     ResetPasswordComponent,

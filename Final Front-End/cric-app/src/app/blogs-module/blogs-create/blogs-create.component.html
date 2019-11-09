@@ -8,20 +8,20 @@
    </span><br> -->
 
    <select name="blogType" #blogType=ngModel [(ngModel)]=blog.blogType class = "form-control" >
-     <option *ngFor="let blogs of blogType" [value]="blogs">{{blogs}}</option>
-    <!-- <option [value]="Players">Players</option>
-    <option [value]="Tournaments">Tournaments</option>
-    <option [value]="Teams">Teams</option>
-    <option [value]="Miscelleous">Miscelleous</option> -->
+      <option value="" selected disabled hidden>Choose type</option>
+      <option value="Players">Players</option>
+      <option value="Tournaments">Tournaments</option>
+      <option value="Teams">Teams</option>
+      <option value="Miscelleous">Miscelleous</option>
   </select>
   </div>
   <div class="form-group">
     <label>Enter Blog Heading</label><br>
-    <input type="text" [(ngModel)]=blog.blogHeading name="heading" #heading=ngModel required pattern="[A-Za-z ]{3,}" placeholder="Enter Heading">
-    <span *ngIf="heading.touched && heading.invalid && 
-    (heading.errors.required || heading.errors.pattern)" class="alert-warning">
-     Invalid heading or heading cannot be empty!><br>
-     </span>
+    <textarea rows="7" cols="70" [(ngModel)]=blog.blogContent name="content" #heading=ngModel required pattern="[A-Za-z ]{3,}" placeholder="Enter Content"></textarea>
+     <span *ngIf="heading.touched && heading.invalid && 
+     (heading.errors.required || heading.errors.pattern)" class="alert-warning">
+      Invalid content or content cannot be empty!><br>
+      </span>
   </div>
   <div class="form group">
     <label>Write Blog Content</label><br>

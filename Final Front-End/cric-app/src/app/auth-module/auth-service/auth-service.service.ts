@@ -8,6 +8,7 @@ import { User } from 'src/app/model/user.model';
 })
 export class AuthService {
 
+user:User;
   private BASE_URL = 'http://localhost:9898/login';
   private ADD_EXT = '/add';
   private LOGIN_EXT = '/enter/';
@@ -16,44 +17,51 @@ export class AuthService {
   private FETCH_ALL_EXT = '/bloggers';
   private DELETE_EXT = '/delete/';
 
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient) { 
+    this.user = new User();
+  }
 
   signup(user : User){
-    return this.http.post<User>(this.BASE_URL + this.ADD_EXT, user);
+    return this.http.post<User>("http://localhost:9898/login/add", user);
   }
 
-  login(userId : string, userPassword : string):Observable<string>{
-    return this.http.get(this.BASE_URL + this.LOGIN_EXT + userId+ "/" + userPassword, {responseType : 'text'});
+  login(userId : string, userPassword : string):Observable<User>{
+    return this.http.get<User>("http://localhost:9898/login/enter/"+userId+"/"+userPassword);
   }
 
-  resetPassword(userId: string, previousPass: string, newPassword: string): Observable<boolean>{
-    return this.http.get<boolean>(this.BASE_URL + this.UPD_PWD_EXT + userId + "/" + previousPass + "/" + newPassword);
+  resetPassword(userId: string, previousPass: string, newPassword: string){
+    return this.http.get<boolean>("http://localhost:9898/login/updatePassword/"+userId+"/"+previousPass+"/"+newPassword);
   }
 
-  forgotPassword(newPassword: string, userId: string, userFavFood: string, userFavAnimal: string): Observable<boolean>{
-    return this.http.put<boolean>(this.BASE_URL + this.FGT_PWD_EXT + newPassword + "/" + userId + "/" + userFavFood + "/" + userFavAnimal, userId);
+  forgotPassword(newPassword: string, userId: string, userFavFood: string, userFavAnimal: string){
+    return this.http.put<number>("http://localhost:9898/login/forgetPassword/"+newPassword+"/"+userId+"/"+userFavFood+"/"+userFavAnimal, userId);
   }
 
   getBloggers():Observable<User[]>{
-    return this.http.get<User[]>(this.BASE_URL + this.FETCH_ALL_EXT);
-  }
-
-  deleteBlogger(userId : string): Observable<boolean>{
-    return this.http.delete<boolean>(this.BASE_URL + this.DELETE_EXT + userId);
+    return this.http.get<User[]>("http://localhost:9898/login/bloggers");
   }
 
   isUserLoggedIn():string{
     if(sessionStorage.getItem('type')=="admin")
-    return "admin";
+    return 'admin';
     else if(sessionStorage.getItem('type')=="blogger")
-    return "blogger";
+    return 'blogger';
     return null;
-
-    // return "admin";
   }
 
-  logOut(){
+  loggOut(){
     sessionStorage.removeItem('type');
   }
 
+  deleteBlogger(userId : string){
+    return this.http.delete<boolean>("http://localhost:9898/login/admin/delete/"+userId).subscribe();
+  }
+
+  setUserBean(user:User){
+    this.user = user;
+  }
+
+  getUserBean(){
+    return this.user;
+  }
 }

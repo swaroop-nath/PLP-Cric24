@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Blog } from 'src/app/model/blog.model';
 import { BlogsService } from '../blogs-service/blogs-service.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth-module/auth-service/auth-service.service';
 
 @Component({
   selector: 'app-blogs-create',
@@ -13,8 +14,9 @@ export class BlogsCreateComponent implements OnInit {
   blog:Blog;
   blogType:string[]=['Players','Tournaments','Teams','Miscalleneous'];
   
-  constructor(private service:BlogsService, private route:Router) { 
+  constructor(private service:BlogsService, private authService: AuthService, private route:Router) { 
     this.blog=new Blog();
+    this.blog.blogger = this.authService.getUserBean();
   }
 
   ngOnInit() {

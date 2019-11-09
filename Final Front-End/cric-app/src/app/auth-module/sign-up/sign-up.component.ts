@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user.model';
-import { AuthService } from '../auth-service/auth-service.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth-service/auth-service.service';
+import { User } from 'src/app/model/user.model';
 
 @Component({
-  selector: 'app-sign-up',
+  selector: 'app-signup',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })

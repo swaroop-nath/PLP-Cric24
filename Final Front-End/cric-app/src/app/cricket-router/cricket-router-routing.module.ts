@@ -20,7 +20,6 @@ import { LogoutComponent } from '../auth-module/logout/logout.component';
 import { ForgotPasswordComponent } from '../auth-module/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from '../auth-module/reset-password/reset-password.component';
 import { SignUpComponent } from '../auth-module/sign-up/sign-up.component';
-import { RetrieveBloggersComponent } from '../auth-module/retrieve-bloggers/retrieve-bloggers.component';
 import { ScorecardViewComponent } from '../archives-module/scorecard-view/scorecard-view.component';
 import { TeamViewComponent } from '../teams-module/team-view/team-view.component';
 import { PlayerViewComponent } from '../players-module/player-view/player-view.component';
@@ -38,25 +37,25 @@ import { ArchivesUpdateComponent } from '../archives-module/archives-update/arch
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ArchivesRetrieveComponent,
-    outlet: 'archives'
-  },
-  {
-    path: '',
-    component: BlogsRetreiveAllComponent,
-    outlet: 'blogs'
-  },
-  {
-    path: '',
-    component: SchedulesRetrieveComponent,
-    outlet: 'schedules'
-  },
   // {
   //   path: '',
-  //   component: ArchivesCreateComponent
+  //   component: ArchivesRetrieveComponent,
+  //   outlet: 'archives'
   // },
+  // {
+  //   path: '',
+  //   component: BlogsRetreiveAllComponent,
+  //   outlet: 'blogs'
+  // },
+  // {
+  //   path: '',
+  //   component: SchedulesRetrieveComponent,
+  //   outlet: 'schedules'
+  // },
+  {
+    path: '',
+    component: BlogsCreateComponent
+  },
   {
     path: 'scorecard-view',
     component: ScorecardViewComponent,

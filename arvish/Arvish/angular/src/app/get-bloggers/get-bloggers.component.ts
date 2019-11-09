@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user.model';
-import { AuthService } from '../auth-service/auth-service.service';
+import { User } from '../login-model/user.model';
+import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-retrieve-bloggers',
-  templateUrl: './retrieve-bloggers.component.html',
-  styleUrls: ['./retrieve-bloggers.component.css']
+  selector: 'app-get-bloggers',
+  templateUrl: './get-bloggers.component.html',
+  styleUrls: ['./get-bloggers.component.css']
 })
-export class RetrieveBloggersComponent implements OnInit {
+export class GetBloggersComponent implements OnInit {
 
   users:User[];
   result: boolean;
