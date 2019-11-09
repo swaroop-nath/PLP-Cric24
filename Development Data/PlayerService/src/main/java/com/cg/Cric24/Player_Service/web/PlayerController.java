@@ -85,7 +85,7 @@ public class PlayerController {
 	 * Access URL - http://localhost:8889/player/update
 	 */
 	@PutMapping(value = "/update", consumes = "application/json", produces = "application/json")
-	public Player updateProduct(@RequestBody Player player) {
+	public Player updateProduct(@Valid @RequestBody Player player) {
 		controllerLogger.info("Update a player as per requirement");
 		return service.updatePlayer(player);
 	}

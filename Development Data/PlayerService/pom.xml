@@ -12,7 +12,7 @@
 	<groupId>com.cg.cric24</groupId>
 	<artifactId>Cric24</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Cric24</name>
+	<name>Cric24-Players</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
